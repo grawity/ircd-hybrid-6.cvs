@@ -56,7 +56,7 @@
 #endif
 
 #ifndef lint
-static char *version="$Id: mtrie_conf.c,v 1.19 1998/12/25 05:17:19 db Exp $";
+static char *version="$Id: mtrie_conf.c,v 1.20 1998/12/28 06:17:41 db Exp $";
 #endif /* lint */
 
 #define MAXPREFIX (HOSTLEN+USERLEN+15)
@@ -1385,6 +1385,14 @@ char *show_iline_prefix(aClient *sptr,aConfItem *aconf,char *name)
 #endif
     if (IsConfFlined(aconf))
       *prefix_ptr++ = '>';
+
+#ifdef IDLE_CHECK  
+#ifdef E_LINES_OPER_ONLY
+  if(IsAnOper(sptr))
+#endif
+    if (IsConfIdlelined(aconf))
+      *prefix_ptr++ = '<';
+#endif
   *prefix_ptr = '\0';
 
   strncat(prefix_of_host,name,MAXPREFIX);
