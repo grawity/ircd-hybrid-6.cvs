@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: config.h,v 1.129 2001/08/05 13:07:53 jdc Exp $
+ * $Id: config.h,v 1.130 2001/08/05 18:47:28 db Exp $
  */
 #ifndef INCLUDED_config_h
 #define INCLUDED_config_h
@@ -697,9 +697,19 @@
  */
 #define LITTLE_I_LINES
 
+/* TS5
+ * This will mean the oldest version of a channel will always remain after a
+ * split, whereas TS3 behaviour was to allow any TS in an opless channel.
+ *
+ * This effectively will make splitting servers for ops useless, but could
+ * cause desync on a mixed TS3/TS5 network.
+ *
+ * See doc/ts5.txt for more details
+ */
+#define TS5 
+
 /* TS5_ONLY
  * This will disallow TS3 servers from linking
- * (see README.HYBRID6.1-CHANGES for more details)
  */
 #undef  TS5_ONLY
 
