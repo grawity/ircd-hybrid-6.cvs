@@ -21,9 +21,12 @@
  */
 
 /*
- * $Id: s_debug.h,v 1.3 1999/07/23 02:38:30 db Exp $
+ * $Id: s_debug.h,v 1.4 1999/07/23 07:02:42 tomh Exp $
  *
  * $Log: s_debug.h,v $
+ * Revision 1.4  1999/07/23 07:02:42  tomh
+ * remove sbrk, replace with get_maxrss
+ *
  * Revision 1.3  1999/07/23 02:38:30  db
  * - more include file fixes
  *
@@ -48,6 +51,7 @@ struct Client;
 extern void send_usage(struct Client*, char *);
 extern void count_memory (struct Client *, char *);
 extern size_t get_maxrss(void);
+extern size_t get_vm_top(void);
 
 extern	void	debug(int, char *, ...);
 
