@@ -1,11 +1,13 @@
 /*
  * motd.h
  *
- * $Id: motd.h,v 1.4 1999/07/18 00:17:44 tomh Exp $
+ * $Id: motd.h,v 1.5 1999/07/21 05:45:03 tomh Exp $
  */
 #ifndef INCLUDED_motd_h
 #define INCLUDED_motd_h
-
+#ifndef INCLUDED_ircd_defs_h
+#include "ircd_defs.h"    /* MAX_DATE_STRING */
+#endif
 #ifndef INCLUDED_limits_h
 #include <limits.h>       /* PATH_MAX */
 #define INCLUDED_limits_h
