@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: irc_string.c,v 1.6 1999/07/23 13:24:20 db Exp $
+ *  $Id: irc_string.c,v 1.7 1999/07/25 18:01:46 tomh Exp $
  */
 #include "irc_string.h"
 #include "list.h"
@@ -95,7 +95,7 @@ void* MyRealloc(void* x, size_t y)
  * annoying opers, lets clean up what is sent to all opers
  * -Dianora
  */
-char* clean_string(char* dest, const char* src, size_t len)
+char* clean_string(char* dest, const unsigned char* src, size_t len)
 {
   char* d    = dest; 
   char* endp = dest + len - 1;
