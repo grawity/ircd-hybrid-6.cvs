@@ -1,3 +1,12 @@
+*** 20000131_1 by lusky
+reverted to -5 nick collide code (db)
+fixes to make debugmode compile (db)
+
+
+*** 20000103_1 by lusky
+revved patchlevel to b119
+
+
 *** 20000102_1 by lusky
 The "hack" ops message is just plain wrong. Its not needed anyway. (db).
 userhost formatting problem (ce)
