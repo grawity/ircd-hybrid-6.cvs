@@ -20,12 +20,11 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_kline.c,v 1.22 1999/07/17 04:44:17 db Exp $
+ *   $Id: m_kline.c,v 1.23 1999/07/17 07:55:56 tomh Exp $
  */
 
 #include "struct.h"
 #include "common.h"
-#include "sys.h"
 #include "numeric.h"
 #include "msg.h"
 #include "channel.h"

@@ -1,12 +1,11 @@
 /*
  * m_info.c 
  *
- * $Id: m_info.c,v 1.18 1999/07/17 02:31:58 db Exp $
+ * $Id: m_info.c,v 1.19 1999/07/17 07:55:56 tomh Exp $
  */
 #include "struct.h"
 
 #include "common.h"
-#include "sys.h"
 #include "numeric.h"
 #include "msg.h"
 #include "channel.h"

@@ -1,11 +1,10 @@
 /*
  * scache.c
  *
- * $Id: scache.c,v 1.5 1999/07/12 23:37:06 tomh Exp $
+ * $Id: scache.c,v 1.6 1999/07/15 08:47:42 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
-#include "sys.h"
 #include "numeric.h"
 #include "h.h"
 #include "send.h"

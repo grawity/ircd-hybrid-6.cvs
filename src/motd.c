@@ -20,10 +20,9 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: motd.c,v 1.5 1999/07/13 23:46:32 db Exp $
+ *   $Id: motd.c,v 1.6 1999/07/17 07:55:57 tomh Exp $
  */
 
-#include "sys.h"
 #include "channel.h"
 #include "h.h"
 #include "s_bsd.h"
