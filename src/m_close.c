@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_version.c,v 1.3 1999/07/28 07:49:37 tomh Exp $
+ *   $Id$
  */
 #include "m_commands.h"
 #include "client.h"
@@ -116,6 +116,8 @@ int m_close(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
       closed++;
     }
   sendto_one(sptr, form_str(RPL_CLOSEEND), me.name, parv[0], closed);
+  sendto_realops("%s issued CLOSE, %d connection%s closed", sptr->name,                                                   
+                  closed, (closed == 1) ? "" : "s");                                 
   return 0;
 }
 
