@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: parse.c,v 1.11 1999/07/10 20:24:58 tomh Exp $
+ *   $Id: parse.c,v 1.12 1999/07/11 21:09:40 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -28,6 +28,7 @@
 #include "numeric.h"
 #include "h.h"
 #include "send.h"
+#include "hash.h"
 
 #if defined( HAVE_STRING_H )
 #include <string.h>
