@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_die.c,v 1.2 1999/08/01 07:50:42 tomh Exp $
+ *   $Id: m_die.c,v 1.3 2000/06/09 01:59:07 lusky Exp $
  */
 #include "m_commands.h"
 #include "client.h"
@@ -110,7 +110,7 @@ int m_die(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 
   if (parc < 2)
     {
-      sendto_one(sptr,":%s NOTICE %s :Need server name /die %s",
+      sendto_one(sptr,":%s NOTICE %s :Need server name: /die %s",
                  me.name,sptr->name,me.name);
       return 0;
     }
