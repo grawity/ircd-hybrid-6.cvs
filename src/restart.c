@@ -25,7 +25,7 @@ void restart(char *mesg)
     abort();
   was_here = YES;
 
-  log(L_NOTICE, "Restarting Server because: %s, memory data limit: %ld",
+  ilog(L_NOTICE, "Restarting Server because: %s, memory data limit: %ld",
          mesg, get_maxrss());
 
   server_reboot();
@@ -37,7 +37,7 @@ void server_reboot(void)
   
   sendto_ops("Aieeeee!!!  Restarting server... memory: %d", get_maxrss());
 
-  log(L_NOTICE, "Restarting server...");
+  ilog(L_NOTICE, "Restarting server...");
   flush_connections(0);
 
   for (i = 0; i < MAXCONNECTIONS; ++i)

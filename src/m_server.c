@@ -250,7 +250,7 @@ int m_server(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
           sendto_realops("Link %s Server %s dropped, no N: line",
 	                 get_client_name(cptr, TRUE), host);
 #endif			 
-	  log(L_NOTICE, "Access denied. No N line for server %s",
+	  ilog(L_NOTICE, "Access denied. No N line for server %s",
 	  		get_client_name(cptr, TRUE));
 #endif
           return exit_client(cptr, cptr, cptr, "NO N line");
@@ -292,7 +292,7 @@ int m_server(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
         sendto_realops("Link %s cancelled, server %s already exists",
 	                   get_client_name(bcptr, TRUE), host);
 #endif			   
-        log(L_NOTICE, "Link %s cancelled, server %s already exists",
+        ilog(L_NOTICE, "Link %s cancelled, server %s already exists",
                            get_client_name(bcptr, TRUE), host);
                                   
         return exit_client(bcptr, bcptr, &me, "Server Exists");

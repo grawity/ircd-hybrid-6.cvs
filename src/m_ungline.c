@@ -118,7 +118,7 @@ m_ungline (aClient *cptr,aClient *sptr,int parc,char *parv[])
                  me.name, parv[0],user, host);
       sendto_ops("%s has removed the G-Line for: [%s@%s]",
                  parv[0], user, host );
-      log(L_NOTICE, "%s removed G-Line for [%s@%s]",
+      ilog(L_NOTICE, "%s removed G-Line for [%s@%s]",
           parv[0], user, host);
       return 0;
     }

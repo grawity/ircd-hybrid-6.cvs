@@ -273,7 +273,7 @@ int m_oper(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 #if !defined(CRYPT_OPER_PASSWORD) && (defined(FNAME_OPERLOG) || defined(SYSLOG_OPER))
         encr = "";
 #endif
-        log(L_TRACE, "OPER %s by %s!%s@%s",
+        ilog(L_TRACE, "OPER %s by %s!%s@%s",
             name, parv[0], sptr->username, sptr->host);
 #ifdef FNAME_OPERLOG
         {

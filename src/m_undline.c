@@ -277,6 +277,6 @@ Then just ignore the line
   sendto_ops("%s has removed the D-Line for: [%s]",
              parv[0], cidr);
 
-  log(L_NOTICE, "%s removed D-Line for [%s]", parv[0], cidr);
+  ilog(L_NOTICE, "%s removed D-Line for [%s]", parv[0], cidr);
   return 0;
 }

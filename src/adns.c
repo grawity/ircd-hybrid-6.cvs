@@ -57,7 +57,7 @@ void init_resolver(void)
  gettimeofday(&SystemTime, NULL);
  r =adns_init(&dns_state, adns_if_noautosys, 0);    
  if(dns_state == NULL) {
-   log(L_CRIT, "Error opening /etc/resolv.conf: %s; r = %d", strerror(errno), r);
+   ilog(L_CRIT, "Error opening /etc/resolv.conf: %s; r = %d", strerror(errno), r);
    exit(76);
  }
 }

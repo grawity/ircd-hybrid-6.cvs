@@ -386,7 +386,7 @@ void init_tree_parse(struct Message *mptr)
    */
   if (mpt->cmd)
     {
-      log(L_CRIT, "bad msgtab entry: ``%s''\n", mpt->cmd);
+      ilog(L_CRIT, "bad msgtab entry: ``%s''\n", mpt->cmd);
       exit(1);
     }
 }

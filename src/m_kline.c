@@ -858,7 +858,7 @@ m_kline(struct Client *cptr,
 		 reason);
 
 
-  log(L_TRACE, "%s added K-Line for [%s@%s] [%s|%s]",
+  ilog(L_TRACE, "%s added K-Line for [%s@%s] [%s|%s]",
       sptr->name, user, host, reason, oper_reason ? oper_reason : "");
 
   kconf = get_conf_name(KLINE_TYPE);
@@ -1307,7 +1307,7 @@ m_dline(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 		 host,
 		 reason);
 
-  log(L_TRACE, "%s added D-Line for [%s] [%s|%s]", 
+  ilog(L_TRACE, "%s added D-Line for [%s] [%s|%s]", 
       sptr->name, host, reason,
       oper_reason ? oper_reason : "" );
 

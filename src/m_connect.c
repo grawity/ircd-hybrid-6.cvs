@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_connect.c,v 1.9 2001/07/21 20:35:40 leeh Exp $
+ *   $Id$
  */
 #include "m_commands.h"
 #include "client.h"
@@ -198,7 +198,7 @@ int m_connect(struct Client* cptr, struct Client* sptr, int parc, char* parv[])
                         me.name, parv[1], parv[2] ? parv[2] : "",
                         get_client_name(sptr, FALSE));
 
-      log(L_TRACE, "CONNECT From %s : %s %s", 
+      ilog(L_TRACE, "CONNECT From %s : %s %s", 
           parv[0], parv[1], parv[2] ? parv[2] : "");
     }
 

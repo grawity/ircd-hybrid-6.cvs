@@ -640,12 +640,12 @@ static void write_pidfile(void)
     {
       ircsprintf(buff,"%d\n", (int)getpid());
       if (write(fd, buff, strlen(buff)) == -1)
-        log(L_ERROR,"Error writing to pid file %s", PPATH);
+        ilog(L_ERROR,"Error writing to pid file %s", PPATH);
       close(fd);
       return;
     }
   else
-    log(L_ERROR, "Error opening pid file %s", PPATH);
+    ilog(L_ERROR, "Error opening pid file %s", PPATH);
 }
 
 /*
@@ -849,7 +849,7 @@ int main(int argc, char *argv[])
   check_class();
   write_pidfile();
 
-  log(L_NOTICE, "Server Ready");
+  ilog(L_NOTICE, "Server Ready");
 
   ServerRunning = 1;
   while (ServerRunning) {

@@ -128,7 +128,7 @@ int     m_restart(struct Client *cptr,
         }
     }
 
-  log(L_WARN, "Server RESTART by %s\n", get_client_name(sptr, SHOW_IP));
+  ilog(L_WARN, "Server RESTART by %s\n", get_client_name(sptr, SHOW_IP));
   ircsprintf(buf, "Server RESTART by %s", get_client_name(sptr, SHOW_IP));
   restart(buf);
   return 0; /*NOT REACHED*/

@@ -214,13 +214,13 @@ int m_rehash(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
           sendto_ops("%s is rehashing dlines from server config file",
 #endif
                      parv[0]);
-          log(L_NOTICE, "REHASH From %s\n", get_client_name(sptr, HIDE_IP));
+          ilog(L_NOTICE, "REHASH From %s\n", get_client_name(sptr, HIDE_IP));
           dline_in_progress = 1;
           return rehash(cptr, sptr, 0);
         }
       if(found)
         {
-          log(L_NOTICE, "REHASH %s From %s\n", parv[1], 
+          ilog(L_NOTICE, "REHASH %s From %s\n", parv[1], 
               get_client_name(sptr, HIDE_IP));
           return 0;
         }
@@ -246,7 +246,7 @@ int m_rehash(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
       sendto_ops("%s is rehashing server config file",
 #endif
                  parv[0]);
-      log(L_NOTICE, "REHASH From %s\n", get_client_name(sptr, SHOW_IP));
+      ilog(L_NOTICE, "REHASH From %s\n", get_client_name(sptr, SHOW_IP));
       return rehash(cptr, sptr, 0);
     }
   return 0; /* shouldn't ever get here */

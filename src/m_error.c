@@ -121,7 +121,7 @@ int m_error(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
    *   if HIDE_ERROR_MESSAGES is undefined,
    *     sendto_realops(hey i got an error me love you long time)
    *       [ and hide the remote servers ip if HIDE_SERVERS_IPS ]
-   *   always: log(blah blah blah, with the real ip)
+   *   always: ilog(blah blah blah, with the real ip)
    * otherwise, if this was sent along from another server:
    *   same logic as above, but messages contain "via x"
    *
@@ -138,7 +138,7 @@ int m_error(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
                get_client_name(cptr, FALSE), para);
 #endif /* SERVERHIDE || HIDE_SERVERS_IPS */
 #endif /* !HIDE_ERROR_MESSAGES */
-    log(L_NOTICE, "ERROR from %s -- %s",
+    ilog(L_NOTICE, "ERROR from %s -- %s",
                get_client_name(cptr, SHOW_IP), para);
   }
   else
@@ -151,7 +151,7 @@ int m_error(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
                get_client_name(cptr, FALSE), para);
 #endif /* SERVERHIDE || HIDE_SERVERS_IPS */
 #endif /* !HIDE_ERROR_MESSAGES */
-    log(L_NOTICE, "ERROR from %s via %s -- %s", sptr->name,
+    ilog(L_NOTICE, "ERROR from %s via %s -- %s", sptr->name,
         get_client_name(cptr, SHOW_IP), para);
   }
 

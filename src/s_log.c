@@ -130,7 +130,7 @@ void vlog(int priority, const char *fmt, va_list args)
 #endif	  		
 }
 
-void log(int priority, const char* fmt, ...)
+void ilog(int priority, const char* fmt, ...)
 {
   char    buf[LOG_BUFSIZE];
   va_list args;

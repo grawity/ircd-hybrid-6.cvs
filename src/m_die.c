@@ -147,7 +147,7 @@ int m_die(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
                    me.name, get_client_name(sptr, MASK_IP));
     }
   flush_connections(0);
-  log(L_NOTICE, "Server terminated by %s", get_client_name(sptr, HIDE_IP));
+  ilog(L_NOTICE, "Server terminated by %s", get_client_name(sptr, HIDE_IP));
   /* 
    * this is a normal exit, tell the os it's ok 
    */

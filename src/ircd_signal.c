@@ -43,7 +43,7 @@ static void dummy_handler(int sig)
 static void sigterm_handler(int sig)  
 {
   flush_connections(0);
-  log(L_CRIT, "Server killed By SIGTERM");
+  ilog(L_CRIT, "Server killed By SIGTERM");
   exit(-1);
 }
   
@@ -70,7 +70,7 @@ static void sigint_handler(int sig)
 {
   static int restarting = 0;
 
-  log(L_WARN, "Server Restarting on SIGINT");
+  ilog(L_WARN, "Server Restarting on SIGINT");
   if (restarting == 0) {
     restarting = 1;
     server_reboot();
