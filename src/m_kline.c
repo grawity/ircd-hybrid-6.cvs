@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_kline.c,v 1.35 1999/07/22 02:06:16 db Exp $
+ *   $Id: m_kline.c,v 1.36 1999/07/23 03:15:49 db Exp $
  */
 
 #include "struct.h"
@@ -162,7 +162,6 @@ LockedFile(const char *filename)
                  * pid - it could be a remnant left over from a
                  * crashed editor or system reboot etc.
                  */
-
                 killret = kill(atoi(buffer), SIGCHLD);
                 if (killret == 0)
                 {
