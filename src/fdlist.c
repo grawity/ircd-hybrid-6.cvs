@@ -3,7 +3,7 @@
  * fdlist.c   maintain lists of certain important fds 
  *
  *
- * $Id: fdlist.c,v 1.4 1999/07/07 02:19:00 db Exp $
+ * $Id: fdlist.c,v 1.5 1999/07/12 23:37:00 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -11,7 +11,7 @@
 #include "h.h"
 #include "config.h"
 #include "fdlist.h"
-
+#include <string.h>
 
 void addto_fdlist(int fd,fdlist *listp)
 {
