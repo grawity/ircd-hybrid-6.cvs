@@ -241,7 +241,7 @@ int parse(aClient *cptr, char *pbuffer, char *bufend)
             cptr->since += (cptr->receiveM % 5) ? 1 : 0;
           else
 #else
-          if (!IsAnOper(cptr) || !CanFlood(cptr))
+          if (!IsAnOper(cptr) && !CanFlood(cptr))
 #endif
 #endif
             cptr->since += (2 + i / 120);
