@@ -17,7 +17,7 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- * $Id: s_serv.h,v 1.8 1999/07/30 06:48:11 tomh Exp $
+ * $Id: s_serv.h,v 1.9 2001/06/06 18:55:05 db Exp $
  *
  */
 #ifndef INCLUDED_serv_h
@@ -44,7 +44,6 @@ struct Capability
 #define CAP_ZIP         0x00000004      /* Can do server compresion */
 #define CAP_EX          0x00000008      /* Can do channel +e exemptions */
 #define CAP_CHW         0x00000010      /* Can do channel wall @# */
-#define CAP_DE          0x00000020      /* Can do channel +d (regex deny) */
 
 #define DoesCAP(x)      ((x)->caps)
 
