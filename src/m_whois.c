@@ -331,8 +331,8 @@ int     m_whois(struct Client *cptr,
                        ":%s NOTICE %s :*** Notice -- %s (%s@%s) is doing a /whois on you.",
                        me.name, acptr->name, parv[0], sptr->username,
                        sptr->host);
-                }
 #ifdef SHOW_REMOTE_WHOIS
+                }
           else
                 {
             sendto_one(acptr,
