@@ -19,7 +19,7 @@
 
 #ifndef lint
 static  char sccsid[] = "@(#)s_auth.c	1.17 17 Oct 1993 (C) 1992 Darren Reed";
-static char *rcs_version = "$Id: s_auth.c,v 1.2 1998/09/22 22:27:14 db Exp $";
+static char *rcs_version = "$Id: s_auth.c,v 1.3 1998/10/14 05:51:55 db Exp $";
 #endif
 
 #include "struct.h"
@@ -40,7 +40,7 @@ static char *rcs_version = "$Id: s_auth.c,v 1.2 1998/09/22 22:27:14 db Exp $";
 			/* define it (BSD4.2 needs this) */
 #include "h.h"
 
-static void authsenderr(aClient *);
+static void authsenderr(aClient *);	/* locally defined */
 
 /*
  * start_auth
