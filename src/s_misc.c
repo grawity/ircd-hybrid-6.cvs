@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: s_misc.c,v 1.45 1999/07/12 23:37:04 tomh Exp $
+ *  $Id: s_misc.c,v 1.46 1999/07/13 23:46:32 db Exp $
  */
 #include "s_conf.h"
 #include "struct.h"
@@ -33,10 +33,11 @@
 #include "s_bsd.h"
 #include "send.h"
 
-#include <sys/stat.h>
-#include <sys/time.h>
+#include <string.h>
 #include <fcntl.h>
 #include <netdb.h>
+#include <sys/stat.h>
+#include <sys/time.h>
 
 #if !defined(ULTRIX) && !defined(SGI) && !defined(sequent) && \
     !defined(__convex__)

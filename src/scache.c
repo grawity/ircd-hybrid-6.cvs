@@ -1,7 +1,7 @@
 /*
  * scache.c
  *
- * $Id: scache.c,v 1.4 1999/07/08 00:53:32 db Exp $
+ * $Id: scache.c,v 1.5 1999/07/12 23:37:06 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -9,6 +9,7 @@
 #include "numeric.h"
 #include "h.h"
 #include "send.h"
+#include <string.h>
 
 
 static int hash(char *);	/* keep it hidden here */

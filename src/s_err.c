@@ -19,7 +19,7 @@
  *
  *	I kind of modernized this code a bit. -Dianora
  *
- *   $Id: s_err.c,v 1.23 1999/07/12 23:37:04 tomh Exp $
+ *   $Id: s_err.c,v 1.24 1999/07/14 02:04:45 db Exp $
  */
 #include "struct.h"
 #include "numeric.h"
@@ -570,7 +570,7 @@ static	char *	replies[] = {
  */
 
 
-char	*form_str(int numeric)
+char* form_str(int numeric)
 {
   char *nptr;
 
