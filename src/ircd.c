@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: ircd.c,v 1.89 1999/07/18 07:16:49 tomh Exp $
+ * $Id: ircd.c,v 1.90 1999/07/18 16:53:10 db Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -40,12 +40,13 @@
 #include "restart.h"
 
 #include <string.h>
+#include <errno.h>
 #include <time.h>
-#include <sys/file.h>
-#include <sys/stat.h>
 #include <pwd.h>
 #include <signal.h>
 #include <fcntl.h>
+#include <sys/file.h>
+#include <sys/stat.h>
 #include <sys/socket.h>
 
 #ifdef SETUID_ROOT
