@@ -34,7 +34,7 @@
  *                mode * -p etc. if flag was clear
  *
  *
- * $Id: channel.c,v 1.163 1999/08/01 07:18:23 tomh Exp $
+ * $Id: channel.c,v 1.164 1999/08/04 01:36:51 lusky Exp $
  */
 #include "channel.h"
 #include "client.h"
@@ -57,7 +57,7 @@
 #ifdef NEED_SPLITCODE
 
 static void check_still_split();
-int server_was_split;
+int server_was_split=YES;
 int got_server_pong;
 time_t server_split_time;
 
