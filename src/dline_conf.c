@@ -1,7 +1,7 @@
 /*
  * dline_conf.c
  *
- * $Id: dline_conf.c,v 1.24 1999/07/19 09:11:45 tomh Exp $
+ * $Id: dline_conf.c,v 1.25 1999/07/21 05:28:45 tomh Exp $
  */
 #include "dline_conf.h"
 #include "struct.h"
@@ -9,6 +9,7 @@
 #include "numeric.h"
 #include "class.h"
 #include "h.h"
+#include "ircd.h"
 #include "s_conf.h"
 #include "send.h"
 

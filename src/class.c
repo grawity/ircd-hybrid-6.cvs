@@ -16,13 +16,14 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: class.c,v 1.7 1999/07/12 23:36:59 tomh Exp $
+ *   $Id: class.c,v 1.8 1999/07/21 05:28:45 tomh Exp $
  */
 #include "class.h"
 #include "struct.h"
 #include "common.h"
 #include "numeric.h"
 #include "h.h"
+#include "ircd.h"
 #include "s_conf.h"
 #include "send.h"
 

@@ -17,8 +17,9 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: ircd.c,v 1.96 1999/07/21 05:28:46 tomh Exp $
+ * $Id: ircd.c,v 1.97 1999/07/21 23:12:14 db Exp $
  */
+#include "ircd.h"
 #include "struct.h"
 #include "common.h"
 #include "dline_conf.h"

@@ -18,13 +18,14 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- *   $Id: packet.c,v 1.11 1999/07/20 08:57:26 db Exp $
+ *   $Id: packet.c,v 1.12 1999/07/21 05:28:49 tomh Exp $
  */ 
 #include "struct.h"
 #include "common.h"
 #include "msg.h"
 #include "s_zip.h"
 #include "h.h"
+#include "ircd.h"
  
 /*
 ** dopacket

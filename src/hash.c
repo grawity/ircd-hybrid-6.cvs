@@ -16,15 +16,17 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: hash.c,v 1.25 1999/07/20 08:20:35 db Exp $
+ *  $Id: hash.c,v 1.26 1999/07/20 13:52:18 sean Exp $
  */
 #include "s_conf.h"
 #include "hash.h"
+#include "channel.h"
 #include "struct.h"
 #include "common.h"
 #include "numeric.h"
 #include "msg.h"
 #include "h.h"
+#include "ircd.h"
 #include "send.h"
 
 #include <assert.h>
