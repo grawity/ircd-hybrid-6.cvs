@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_server.c,v 1.13 2001/06/16 11:22:10 leeh Exp $
+ *   $Id$
  */
 #include "m_commands.h"  /* m_server prototype */
 #include "client.h"      /* client struct */
@@ -292,6 +292,9 @@ int m_server(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
         sendto_realops("Link %s cancelled, server %s already exists",
 	                   get_client_name(bcptr, TRUE), host);
 #endif			   
+        log(L_NOTICE, "Link %s cancelled, server %s already exists",
+                           get_client_name(bcptr, TRUE), host);
+                                  
         return exit_client(bcptr, bcptr, &me, "Server Exists");
       }
       /*
