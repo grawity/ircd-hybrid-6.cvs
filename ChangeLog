@@ -1,3 +1,36 @@
+metalrock    2004/03/27 18:58:56 EST	(20040327_0)
+
+  ircd-hybrid-6/thisisbogus - Imported sources
+  Update of /cvsroot/ircd-hybrid-6/thisisbogus
+  In directory hybridcvs.ircd-hybrid.org:/tmp/cvs-serv59959
+  
+  Log Message:
+  yet another
+  
+  Status:
+  
+  Vendor Tag:	hybteam
+  Release Tags:	start
+  		
+  N ircd-hybrid-6/thisisbogus/newfile.c
+  
+  No conflicts created by this import
+  
+
+
+
+lusky       2004/03/18 00:32:47 EST	(20040318_2)
+
+  Modified files:
+    .                    RELNOTES 
+  Log:
+  Updated RELNOTES for 6.4.2rc1, better late than never.
+  
+  Revision  Changes    Path
+  1.21      +11 -0     ircd-hybrid-6/RELNOTES
+
+
+
 ievil       2004/03/17 21:56:39 EST	(20040318_1)
 
   Modified files:
