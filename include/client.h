@@ -95,7 +95,8 @@ struct Server
 {
   struct User*     user;        /* who activated this connection */
   const char*      up;          /* Pointer to scache name */
-  char             by[NICKLEN + 1];
+  char             by[NICKLEN + 1];     /* oper who made the connection */
+  char             bysrv[HOSTLEN + 1]; /* server connection was done from */
   struct ConfItem* nline;       /* N-line pointer for this server */
   struct Client*   servers;     /* Servers on this server */
   struct Client*   users;       /* Users on this server */

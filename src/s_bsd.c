@@ -600,6 +600,7 @@ int connect_server(struct ConfItem* aconf,
   if (by && IsPerson(by))
     {
       strcpy(cptr->serv->by, by->name);
+      strcpy(cptr->serv->bysrv, by->user->server);
       if (cptr->serv->user) 
         free_user(cptr->serv->user, NULL);
       cptr->serv->user = by->user;
