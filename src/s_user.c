@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: s_user.c,v 1.109 1999/07/04 08:51:42 tomh Exp $
+ *  $Id: s_user.c,v 1.110 1999/07/06 05:42:22 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -2037,7 +2037,15 @@ static	int	m_message(aClient *cptr,
 		     cmd, nick, parv[2]);
 	  return 0;
 	}
+
       *server = '\0';
+
+      /* special case opers@server */
+      if(!strcasecmp(nick,"opers"))
+	{
+	  sendto_realops("To opers: From %s: %s",parv[0],parv[2]);
+	  return 0;
+	}
 	
       if ((host = (char *)strchr(nick, '%')))
 	*host++ = '\0';
