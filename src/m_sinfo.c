@@ -64,19 +64,30 @@ int m_sinfo (struct Client *cptr, struct Client *sptr, int parc, char *parv[])
     switch(snum)
     {
       case TOKEN_SPLIT:
+#ifdef NEED_SPLITCODE
         if (server_was_split)
           sendto_one(sptr, ":%s NOTICE %s :*** Notice -- server is currently in split-mode",
                      me.name, parv[0]);
         else
           sendto_one(sptr, ":%s NOTICE %s :*** Notice -- server is currently not in split-mode",
                      me.name, parv[0]);
+#else
+        sendto_one(sptr, ":%s NOTICE %s :*** Notice -- Error: server is not running with splitcode enabled!",
+                   me.name, parv[0]);
+#endif
         return 0;
         break;
       case TOKEN_KLINES:
+        sendto_one(sptr, ":%s NOTICE %s :*** Notice -- not yet implemented",
+                   me.name, parv[0]);
         break;
       case TOKEN_DLINES:
+        sendto_one(sptr, ":%s NOTICE %s :*** Notice -- not yet implemented",
+                   me.name, parv[0]);
         break;
       case TOKEN_XLINES:
+        sendto_one(sptr, ":%s NOTICE %s :*** Notice -- not yet implemented",
+                   me.name, parv[0]);
         break;
       case TOKEN_TKLINES:
         {
