@@ -17,7 +17,7 @@ fi
 
 generation=`expr $generation + 1`
 
-uname=`uname -a`
+uname=`uname -a | sed -e 's/\"/\\\"/g'`
 
 creation=`date | \
 awk '{if (NF == 6) \
@@ -64,6 +64,7 @@ char *infotext[] =
   "$package --",
   "Based on the original code written by Jarkko Oikarinen",
   "Copyright 1988, 1989, 1990, 1991 University of Oulu, Computing Center",
+  "Copyright (c) 1996-2003 Hybrid Development Team", 
   "",
   "This program is free software; you can redistribute it and/or",
   "modify it under the terms of the GNU General Public License as",
