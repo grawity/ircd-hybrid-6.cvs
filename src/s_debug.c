@@ -54,9 +54,7 @@ extern  int     maxdbufblocks;                    /* defined in dbuf.c */
  * Option string.  Must be before #ifdef DEBUGMODE.
  */
 const char serveropts[] = {
-#ifdef  SENDQ_ALWAYS
-  'A',
-#endif
+  'A',  /* SENDQ_ALWAYS */
 #ifdef  CMDLINE_CONFIG
   'C',
 #endif

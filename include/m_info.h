@@ -615,12 +615,6 @@ Info MyInformation[] = {
   { "SEND_FAKE_KILL_TO_CLIENT", "OFF", 0, "Make Client think they were KILLed" },
 #endif /* SEND_FAKE_KILL_TO_CLIENT */
 
-#ifdef SENDQ_ALWAYS
-  { "SENDQ_ALWAYS", "ON", 0, "Put All OutBound data into a SendQ" },
-#else
-  { "SENDQ_ALWAYS", "OFF", 0, "Put All OutBound data into a SendQ" },
-#endif /* SENDQ_ALWAYS */
-
 #ifdef SERVERHIDE
   { "SERVERHIDE", "ON", 0, "Hide server info from users" },
 #else
