@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: config.h,v 1.113 2001/06/25 02:29:02 greg Exp $
+ * $Id: config.h,v 1.114 2001/07/02 03:04:13 db Exp $
  */
 #ifndef INCLUDED_config_h
 #define INCLUDED_config_h
@@ -405,6 +405,7 @@
 
 #undef CRYPT_LINKS             /* allow encrypted server-server links */
 #define CRYPT_LINKS_CNPREFIX '@'
+#define CRYPT_LINKS_CIPHERPREFIX ','
 #define CRYPT_LINKS_PRIVATEKEYFILE "private.key"
 
 /* USE_EGD -  if your system does not have *random devices and you want to
