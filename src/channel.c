@@ -188,9 +188,10 @@ static int add_id(struct Client *cptr, struct Channel *chptr, char *banid, int t
   return 0;
   }
 
-  /*  only check for matching bans if the klines are from the local server */
-  /*  fixes possible desync */
-  if (!IsServer(cptr))
+  /*  only check for matching bans if the klines are from the local server
+   *  fixes possible desync  
+   */
+  if (IsServer(cptr))
   {
     for (tmp = *list; tmp; tmp = tmp->next)
       if (irccmp(BANSTR(tmp), banid) == 0)
