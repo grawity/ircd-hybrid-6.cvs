@@ -1,7 +1,7 @@
 /*
  * dline_conf.c
  *
- * $Id: dline_conf.c,v 1.32 1999/08/01 06:47:18 tomh Exp $
+ * $Id: dline_conf.c,v 1.33 1999/08/05 04:43:11 lusky Exp $
  */
 #include "dline_conf.h"
 #include "class.h"
@@ -296,7 +296,8 @@ aConfItem *find_exception(unsigned long ip)
   
   while (scan)
     {
-      if (scan->ip == (ip & scan->ip_mask)) exit;
+      if (scan->ip == (ip & scan->ip_mask))
+        break;
       scan=scan->next;
     }
   return scan;
