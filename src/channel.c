@@ -34,7 +34,7 @@
  *                mode * -p etc. if flag was clear
  *
  *
- * $Id: channel.c,v 1.155 1999/07/27 21:31:55 db Exp $
+ * $Id: channel.c,v 1.156 1999/07/27 21:37:13 db Exp $
  */
 #include "channel.h"
 #include "struct.h"
@@ -108,10 +108,6 @@ static  char    *PartFmt = ":%s PART %s";
 static  char    buf[BUFSIZE];
 static  char    modebuf[MODEBUFLEN], modebuf2[MODEBUFLEN];
 static  char    parabuf[MODEBUFLEN], parabuf2[MODEBUFLEN];
-
-
-/* externally defined function */
-extern Link *find_channel_link(Link *,aChannel *);      /* defined in list.c */
 
 
 /* 
