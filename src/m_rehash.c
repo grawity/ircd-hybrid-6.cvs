@@ -130,7 +130,7 @@ int m_rehash(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
       else if(irccmp(parv[1],"TKLINES") == 0)
         {
 		  /* see the note for glines and such .. -gnp */
-		  if (!SetOperK(sptr))
+		  if (!IsSetOperK(sptr))
 		    {
 			  sendto_one(sptr,":%s NOTICE %s :You have no K flag",me.name,parv[0]);
 			  return 0;

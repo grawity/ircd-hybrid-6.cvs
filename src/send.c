@@ -1443,13 +1443,13 @@ vsendto_prefix_one(aClient *to, aClient *from,
 
       to->flags |= FLAGS_KILLED;
 
-      exit_client(NULL, to, &me, "Ghosted client");
-
       if (IsPerson(from))
         sendto_one(from, form_str(ERR_GHOSTEDCLIENT),
                    me.name, from->name, to->name, to->username,
                    to->host, to->from);
       
+      exit_client(NULL, to, &me, "Ghosted client");
+            
       return;
     } /* if (!MyClient(from) && IsPerson(to) && (to->from == from->from)) */
   
