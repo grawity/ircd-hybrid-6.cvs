@@ -22,7 +22,7 @@
 static  char sccsid[] = "@(#)s_conf.c	2.56 02 Apr 1994 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version = "$Id: s_conf.c,v 1.54 1999/05/13 03:10:45 db Exp $";
+static char *rcs_version = "$Id: s_conf.c,v 1.55 1999/05/19 05:31:01 db Exp $";
 #endif
 
 #include "struct.h"
@@ -3433,7 +3433,7 @@ int	is_address(char *host,
   int dot_count=0;
   char c;
 
-  while( c = *host)
+  while( (c = *host) )
     {
       if(isdigit(c))
 	{
