@@ -1,3 +1,11 @@
+*** 20010708_3 by a1kmm
+- The first phase of adding KSERVER.
+
+
+*** 20010708_2 by a1kmm
+- Had better change the path in mkkeypair back...
+
+
 *** 20010708_1 by a1kmm
 - Remove P-lines when they are not in use on rehash.
 
