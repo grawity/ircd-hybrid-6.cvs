@@ -15,12 +15,9 @@
  *   You should have received a copy of the GNU General Public License
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *
+ *   $Id: s_zip.c,v 1.10 1999/07/08 00:53:32 db Exp $
  */
-
-#ifndef lint
-static  char rcsid[] = "@(#)$Id: s_zip.c,v 1.9 1999/06/25 12:00:01 db Exp $";
-#endif
-
 #include "struct.h"
 #include "sys.h"
 #include "h.h"
