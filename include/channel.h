@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: channel.h,v 1.26 2000/10/06 03:00:55 lusky Exp $
+ * $Id: channel.h,v 1.27 2001/01/11 00:35:13 lusky Exp $
  */
 
 #ifndef INCLUDED_channel_h
@@ -70,10 +70,6 @@ struct Channel
 #ifdef FLUD
   time_t          fludblock;
   struct fludbot* fluders;
-#endif
-#if defined(PRESERVE_CHANNEL_ON_SPLIT) || defined(NO_JOIN_ON_SPLIT)
-  struct Channel* last_empty_channel;
-  struct Channel* next_empty_channel;
 #endif
   char            chname[1];
 };
@@ -156,10 +152,6 @@ extern void    set_channel_mode(struct Client *, struct Client *,
 
 #ifdef NEED_SPLITCODE
 
-#if defined(PRESERVE_CHANNEL_ON_SPLIT) || defined(NO_JOIN_ON_SPLIT)
-#define MODE_SPLIT      0x1000
-extern void remove_empty_channels();
-#endif
 
 extern int server_was_split;
 extern time_t server_split_time;
