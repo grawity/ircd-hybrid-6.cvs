@@ -1,3 +1,13 @@
+*** 19991013_1 by lusky
+revved patchlevel to b109
+fixed botched wild card matching for K/I lines (db)
+added INIT_LOG_LEVEL to config.h
+
+
+*** 19991011_1 by lusky
+cptr->fd is <0 in some cases when its being used in send.c (db)
+
+
 *** 19991010_1 by lusky
 fixed bogus strncpy in s_conf.c report by Q (th)
 
