@@ -16,10 +16,11 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: irc_string.c,v 1.3 1999/07/20 01:20:42 db Exp $
+ *  $Id: irc_string.c,v 1.4 1999/07/20 03:56:30 tomh Exp $
  */
 #include "irc_string.h"
 #include "h.h"
+#include "list.h"
 #include <assert.h>
 #include <string.h>
 #include <stdlib.h>
