@@ -67,6 +67,7 @@ SRCS = \
 	m_restart.c \
 	m_server.c \
 	m_set.c \
+	m_sinfo.c \
 	m_squit.c \
 	m_stats.c \
 	m_svinfo.c \
@@ -154,6 +155,7 @@ SRCS = \
 #	m_restart.o \
 #	m_server.o \
 #	m_set.o \
+#       m_sinfo.o \
 #	m_squit.o \
 #	m_stats.c \
 #	m_svinfo.o \

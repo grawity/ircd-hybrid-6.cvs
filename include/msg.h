@@ -130,8 +130,8 @@ typedef struct MessageTree MESSAGE_TREE;
 #define MSG_KNOCK          "KNOCK"  /* KNOCK */
 
 #define MSG_MAP      "MAP"      /* MAP */
-#define MSG_ETRACE	"ETRACE"   /* ETRACE */
-
+#define MSG_ETRACE   "ETRACE"   /* ETRACE */
+#define MSG_SINFO    "SINFO"    /* SINFO */
 #define MAXPARA    15 
 
 #define MSG_TESTLINE "TESTLINE"
@@ -261,7 +261,8 @@ struct Message msgtab[] = {
   { MSG_ENCAP,  ms_encap,    0, MAXPARA, 1, 0, 0, 0L },
   { MSG_OPERSPY, ms_operspylog, 0, MAXPARA, 1, 0, 0, 0L },
   { MSG_MAP,     m_map,      0, MAXPARA, 1, 0, 0, 0L },
-  { MSG_ETRACE, m_etrace,    0, MAXPARA, 1, 0, 0, 0L }, 
+  { MSG_ETRACE, m_etrace,    0, MAXPARA, 1, 0, 0, 0L },
+  { MSG_SINFO,  m_sinfo,     0, MAXPARA, 1, 0, 0, 0L },
   { (char *) 0, (int (*)()) 0 , 0, 0,    0, 0, 0, 0L }
 };
 
