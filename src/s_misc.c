@@ -223,7 +223,7 @@ void show_isupport(aClient *cptr, char *name)
   u_knock = 1;
 #endif
 
-  ircsprintf(features, "WALLCHOPS%s%s%s MODES=%d MAXCHANNELS=%d MAXBANS(b%s%s)=%d "
+  ircsprintf(features, "WALLCHOPS%s%s%s MODES=%d MAXCHANNELS=%d MAXBANS=b%s%s:%d "
                        "MAXTARGETS=4 NICKLEN=%d TOPICLEN=%d KICKLEN=%d",
                         u_knock  ? " KNOCK"    : "",
                         mode_e   ? " EXCEPTS" : "",

@@ -131,7 +131,7 @@ int     m_whois(struct Client *cptr,
   int whois_len = 4;
 
 #ifdef OPERSPY
-  char osnuh[NICKLEN + 1 + USERLEN + 1 + HOSTLEN + 1];
+  char osnuh[NICKLEN + 1 + USERLEN + 1 + HOSTLEN + 1 + HOSTLEN + 1];
   int OperSpyWhois = 0;
 #endif
 
