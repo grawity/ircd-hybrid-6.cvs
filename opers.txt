@@ -27,6 +27,7 @@ Usermodes: (* designates that the umode is oper only)
                   messages.
        * +p     - Can hide from stats p (oper flag P - for tcm's)
        * +a     - User is admin
+       * +Z     - Can see OperSpy Log events
 
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
