@@ -719,6 +719,30 @@
  */
 #define OPERSPYLOG
 
+/* CHANMODE_E
+ * /mode #channel +e allows you to add exceptions to bans.
+ * very useful if a friend has to use an aol.com account for a few days.
+ * e.g. You can continue to ban *.aol.com but allow an exception for them.
+ *
+ * Note, +e will NEVER be sent to a server that does not understand it.
+ *
+ * +e is supported by dalnet, ircnet, undernet and EFNet atm (Aug 2003).
+ */
+/* #undef'ing this will NOT stop modes passing through your server,
+ * it will only stop them being used/set on your server.  This is to
+ * stop server "+e patches" and desyncs across a hub where leaf servers
+ * +e lists differ.   --fl_
+ */
+#define CHANMODE_E
+
+/* CHANMODE_I
+ * /mode #channel +I allows you to add exceptions to +i.
+ * this is a nick!user@host mask of somebody who can join an
+ * invite-only (+i) channel without having to be invited first.
+ * - alk
+ */
+#define CHANMODE_I
+
 
 /* ----------------- not approved on EFnet section --------------------
  *
@@ -766,30 +790,6 @@
  */
 #define GLINE_REASON_FIRST
    
-/* CHANMODE_E
- * /mode #channel +e allows you to add exceptions to bans.
- * very useful if a friend has to use an aol.com account for a few days.
- * e.g. You can continue to ban *.aol.com but allow an exception for them.
- *
- * Note, +e will NEVER be sent to a server that does not understand it.
- *
- * +e is supported by dalnet, ircnet, undernet and EFNet atm.
- */
-/* #undef'ing this will NOT stop modes passing through your server,
- * it will only stop them being used/set on your server.  This is to
- * stop server "+e patches" and desyncs across a hub where leaf servers
- * +e lists differ.   --fl_
- */
-#undef CHANMODE_E
-
-/* CHANMODE_I
- * /mode #channel +I allows you to add exceptions to +i.
- * this is a nick!user@host mask of somebody who can join an 
- * invite-only (+i) channel without having to be invited first.
- * - alk
- */ 
-#undef CHANMODE_I
-
 /* USE_KNOCK
  * KNOCK allows users to send a "knock" to a +ikl channel.
  */
