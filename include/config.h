@@ -753,6 +753,12 @@
 
 #define DEFAULT_MAXTKLINE (60*48)
 
+/* WHOISACTUALLY
+ * Gives the real ip address back for users on a whois 
+ */
+ 
+#undef WHOISACTUALLY
+
 /* ----------------- not approved on EFnet section --------------------
  *
  * if you are not an efnet admin - we recommend you enable most of these.. 
