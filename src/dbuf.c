@@ -21,7 +21,7 @@
  * see the header file (dbuf.h).
  *
  *
- * $Id: dbuf.c,v 1.15 1999/09/04 21:46:26 lusky Exp $
+ * $Id: dbuf.c,v 1.16 1999/12/23 07:10:54 lusky Exp $
  */
 #include "dbuf.h"
 #include "common.h"
@@ -108,7 +108,7 @@ void dbuf_init()
  * dbuf_alloc - allocates a struct DBufBuffer structure either from 
  * dbufFreeList or create a new one.
  */
-static struct DBufBuffer* dbuf_alloc()
+static struct DBufBuffer* dbuf_alloc(void)
 {
   struct DBufBuffer* db = dbufFreeList;
 

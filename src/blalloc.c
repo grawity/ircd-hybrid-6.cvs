@@ -4,7 +4,7 @@
  * Owner:  Wohali (Joan Touzet)
  *
  *
- * $Id: blalloc.c,v 1.17 1999/07/21 05:28:43 tomh Exp $
+ * $Id: blalloc.c,v 1.18 1999/07/31 08:22:56 tomh Exp $
  */
 #include "blalloc.h"
 #include "ircd_defs.h"      /* DEBUG_BLOCK_ALLOCATOR */
@@ -23,7 +23,7 @@ int         BH_CurrentLine = 0;   /* GLOBAL used for BlockHeap debugging */
 
 static int newblock(BlockHeap *bh);
 
-extern void outofmemory();      /* defined in list.c */
+extern void outofmemory(void);      /* defined in list.c */
 
 /* ************************************************************************ */
 /* FUNCTION DOCUMENTATION:                                                  */
