@@ -17,7 +17,7 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- * $Id: client.h,v 1.40 1999/08/01 04:59:51 tomh Exp $
+ * $Id: client.h,v 1.41 1999/08/06 03:34:16 lusky Exp $
  */
 #ifndef INCLUDED_client_h
 #define INCLUDED_client_h
@@ -211,8 +211,8 @@ struct Client
   struct Zdata*     zip;        /* zip data */
 #endif
   short             lastsq;     /* # of 2k blocks when sendqueued called last*/
-  dbuf              sendQ;      /* Outgoing message queue--if socket full */
-  dbuf              recvQ;      /* Hold for data incoming yet to be parsed */
+  struct DBuf       sendQ;      /* Outgoing message queue--if socket full */
+  struct DBuf       recvQ;      /* Hold for data incoming yet to be parsed */
   /*
    * we want to use unsigned int here so the sizes have a better chance of
    * staying the same on 64 bit machines. The current trend is to use
