@@ -145,8 +145,7 @@ extern int total_ignoreops;
 #define CHFL_DEOPPED    0x0004 /* deopped by us, modes need to be bounced */
 #define CHFL_BAN        0x0008 /* ban channel flag */
 #define CHFL_EXCEPTION  0x0010 /* exception to ban channel flag */
-#define CHFL_DENY       0x0020 /* regular expression deny flag */
-#define CHFL_INVEX      0x0040 /* exception to channel invite flag */
+#define CHFL_INVEX      0x0020 /* exception to channel invite flag */
 
 /* Channel Visibility macros */
 
