@@ -29,6 +29,7 @@
 #include "s_serv.h"
 #include "send.h"
 #include <string.h>
+#include <stdio.h>
 
 /*
  * m_functions execute protocol messages on this server:
@@ -97,11 +98,19 @@ int     m_quit(struct Client *cptr,
                int parc,
                char *parv[])
 {
+  char reason[TOPICLEN +1];
   char *comment = (parc > 1 && parv[1]) ? parv[1] : cptr->name;
+
 
   sptr->flags |= FLAGS_NORMALEX;
   if (strlen(comment) > (size_t) TOPICLEN)
     comment[TOPICLEN] = '\0';
+
+  if (!IsServer(sptr) && MyConnect(sprt) && comment[0]) 
+    {
+      snprint(reason, TOPICLEN, "Quit: %s", comment);
+      comment = reason;    
+    }
 
 #ifdef ANTI_SPAM_EXIT_MESSAGE
   if( !IsServer(sptr) && MyConnect(sptr) &&
