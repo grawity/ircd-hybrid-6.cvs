@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: s_user.c,v 1.173 1999/07/22 06:31:21 tomh Exp $
+ *  $Id: s_user.c,v 1.174 1999/07/22 07:56:55 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -56,7 +56,7 @@
 #include <time.h>
 #include <sys/stat.h>
 
-extern ConfigFileEntryType ConfigFileEntry; /* defined in ircd.c */
+extern ConfigFileEntryType ConfigFileEntry;
 
 static int do_user (char *, aClient *, aClient*, char *, char *, char *,
                      char *);
