@@ -195,9 +195,12 @@ add_mtrie_conf_entry(struct ConfItem *aconf,int flags)
           aconf2 = find_wild_card_iline(aconf->user);
           if (aconf2 != NULL)
             {
-              report_dup('I', aconf2);
-              free(aconf);
-              return;
+              if (!irccmp(aconf->user, aconf2->user))
+                {
+                  report_dup('I', aconf2);
+                  free(aconf);
+                  return;
+                }
             }
           if(wild_card_ilines)
             {
