@@ -1,7 +1,7 @@
 /*
  * scache.c
  *
- * $Id: scache.c,v 1.15 1999/07/23 13:24:28 db Exp $
+ * $Id: scache.c,v 1.16 1999/08/01 06:47:24 tomh Exp $
  */
 
 #include "client.h"
@@ -11,6 +11,7 @@
 #include "numeric.h"
 #include "send.h"
 #include "struct.h"
+#include "scache.h"
 
 
 #include <assert.h>
