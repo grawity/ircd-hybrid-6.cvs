@@ -712,7 +712,7 @@
  * - See all +s/+ channels in /whois
  * - See channel keys/modes
  */
-#define OPERSPY
+#undef OPERSPY
 
 /* OPERSPYLOG *mandatory on efnet*
  * Logs OPERSPY usage.
