@@ -2,7 +2,7 @@
  * send.h
  * Copyright (C) 1999 Patrick Alken
  *
- * $Id: send.h,v 1.7 1999/07/18 21:47:11 db Exp $
+ * $Id: send.h,v 1.8 1999/07/18 22:27:26 db Exp $
  */
 
 #ifndef INCLUDED_send_h
@@ -54,5 +54,7 @@ extern  void ts_warn(const char *, ...);
 
 extern  void sendto_prefix_one(struct Client *, struct Client *, 
                                const char *, ...);
+
+extern  void    flush_server_connections(void);
 
 #endif /* INCLUDED_send_h */
