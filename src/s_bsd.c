@@ -21,7 +21,7 @@
 #ifndef lint
 static  char sccsid[] = "@(#)s_bsd.c	2.78 2/7/94 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
-static char *rcs_version = "$Id: s_bsd.c,v 1.12 1998/10/18 06:23:51 lusky Exp $";
+static char *rcs_version = "$Id: s_bsd.c,v 1.13 1998/10/19 07:05:27 db Exp $";
 #endif
 
 #include "struct.h"
@@ -1174,7 +1174,7 @@ static	void	set_sock_opts(int fd, aClient *cptr)
       if (setsockopt(fd, SOL_SOCKET, SO_SNDBUF, (char *)&opt, sizeof(opt)) < 0)
 	report_error("setsockopt(SO_SNDBUF) %s:%s", cptr);
 #endif
-#if defined(IP_OPTIONS) && defined(IPPROTO_IP) && !defined(SUN_GSO_BUG)
+#if defined(IP_OPTIONS) && defined(IPPROTO_IP)
         {
 # if defined(MAXBUFFERS) && !defined(SEQUENT)
 	  char	*s = readbuf, *t = readbuf + (rcvbufmax*sizeof(char))/ 2;
