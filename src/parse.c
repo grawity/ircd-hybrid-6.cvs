@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: parse.c,v 1.25 1999/07/24 03:45:18 db Exp $
+ *   $Id: parse.c,v 1.26 1999/07/24 04:08:42 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -424,10 +424,10 @@ int parse(aClient *cptr, char *buffer, char *bufend)
 
 #ifdef IDLE_FROM_MSG
   if (IsRegisteredUser(cptr) && mptr->reset_idle)
-    from->user->last = timeofday;
+    from->user->last = CurrentTime;
 #else
   if (IsRegisteredUser(cptr) && !mptr->reset_idle)
-    from->user->last = timeofday;
+    from->user->last = CurrentTime;
 #endif
   
   /* don't allow other commands while a list is blocked. since we treat

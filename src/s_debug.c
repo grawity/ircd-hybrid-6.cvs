@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: s_debug.c,v 1.34 1999/07/24 02:03:33 tomh Exp $
+ *   $Id: s_debug.c,v 1.35 1999/07/24 04:04:15 tomh Exp $
  */
 #include "struct.h"
 #include "s_conf.h"
@@ -202,7 +202,7 @@ void send_usage(aClient *cptr, char *nick)
       return;
     }
   secs = rus.ru_utime.tv_sec + rus.ru_stime.tv_sec;
-  rup = timeofday - me.since;
+  rup = CurrentTime - me.since;
   if (secs == 0)
     secs = 1;
 
