@@ -107,7 +107,7 @@ static struct AuthRequest* make_auth_request(struct Client* client)
   memset(request, 0, sizeof(struct AuthRequest));
   request->fd      = -1;
   request->client  = client;
-  request->timeout = CurrentTime + CONNECTTIMEOUT;
+  request->timeout = CurrentTime + AUTH_CONNECTTIMEOUT;
   return request;
 }
 
