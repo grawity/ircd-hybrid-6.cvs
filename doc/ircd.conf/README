@@ -3,7 +3,7 @@ Files description of
 doc/ircd.conf/
 
 
-I still remember setting up my first ircd-hybrid irc server and remeber
+I still remember setting up my first ircd-hybrid irc server and remember
 the feeling when I opened the example.conf and was overwhelmed by all the
 info there. Over the years I've had several versions of this file and when
 Nick Parrin and I set up our test net for this release of ircd-hybrid-6 (6.4) 
@@ -19,7 +19,7 @@ thing. It's just a help to get started.
 
 Files:
 
-ircd.conf      -   The main ircd.conf which trough .include statements 
+ircd.conf      -   The main ircd.conf which through .include statements 
                    load the rest of the configuration file.
 ilines.conf    -   This file controls the I-lines or access lines.
 ispoof.conf    -   Spoofed i-lines
