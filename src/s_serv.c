@@ -960,7 +960,7 @@ void show_servers(struct Client *cptr)
       seconds %= 3600;
       minutes = seconds / 60;
       seconds %= 60;
-      sendto_one(cptr, ":%s %d %s :%s (%s!%s@%s) Idle: %d Connected: %l%s%ld%s%ld%s%ld%s",
+      sendto_one(cptr, ":%s %d %s :%s (%s!%s@%s) Idle: %d Connected: %ld%s%ld%s%ld%s%ld%s",
                  me.name, RPL_STATSDEBUG, cptr->name, cptr2->name,
                  (cptr2->serv->by[0] ? cptr2->serv->by : "Remote."), 
                  "*", (cptr2->serv->bysrv[0] ? cptr2->serv->bysrv : "*"), 
