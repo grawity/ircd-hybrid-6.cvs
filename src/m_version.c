@@ -27,6 +27,7 @@
 #include "ircd.h"
 #include "numeric.h"
 #include "s_serv.h"
+#include "s_misc.h"
 #include "send.h"
 
 /*

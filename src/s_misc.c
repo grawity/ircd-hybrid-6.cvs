@@ -206,7 +206,6 @@ void serv_info(aClient *cptr,char *name)
 /* Make ISUPPORT string */
 void show_isupport(aClient *cptr, char *name)
 {
-  char isupport[512];
   char features[300];
   char features2[300];
   char cbmodes[128];

@@ -43,6 +43,7 @@
 #include "s_log.h"
 #include "s_serv.h"
 #include "s_stats.h"
+#include "s_misc.h"
 #include "scache.h"
 #include "send.h"
 #include "struct.h"
