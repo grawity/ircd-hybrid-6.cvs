@@ -344,7 +344,7 @@ int     m_whois(struct Client *cptr,
 #ifdef OPERSPY
           if (OperSpyWhois)
 	    { 
-	      if !MyConnect(acptr)
+	      if (!MyConnect(acptr))
 	        {
                    ircsprintf(osnuh,"%s!%s@%s %s", acptr->name, acptr->username, 
 	                             acptr->host, acptr->user->server);
