@@ -426,7 +426,7 @@ static int invalid_gline(struct Client *sptr, char *luser, char *lhost,
   }
   
   /* dont allow glines with : in, theyll break the conf */
-  if(strchr(luser, ':') || strchr(lhost, ':') || strchr(lreason, ':'))
+  if(strchr(luser, ':') || strchr(lreason, ':'))
   {
     if(local_client)
       sendto_one(sptr, ":%s NOTICE %s :Invalid character ':' in gline",
