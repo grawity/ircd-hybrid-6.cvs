@@ -145,7 +145,7 @@ static int user_modes_from_c_to_bitmask[] =
   FLAGS_DEBUG,  /* d */
 #ifdef ELEET_BY_FLAG
   FLAGS_ELEET,	/* e */
-#else /* ELEET_BY_FLAG
+#else /* ELEET_BY_FLAG */
   0,			/* e */
 #endif /* ELEET_BY_FLAG */
   FLAGS_FULL,   /* f */
