@@ -1,4 +1,8 @@
 /*
+ * general.c: $Id$
+ *  
+ */
+/*
  * general.c
  * - diagnostic functions
  * - vbuf handling
@@ -25,7 +29,7 @@
  *  along with this program; if not, write to the Free Software Foundation,
  *  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. 
  *
- * $Id: general.c,v 1.10 2001/06/05 01:55:07 ejb Exp $
+ * $Id: general.c,v 1.2 2001/12/04 07:33:54 androsyn Exp $
  */
 
 #include "fileio.h"
