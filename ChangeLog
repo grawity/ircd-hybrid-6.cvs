@@ -1,21 +1,19 @@
-metalrock    2004/03/27 18:58:56 EST	(20040327_0)
+ievil       2004/04/08 21:12:28 EDT	(20040409_1)
 
-  ircd-hybrid-6/thisisbogus - Imported sources
-  Update of /cvsroot/ircd-hybrid-6/thisisbogus
-  In directory hybridcvs.ircd-hybrid.org:/tmp/cvs-serv59959
+  ircd-hybrid-6/contrib - New directory
+
+
+
+ievil       2004/04/08 21:07:47 EDT	(20040409_0)
+
+  Modified files:
+    .                    ChangeLog 
+  Log:
+  removed the bogus commit
   
-  Log Message:
-  yet another
-  
-  Status:
-  
-  Vendor Tag:	hybteam
-  Release Tags:	start
-  		
-  N ircd-hybrid-6/thisisbogus/newfile.c
-  
-  No conflicts created by this import
-  
+  Revision  Changes    Path
+  1.722     +0 -20     ircd-hybrid-6/ChangeLog
+
 
 
 
