@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: parse.c,v 1.31 1999/07/25 17:09:06 db Exp $
+ *   $Id: parse.c,v 1.32 1999/07/26 05:34:46 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -700,7 +700,7 @@ static int     do_numeric(
             sendto_prefix_one(acptr, sptr,":%s %s %s%s",
                               parv[0], numeric, nick, buffer);
         }
-      else if ((chptr = find_channel(nick, (aChannel *)NULL)))
+      else if ((chptr = hash_find_channel(nick, (aChannel *)NULL)))
         sendto_channel_butone(cptr,sptr,chptr,":%s %s %s%s",
                               parv[0],
                               numeric, chptr->chname, buffer);
