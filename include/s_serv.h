@@ -44,7 +44,10 @@ struct Capability
 #define CAP_ZIP         0x00000004      /* Can do server compresion */
 #define CAP_EX          0x00000008      /* Can do channel +e exemptions */
 #define CAP_CHW         0x00000010      /* Can do channel wall @# */
-#define CAP_KNOCK	0x00000020
+#define CAP_KNOCK	0x00000020      /* Can do KNOCK */
+#define CAP_KLN         0x00000040      /* Can do remote Kline */
+#define CAP_UNKLN       0x00000080      /* Can do remote UNkline */
+
 
 #define DoesCAP(x)      ((x)->caps)
 
