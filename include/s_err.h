@@ -16,9 +16,11 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: s_err.h,v 1.18 1999/06/11 03:34:34 lusky Exp $
+ * $Id: s_err.h,v 1.19 1999/06/14 04:45:44 db Exp $
  *
  */
+
+/* jive replies originally from mr_bill - mrbill@mrbill.net (Bill Bradford) */
 
 #ifdef CUSTOM_ERR
 static	char *	replies[] = {
