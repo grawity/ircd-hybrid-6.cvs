@@ -639,7 +639,7 @@ int m_set(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
           break;
         }
     }
-  sendto_one(sptr, ":%s NOTICE %s :Options: MAX MAXTKLINE AUTOCONN",
+  sendto_one(sptr, ":%s NOTICE %s :Options: MAX MAXBANS MAXTKLINE AUTOCONN",
              me.name, parv[0]);
 #ifdef FLUD
   sendto_one(sptr, ":%s NOTICE %s :Options: FLUDNUM, FLUDTIME, FLUDBLOCK",

@@ -39,6 +39,7 @@ static void dump_map(struct Client *cptr,struct Client *root_p, char *pbuf);
 
 int m_map(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 {
+  buf[0]=0;
 #ifdef SERVERHIDE
   if (!IsAnOper(cptr))
   {
@@ -67,7 +68,7 @@ static void dump_map(struct Client *cptr,struct Client *root_p, char *pbuf)
 
   users = root_p->serv->usercnt;
 
-  snprintf(buf + len, BUFSIZE, " [Users: %d (%1.1f%%)]", users,
+  snprintf(buf + len, BUFSIZE - len, " [Users: %d (%1.1f%%)]", users,
            100 * (float)users / (float)Count.total);
 
   sendto_one(cptr, form_str(RPL_MAP),me.name,cptr->name,buf);

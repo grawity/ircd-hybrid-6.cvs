@@ -142,8 +142,8 @@ extern const char* form_str(int);
 #define RPL_MYINFO           004
 #define RPL_ISUPPORT         005
 
-#define RPL_MAP              015
-#define RPL_MAPEND           017
+#define RPL_MAP              15
+#define RPL_MAPEND           17
 
 /*
  * Numeric replies from server commands.
