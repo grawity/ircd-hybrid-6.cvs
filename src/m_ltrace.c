@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_ltrace.c,v 1.6 2001/06/16 11:22:10 leeh Exp $
+ *   $Id: m_ltrace.c,v 1.7 2001/06/17 23:51:21 greg Exp $
  */
 #include "m_commands.h"
 #include "class.h"
@@ -243,10 +243,21 @@ int     m_ltrace(struct Client *cptr,
       switch(acptr->status)
         {
         case STAT_HANDSHAKE:
+#ifdef HIDE_SERVERS_IPS
+	  name=get_client_name(acptr, MASK_IP);
+#endif	  
           sendto_one(sptr, form_str(RPL_TRACEHANDSHAKE), me.name,
                      parv[0], c_class, name);
           cnt++;
           break;
+	case STAT_CONNECTING:
+#ifdef HIDE_SERVERS_IPS
+          name=get_client_name(acptr, MASK_IP);
+#endif
+	  sendto_one(sptr, form_str(RPL_TRACECONNECTING), me.name, 
+	             parv[0], c_class, name);
+	  cnt++;
+	  break;
         case STAT_ME:
           break;
         case STAT_CLIENT:
