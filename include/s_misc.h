@@ -1,5 +1,5 @@
 /*
- * $Id: s_misc.h,v 1.0 2000/09/14 05:21:56 lusky Exp $ 
+ * $Id$ 
  */
 
 #ifndef INCLUDED_s_misc_h
@@ -17,6 +17,7 @@ extern char*   date(time_t);
 extern const char* smalldate(time_t);
 extern char    *small_file_date(time_t);
 
+extern char *make_isupport();
 #endif
 
 
