@@ -749,7 +749,7 @@
  * Gives the real ip address back for users on a whois 
  */
  
-#undef WHOISACTUALLY
+#undef  WHOISACTUALLY
 
 /* ----------------- not approved on EFnet section --------------------
  *

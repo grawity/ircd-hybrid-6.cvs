@@ -257,10 +257,18 @@ int m_whois (struct Client *cptr, struct Client *sptr, int parc, char *parv[])
          && MyConnect (acptr)))
     {
 #ifdef WHOISACTUALLY
-      sendto_one(sptr, form_str(RPL_WHOISACTUALLY),
-                 me.name, parv[0], name,
-                 (IsIPSpoof(acptr)) ? get_client_name(acptr, MASK_IP) : get_client_name(acptr, TRUE)
-                );
+      if (!MyOper (acptr))
+      { 
+        const char* ip;
+#ifdef HIDE_SPOOF_IPS
+        if (IsIPSpoof(acptr))
+          ip = "255.255.255.255";
+        else
+#endif
+        ip = inetntoa((const char*) &acptr->ip);
+        sendto_one(sptr, form_str(RPL_WHOISACTUALLY),
+                   me.name, parv[0], name, ip);
+      } 
 #endif /* WHOISACTUALLY */
       sendto_one (sptr, form_str (RPL_WHOISIDLE),
                   me.name, parv[0], name,
