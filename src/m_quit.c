@@ -109,6 +109,7 @@ int     m_quit(struct Client *cptr,
   if (!IsServer(sptr) && MyConnect(sptr) && comment[0]) 
     {
       snprintf(reason, TOPICLEN, "Quit: %s", comment);
+      reason[TOPICLEN] = '\0';
       comment = reason;    
     }
 
