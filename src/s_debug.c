@@ -21,15 +21,15 @@
 #ifndef lint
 static  char sccsid[] = "@(#)s_debug.c	2.28 07 Nov 1993 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
-static char *version = "$Id: s_debug.c,v 1.2 1998/10/09 22:36:25 db Exp $";
+static char *version = "$Id: s_debug.c,v 1.3 1998/10/18 05:12:45 lusky Exp $";
 #endif
 
 #include "struct.h"
 extern	void	count_whowas_memory(int *, u_long *);
 extern	u_long	cres_mem(aClient *);
-extern  void    count_ip_hash(int *,u_long *);	/* defined in s_conf.c */
+extern  void    count_ip_hash(int *,u_long *);	  /* defined in s_conf.c */
 extern	void	count_dline_hash(int *,u_long *); /* defined in s_conf.c */
-
+extern  int	maxdbufblocks;			  /* defined in dbuf.c */
 /*
  * Option string.  Must be before #ifdef DEBUGMODE.
  */
