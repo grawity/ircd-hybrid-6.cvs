@@ -22,7 +22,7 @@
  * These flags can be set in a define if you wish.
  *
  *
- * $Id: channel.c,v 1.191 2001/06/06 15:52:10 davidt Exp $
+ * $Id: channel.c,v 1.192 2001/06/06 18:55:08 db Exp $
  */
 #include "channel.h"
 #include "client.h"
@@ -3902,7 +3902,7 @@ int     m_sjoin(struct Client *cptr,
       sendto_realops("*** Bogus TS %lu on %s ignored from %s",
 		     (unsigned long) newts,
 		     chptr->chname,
-		     client_p->name);
+		     cptr->name);
     }
 #endif
 
