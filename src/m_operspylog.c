@@ -77,7 +77,7 @@ void operspy_log(struct Client *cptr, const char *command, const char *target)
     ircsprintf(oper_name, "%s!%s@%s",
                cptr->name, cptr->username, cptr->host);
                
-    sendto_match_cap_servs_butone(&me, 0, "*", CAP_ENCAP, "ENCAP * OPERSPY %s :%s",command, target);
+    sendto_match_cap_servs_butone(cptr, 0, "*", CAP_ENCAP, "ENCAP * OPERSPY %s :%s",command, target);
 /*    sendto_match_servs(cptr, "*", CAP_ENCAP, "ENCAP * OPERSPY %s :%s",
  *                      command, target);
  */
@@ -96,7 +96,7 @@ void operspy_log(struct Client *cptr, const char *command, const char *target)
     ircsprintf(oper_name, "%s!%s@%s{%s}",
                cptr->name, cptr->username, cptr->host, cptr->user->server);
 #ifdef FNAME_OPERSPYRLOG
-    if ((logfile = open(FNAME_OPERSPYLOG, O_WRONLY|O_APPEND)) != -1)
+    if ((logfile = open(FNAME_OPERSPYRLOG, O_WRONLY|O_APPEND)) != -1)
       {
         ircsprintf(buf, "[%s] OPERSPY %s %s %s\n",
                    current_date, oper_name, command, target);

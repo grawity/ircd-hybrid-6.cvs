@@ -721,6 +721,11 @@ static int     do_numeric(
           ** with numerics which can happen with nick collisions.
           ** - Avalon
           */
+
+	  /* comstud ircd hack, it bounces +a modes */
+	  if((atoi(numeric) == ERR_UMODEUNKNOWNFLAG) && MyClient(acptr))
+	    return 0;
+
           if (!IsMe(acptr) && IsPerson(acptr))
             sendto_prefix_one(acptr, sptr,":%s %s %s%s",
                               parv[0], numeric, nick, buffer);

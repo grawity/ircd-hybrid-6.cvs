@@ -2099,14 +2099,14 @@ int user_mode(aClient *cptr, aClient *sptr, int parc, char *parv[])
       sptr->umodes &= ~FLAGS_NCHANGE; /* only tcm's really need this */
     }
 
-  if ((sptr->umodes & FLAGS_ADMIN) && !IsSetOperAdmin(sptr))
+  if ((sptr->umodes & FLAGS_ADMIN) && !IsSetOperAdmin(sptr) && MyConnect(sptr))
     {
       sendto_one(sptr,":%s NOTICE %s :*** You need oper and A flag for +a",
                 me.name,parv[0]);
       sptr->umodes &= ~FLAGS_ADMIN; /* only for admins ! */
     }
 
-  if ((sptr->umodes & FLAGS_OSPYLOG) && !IsSetOperOSpyLog(sptr))
+  if ((sptr->umodes & FLAGS_OSPYLOG) && !IsSetOperOSpyLog(sptr) && MyConnect(sptr))
     {
       sendto_one(sptr,":%s NOTICE %s :*** You need oper and Z flag for +Z",
                  me.name,parv[0]);

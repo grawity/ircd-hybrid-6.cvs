@@ -214,7 +214,7 @@
 /* FNAME_OPERSPYLOG and FNAME_OPERSPYRLOG - logs of OPERSPY usage!
  */
 #define FNAME_OPERSPYLOG   "/usr/local/ircd/operspy.local.log"
-#define FNAME_OPERSPYRLOG  "/usr/local/ircd/operspy.local.log"
+#define FNAME_OPERSPYRLOG  "/usr/local/ircd/operspy.remote.log"
 
 
 /* RFC1035_ANAL
