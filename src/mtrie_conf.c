@@ -43,7 +43,7 @@
  *
  * Diane Bruce -db (db@db.net)
  *
- * $Id: mtrie_conf.c,v 1.81 2001/12/04 08:26:50 db Exp $
+ * $Id$
  */
 #include "mtrie_conf.h"
 #include "class.h"
@@ -1455,7 +1455,7 @@ report_sub_mtrie(struct Client *sptr, int flags, DOMAIN_LEVEL *dl_ptr)
   DOMAIN_PIECE *dp_ptr;
   struct ConfItem *aconf;
   int i;
-  char *name, *host, *pass, *oper_reason, *user, *p;
+  char *name, *host, *pass, *oper_reason, *user;
   int  port;
   char c='\0';
 

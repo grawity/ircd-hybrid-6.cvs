@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: send.c,v 1.106 2001/10/25 16:28:15 leeh Exp $
+ *   $Id$
  */
 #include "send.h"
 #include "channel.h"
@@ -678,7 +678,6 @@ send_knock(aClient *from, aChannel *chptr, int type, char *message)
 {
   register Link *lp;
   register aClient *acptr;
-  register int i;
 
   for(lp = chptr->members; lp; lp = lp->next)
   {
