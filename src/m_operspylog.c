@@ -48,10 +48,11 @@ int ms_operspylog(struct Client *cptr, struct Client *sptr, int parc, char *parv
 {
   /* only for logging */
   if (IsPerson(cptr))
-    return;
+    return 0;
 #ifdef OPERSPYLOG
   operspy_log(sptr, parv[1], parv[2]);
 #endif
+  return 0;
 }
 
 #ifdef OPERSPYLOG
