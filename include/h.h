@@ -23,12 +23,9 @@
  * Most of the externs and prototypes thrown in here to 'cleanup' things.
  * -avalon
  *
- * $Id: h.h,v 1.7 1998/10/18 05:12:42 lusky Exp $
+ * $Id: h.h,v 1.8 1998/11/25 23:44:49 db Exp $
  *
  */
-
-extern int	R_do_dns, R_fin_dns, R_fin_dnsc, R_fail_dns,
-		R_do_id, R_fin_id, R_fail_id;
 
 
 extern aMessageFile	*motd;
