@@ -557,7 +557,7 @@ static void log_gline(aClient *sptr,
     return;
 
   if (strchr(host, ':'))
-    ircsprintf(buffer, "# IPv6 Host, invalid (%s@%s) [%s]", user,host,
+    ircsprintf(buffer, "# IPv6 Host, invalid (%s@%s) [%s]\n", user,host,
 #ifdef GLINE_REASON_FIRST
                gline_pending_ptr->reason1
 #else
