@@ -55,7 +55,7 @@
 #endif
 
 #ifndef lint
-static char *version="$Id: mtrie_conf.c,v 1.4 1998/10/06 04:42:28 db Exp $";
+static char *version="$Id: mtrie_conf.c,v 1.5 1998/10/17 21:06:56 lusky Exp $";
 #endif /* lint */
 
 #define MAXPREFIX (HOSTLEN+USERLEN+10)
@@ -1385,6 +1385,11 @@ static void report_sub_mtrie(aClient *sptr, int flags, DOMAIN_LEVEL *dl_ptr)
 		    }
 		  else
 		    {
+		      c = 'I';
+#ifdef LITTLE_I_LINES
+		      if(IsConfLittleI(aconf))
+			c = 'i';
+#endif
 		      sendto_one(sptr, rpl_str(RPL_STATSILINE),
 				 me.name,
 				 sptr->name,
