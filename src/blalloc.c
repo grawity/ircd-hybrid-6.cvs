@@ -4,7 +4,7 @@
  * Owner:  Wohali (Joan Touzet)
  *
  * Modified 2001/11/29 for mmap() support by Aaron Sethman <androsyn@ratbox.org>
- * $Id: blalloc.c,v 1.19 2001/07/18 02:15:23 lusky Exp $
+ * $Id$
  */
 #include "config.h"
 #include "blalloc.h"
@@ -37,39 +37,48 @@ void initBlockHeap(void)
 {
     zero_fd = open("/dev/zero", O_RDWR);
     if (zero_fd < 0)
-        outofmemory();
+    {
+      outofmemory();
+    }
 }
-
 static void *get_block(size_t size)
 {
     return (mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE, zero_fd, 0));
 }
-#else
+
+#else /* MAP_ANON */
+
 void initBlockHeap(void)
 {
     return;
 }
+static void *get_block(size_t size)
+{
+    return (mmap(NULL, size, PROT_READ | PROT_WRITE,
+                 MAP_PRIVATE | MAP_ANON, -1, 0) );
+}
+#endif /* MAP_ANON */
+
+void initBlockHeap(void)
+{
+    return;
+}
+static void free_block(void *ptr, size_t size)
+{
+    munmap(ptr, size);
+}
+
+#else /* HAVE_MMAP */
 
 static void *get_block(size_t size)
 {
-    return (mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0));
+    return(MyMalloc(size));
 }
-#endif
 static void free_block(void *ptr, size_t size)
 {
-	munmap(ptr, size);
+    MyFree(ptr);
 }
-#else
-static void *get_block(size_t size)
-{
-	return(MyMalloc(size));
-}
-
-static void free_block(void *ptr, size_t size)
-{
-	MyFree(ptr);
-}
-#endif
+#endif /* HAVE_MMAP */
 
 /* ************************************************************************ */
 /* FUNCTION DOCUMENTATION:                                                  */
