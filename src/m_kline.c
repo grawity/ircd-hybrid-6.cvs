@@ -536,6 +536,8 @@ m_kline(struct Client *cptr,
 
       if (!*host)               /* duh. no host found, assume its '*' host */
         host = "*";
+      if (!*user)               /* The oper gave us a "@host" kline */
+        user = "*";
       strncpy_irc(tempuser, user, USERLEN + 1); /* allow for '*' in front */
       tempuser[USERLEN + 1] = '\0';
       strncpy_irc(temphost, host, HOSTLEN);
