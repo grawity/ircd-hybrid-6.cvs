@@ -17,11 +17,9 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: sprintf_irc.c,v 1.7 1999/07/18 07:00:31 tomh Exp $
+ *   $Id: sprintf_irc.c,v 1.8 1999/07/21 05:28:56 tomh Exp $
  */
-#include "irc_string.h"
-#include "send.h"
-#include "common.h"
+#include "sprintf_irc.h"
 
 #include <stdio.h>
 
