@@ -772,9 +772,6 @@
  *   - ievil
  */
 #undef OPER_JUPE_BYPASS
-   
-
-/* -------------- END NOT APPROVED ON EFNET SECTION --------------------- */
 
 /* RESTRICT_LOCOP
  * Add restrictions to LOCOPS to easier allow them to being added when
@@ -787,7 +784,9 @@
  *   bad friends. No more....
  *
  */
-#define RESTRICT_LOCOP
+#undef RESTRICT_LOCOP
+
+/* -------------- END NOT APPROVED ON EFNET SECTION --------------------- */
 
 /*   STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP  */
 
