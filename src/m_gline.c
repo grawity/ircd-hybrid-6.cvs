@@ -20,10 +20,11 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: m_gline.c,v 1.35 1999/07/30 06:40:13 tomh Exp $
+ *  $Id: m_gline.c,v 1.36 1999/07/31 08:22:58 tomh Exp $
  */
 #include "m_gline.h"
 #include "channel.h"
+#include "client.h"
 #include "common.h"
 #include "config.h"
 #include "dline_conf.h"

@@ -1,14 +1,18 @@
 /*
  * scache.c
  *
- * $Id: scache.c,v 1.14 1999/07/22 02:06:25 db Exp $
+ * $Id: scache.c,v 1.15 1999/07/23 13:24:28 db Exp $
  */
-#include "struct.h"
+
+#include "client.h"
 #include "common.h"
-#include "numeric.h"
-#include "ircd.h"
-#include "send.h"
 #include "irc_string.h"
+#include "ircd.h"
+#include "numeric.h"
+#include "send.h"
+#include "struct.h"
+
+
 #include <assert.h>
 #include <string.h>
 

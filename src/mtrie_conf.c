@@ -43,10 +43,11 @@
  *
  * Diane Bruce -db (db@db.net)
  *
- * $Id: mtrie_conf.c,v 1.58 1999/07/30 06:40:16 tomh Exp $
+ * $Id: mtrie_conf.c,v 1.59 1999/07/31 23:45:50 db Exp $
  */
 #include "mtrie_conf.h"
 #include "class.h"
+#include "client.h"
 #include "common.h"
 #include "dline_conf.h"
 #include "irc_string.h"

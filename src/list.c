@@ -19,12 +19,13 @@
  *
  *  (C) 1988 University of Oulu, Computing Center and Jarkko Oikarinen
  *
- * $Id: list.c,v 1.37 1999/07/30 21:31:58 db Exp $
+ * $Id: list.c,v 1.38 1999/07/31 08:22:58 tomh Exp $
  */
 #include "struct.h"
 #include "blalloc.h"
 #include "channel.h"
 #include "class.h"
+#include "client.h"
 #include "common.h"
 #include "irc_string.h"
 #include "list.h"
