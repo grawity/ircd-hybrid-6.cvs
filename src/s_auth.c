@@ -398,8 +398,8 @@ void start_auth(struct Client* client)
 
   sendheader(client, REPORT_DO_DNS);
 
-  if(!adns_getaddr(&client->ip, client->dns_query))
-    SetDNSPending(auth);
+  adns_getaddr(&client->ip, client->dns_query);
+  SetDNSPending(auth);
 
   if (start_auth_query(auth))
     link_auth_request(auth, &AuthPollList);

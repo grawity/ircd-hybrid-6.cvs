@@ -574,9 +574,6 @@ static void initialize_global_set_options(void)
   NOISYHTM = NOISY_HTM;
   GlobalSetOptions.autoconn = 1;
 
-  /* wheeeee? -gnp */
-  strcpy(GlobalSetOptions.operstring, "is an IRC Operator");
-
 #ifdef FLUD
   FLUDNUM = FLUD_NUM;
   FLUDTIME = FLUD_TIME;

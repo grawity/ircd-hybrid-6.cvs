@@ -268,18 +268,15 @@ WriteKline(const char *filename, struct Client *sptr, struct Client *rcptr,
   if (IsServer(sptr))
   {
     if (rcptr != NULL)
-		if (oper_reason)
-		{
-            ircsprintf(buffer, "#%s!%s@%s from %s K'd: %s@%s:%s|%s\n",
-				rcptr->name, rcptr->username, rcptr->host, sptr->name,
-				user, host, reason, oper_reason);
-		}
-		else
-	    {
-            ircsprintf(buffer, "#%s!%s@%s from %s K'd: %s@%s:%s\n",
-				rcptr->name, rcptr->username, rcptr->host, sptr->name,
-				user, host, reason);
-		}
+      ircsprintf(buffer,
+		 "#%s!%s@%s from %s K'd: %s@%s:%s\n",
+		 rcptr->name,
+		 rcptr->username,
+		 rcptr->host,
+		 sptr->name,
+		 user,
+		 host,
+		 reason);
   }
   else
 #endif /* SLAVE_SERVERS */
@@ -313,7 +310,7 @@ WriteKline(const char *filename, struct Client *sptr, struct Client *rcptr,
   if (safe_write(sptr, filename, out, buffer) == (-1))
     return;
 
-  if (oper_reason)
+  if (oper_reason != NULL)
     {
       ircsprintf(buffer, "K:%s:%s (%s) |%s:%s\n",
 		 host,
@@ -459,26 +456,23 @@ m_kline(struct Client *cptr,
       else
         return 0;
 
-	  aconf = find_special_conf(sptr->name, CONF_ULINE);
-
-	  if (!aconf)
-	  {
-		  sendto_realops("Received KLINE from non-slave server %s", sptr->name);
-		  return 0;
-	  }
-	  else if (!(aconf->port & ULFL_ACCEPTKLINES))
-	  {
-		  sendto_realops("Refused KLINE from unauthorized slave %s", sptr->name);
-		  return 0;
-	  }
+      if(!find_special_conf(sptr->name,CONF_ULINE))
+        {
+          sendto_realops("Received unauthorized K-line from %s",sptr->name);
+          return 0;
+        }
+      else
+        {
+          sendto_realops("Received K-line from %s", sptr->name);
+        }
 
 #ifdef HUB
-      sendto_slaves(sptr, ULFL_SENDKLINES, "KLINE", slave_oper, parc, parv);
-#endif /* HUB */
+      sendto_slaves(sptr,"KLINE",slave_oper,parc,parv);
+#endif
 
     }
   else
-#endif /* SLAVE_SERVERS */
+#endif
     {
       if (!MyClient(sptr) || !IsAnOper(sptr))
         {
@@ -500,7 +494,7 @@ m_kline(struct Client *cptr,
         }
 
 #ifdef SLAVE_SERVERS
-      sendto_slaves(NULL, ULFL_SENDKLINES, "KLINE",sptr->name,parc,parv);
+      sendto_slaves(NULL,"KLINE",sptr->name,parc,parv);
 #endif
     }
 
@@ -805,10 +799,7 @@ m_kline(struct Client *cptr,
       dline_in_progress = NO;
       nextping = CurrentTime;
       sendto_realops("%s added temporary %d min. K-Line for [%s@%s] [%s]",
-#ifdef SLAVE_SERVERS
-			 IsServer(sptr) ? slave_oper :
-#endif /* SLAVE_SERVERS */
-			 sptr->name,
+		     parv[0],
 		     temporary_kline_time,
 		     user,
 		     host,
@@ -832,9 +823,6 @@ m_kline(struct Client *cptr,
     add_mtrie_conf_entry(aconf,CONF_KILL);
 
   sendto_realops("%s added K-Line for [%s@%s] [%s]",
-#ifdef SLAVE_SERVERS
-	     IsServer(sptr) ? slave_oper :
-#endif /* SLAVE_SERVERS */
 		 sptr->name,
 		 user,
 		 host,
@@ -881,9 +869,6 @@ m_kline(struct Client *cptr,
     sendto_one(sptr,
       ":%s NOTICE %s :Added K-Line [%s@%s] (config file write delayed)",
       me.name,
-#ifdef SLAVE_SERVERS
-	  IsServer(sptr) ? slave_oper :
-#endif /* SLAVE_SERVERS */
       sptr->name,
       user,
       host);
@@ -896,9 +881,6 @@ m_kline(struct Client *cptr,
   sendto_one(sptr,
     ":%s NOTICE %s :Added K-Line [%s@%s] to %s",
     me.name,
-#ifdef SLAVE_SERVERS
-    IsServer(sptr) ? slave_oper :
-#endif /* SLAVE_SERVERS */
     sptr->name,
     user,
     host,

@@ -32,8 +32,6 @@
 #define INCLUDED_sys_types_h
 #endif
 
-#define IRCD_BUFSIZE	512
-
 struct Client;
 
 struct SetOptions
@@ -68,8 +66,6 @@ struct SetOptions
   int spam_num;
   int spam_time;
 #endif
-
-  char operstring[IRCD_BUFSIZE+1];
 };
 
 struct Counter {
@@ -111,6 +107,7 @@ extern struct SetOptions GlobalSetOptions;  /* defined in ircd.c */
 #define SPLITDELAY GlobalSetOptions.server_split_recovery_time
 #define SPLITNUM   GlobalSetOptions.split_smallnet_size
 #define SPLITUSERS GlobalSetOptions.split_smallnet_users
+
 
 extern char*          debugmode;
 extern int            debuglevel;
