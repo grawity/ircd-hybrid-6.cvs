@@ -915,7 +915,7 @@ void send_channel_modes(struct Client *cptr, struct Channel *chptr)
   *parabuf = '\0';
   *modebuf = '+';
   modebuf[1] = '\0';
-  send_mode_list(cptr, chptr->chname, chptr->exceptlist, CHFL_INVEX,'I');
+  send_mode_list(cptr, chptr->chname, chptr->invexlist, CHFL_INVEX,'I');
 
   if (modebuf[1] || *parabuf)
     sendto_one(cptr, ":%s MODE %s %s %s",
