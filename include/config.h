@@ -85,7 +85,7 @@
  * CPATH = conf file,
  * MPATH = MOTD
  * KPATH = kline conf file
- * DLPATH = dline conf file
+ * DLPATH = dline conf file  - changed to be in seperate file!!
  *
  * OMOTD = path to MOTD for opers
  *
@@ -104,7 +104,7 @@
 #define SPATH   "/usr/local/ircd/ircd"
 #define CPATH   "ircd.conf"
 #define KPATH   "kline.conf"
-#define DLPATH  "kline.conf"
+#define DLPATH  "dline.conf"
 #define MPATH   "ircd.motd"
 #define LPATH   "ircd.log"
 #define PPATH   "ircd.pid"
