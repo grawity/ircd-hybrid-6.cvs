@@ -79,6 +79,7 @@ struct Capability captab[] = {
   { "UNKLN",    CAP_UNKLN },
 #endif
   { "ENCAP",    CAP_ENCAP },
+  { "IE",       CAP_IE },
   { 0,   0 }
 };
 

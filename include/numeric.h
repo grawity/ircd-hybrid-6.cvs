@@ -246,6 +246,9 @@ extern const char* form_str(int);
 #define RPL_INVITING         341
 #define RPL_SUMMONING        342
 
+#define RPL_INVEXLIST        346
+#define RPL_ENDOFINVEXLIST   347
+
 #define RPL_EXCEPTLIST       348
 #define RPL_ENDOFEXCEPTLIST  349
 

@@ -101,6 +101,12 @@ Info MyInformation[] = {
   { "CHANMODE_E", "OFF", 0, "Enable channel mode +e" },
 #endif /* CHANMODE_E */
 
+#ifdef CHANMODE_I
+  { "CHANMODE_I", "ON", 0, "Enable channel mode +I" },
+#else
+  { "CHANMODE_I", "OFF", 0, "Enable channel mode +I" },
+#endif /* CHANMODE_O */
+    
 #ifdef CLIENT_FLOOD
   { "CLIENT_FLOOD", "", CLIENT_FLOOD, "Client Excess Flood Threshold" },
 #else

@@ -17,7 +17,7 @@ extern char*   date(time_t);
 extern const char* smalldate(time_t);
 extern char    *small_file_date(time_t);
 
-extern char *make_isupport();
+extern void show_isupport(struct Client *, char *);
 #endif
 
 

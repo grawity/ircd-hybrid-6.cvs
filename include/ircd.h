@@ -135,7 +135,7 @@ extern time_t         LCF;
 extern time_t         nextconnect;
 extern time_t         nextping;
 
-char *isupport;
+/* char *isupport; removed ! */
 
 extern struct Client* local_cptr_list;
 extern struct Client* oper_cptr_list;
