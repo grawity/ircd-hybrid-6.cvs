@@ -19,7 +19,7 @@
  *
  * "ircd.h". - Headers file.
  *
- * $Id: ircd.h,v 1.18 2000/12/31 00:11:55 lusky Exp $
+ * $Id$
  *
  */
 #ifndef INCLUDED_ircd_h
@@ -117,7 +117,7 @@ extern char*          generation;
 extern char*          platform;
 extern char*          infotext[];
 extern char*          serno;
-extern char*          version;
+extern char*          ircd_version;
 extern const char     serveropts[];
 extern int            LRV;
 extern int            cold_start;

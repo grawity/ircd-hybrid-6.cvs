@@ -17,7 +17,8 @@ Bugs: has holes, but everyone on here has root, so I'm not worrying about it.
 Diane Bruce, db May 11 1998
 */
 
-static char *version="$Id: start_ircd.c,v 1.1 1998/05/11 20:58:05 dianora Exp dianora $";
+static
+char *prog_version = "$Id$";
 
 #define IRCDDIR "/usr/local/lib/ircd"
 
