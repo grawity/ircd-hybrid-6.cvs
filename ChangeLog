@@ -1,5 +1,8 @@
+*** 20010110_2 by lusky
+- revved patchlevel to 6.0.1
+
+
 *** 20010110_1 by lusky
-- revved patchlevel to 6.1
 - removed old ban removel code (db)
 - removed unused locally_created flag (db)
 
