@@ -565,7 +565,7 @@ int connect_server(struct ConfItem* aconf,
   if (!connect_inet(aconf, cptr)) {
     if (by && IsPerson(by) && !MyClient(by))
       sendto_one(by, ":%s NOTICE %s :Connect to host %s failed.",
-                 me.name, by->name, cptr);
+                 me.name, by->name, cptr->name);
     free_client(cptr);
     return 0;
   }
@@ -583,7 +583,7 @@ int connect_server(struct ConfItem* aconf,
                  aconf->name);
       if (by && IsPerson(by) && !MyClient(by))
         sendto_one(by, ":%s NOTICE %s :Connect to host %s failed.",
-                   me.name, by->name, cptr);
+                   me.name, by->name, cptr->name);
       det_confs_butmask(cptr, 0);
 
       free_client(cptr);
