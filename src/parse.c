@@ -22,7 +22,7 @@
 static  char sccsid[] = "@(#)parse.c	2.30 17 Oct 1993 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version = "$Id: parse.c,v 1.7 1999/06/25 05:23:36 tomh Exp $";
+static char *rcs_version = "$Id: parse.c,v 1.8 1999/06/25 11:59:56 db Exp $";
 
 #endif
 #include "struct.h"
@@ -98,7 +98,7 @@ aClient *find_userhost(char *user,
 
   *count = 0;
   if (collapse(user))
-    for (c2ptr = client; c2ptr; c2ptr = c2ptr->next) 
+    for (c2ptr = GlobalClientList; c2ptr; c2ptr = c2ptr->next) 
       {
 	if (!MyClient(c2ptr)) /* implies mine and a user */
 	  continue;
@@ -151,7 +151,7 @@ aClient *find_name(char *name, aClient *cptr)
    * -Dianora
    */
 
-  for (c2ptr = client; c2ptr; c2ptr = c2ptr->next)
+  for (c2ptr = GlobalClientList; c2ptr; c2ptr = c2ptr->next)
     {
       if (!IsServer(c2ptr) && !IsMe(c2ptr))
 	continue;
