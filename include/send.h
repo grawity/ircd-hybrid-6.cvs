@@ -20,6 +20,7 @@ struct Channel;
 /* send.c prototypes */
 
 extern  void send_operwall(struct Client *,char *,char *);
+extern  void send_locops(struct Client *,char *,char *);
 extern  void sendto_channel_type_notice(struct Client *, 
                                         struct Channel *, int, char *);
 extern  void send_knock(struct Client *, struct Client *, 
