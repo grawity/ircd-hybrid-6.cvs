@@ -106,5 +106,10 @@ extern int m_map(struct Client *,struct Client *,int,char **);
 extern int m_etrace(struct Client *,struct Client *,int,char **);
 extern int m_sinfo(struct Client *,struct Client *,int,char **);
 
+extern int m_xline(struct Client *,struct Client *,int,char **);
+extern int m_unxline(struct Client *,struct Client *,int,char **);
+extern int m_resv(struct Client *,struct Client *,int,char **);
+extern int m_unresv(struct Client *,struct Client *,int,char **);
+
 #endif /* INCLUDED_m_commands_h */
 
