@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: s_bsd.c,v 1.138 2001/07/10 12:40:33 jdc Exp $
+ *  $Id: s_bsd.c,v 1.139 2001/07/18 01:37:16 lusky Exp $
  */
 #include "s_bsd.h"
 #include "class.h"
@@ -592,8 +592,8 @@ int connect_server(struct ConfItem* aconf,
    */
   if (!attach_cn_lines(cptr, aconf->name, aconf->host))
     {
-      sendto_realops("Host %s is not enabled for connecting:no C/N-line",
-                 aconf->host);
+      sendto_realops("Server %s is not enabled for connecting: no C/N-line",
+                 aconf->name);
       if (by && IsPerson(by) && !MyClient(by))
         sendto_one(by, ":%s NOTICE %s :Connect to host %s failed.",
                    me.name, by->name, cptr);
