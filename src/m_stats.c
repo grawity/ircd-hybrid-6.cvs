@@ -517,7 +517,7 @@ int m_stats(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
           report_specials(sptr,CONF_XLINE,RPL_STATSXLINE);
           valid_stats++;
         }
-      break;;
+      break;
 
     case 'Y' : case 'y' :
       if(IsAnOper(sptr))

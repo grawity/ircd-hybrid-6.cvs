@@ -206,11 +206,11 @@ void serv_info(aClient *cptr,char *name)
 /* Make ISUPPORT string */
 char *make_isupport()
 {
-  static char tisupport[200];
+  static char tisupport[300];
 
   ircsprintf(tisupport, "WALLCHOPS PREFIX=(ov)@+ CHANTYPES=#& MAXCHANNELS=%d "
                         "MAXBANS=%d NICKLEN=%d TOPICLEN=%d KICKLEN=%d "
-                        "NETWORK=%s "
+                        "NETWORK=%s CASEMAPPING=rfc1459 "
 #ifdef CHANMODE_E
                         "CHANMODES=be,k,l,imnpst EXCEPTS"
 #else

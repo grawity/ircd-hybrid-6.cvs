@@ -123,6 +123,7 @@ extern int            LRV;
 extern int            cold_start;
 extern int            dline_in_progress;
 extern int            dorehash;
+extern int            doremotd;
 extern int            rehashed;
 extern float          currlife;
 extern struct Client  me;

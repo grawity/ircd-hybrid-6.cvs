@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: s_zip.c,v 1.24 2000/11/24 18:24:37 lusky Exp $
+ *   $Id$
  */
 #include "client.h"
 #include "s_zip.h"
@@ -283,7 +283,7 @@ char *unzip_packet(aClient *cptr, char *buffer, int *length)
 
     default: /* error ! */
       /* should probably mark link as dead or something... */
-      sendto_realops("inflate() error(%d): %s", r,
+      sendto_realops("inflate() error(%d): %s: %s", r, zError(r),
                   (zin->msg) ? zin->msg : "?");
       *length = -1; /* report error condition */
       break;
@@ -340,7 +340,8 @@ char *zip_buffer(aClient *cptr, char *buffer, int *length, int flush)
       return zipbuf;
 
     default: /* error ! */
-      sendto_realops("deflate() error(%d): %s", r, (zout->msg) ? zout->msg : "?");
+      sendto_realops("deflate() error(%d): %s: %s", r, zError(r),
+                     (zout->msg) ? zout->msg : "?");
       *length = -1;
       break;
     }

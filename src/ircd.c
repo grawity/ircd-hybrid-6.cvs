@@ -150,6 +150,7 @@ static int         bootDaemon  = 1;
 
 char**  myargv;
 int     dorehash   = 0;
+int     doremotd   = 0;
 int     debuglevel = -1;        /* Server debug level */
 char*   debugmode  = "";        /*  -"-    -"-   -"-  */
 
@@ -529,6 +530,12 @@ static time_t io_loop(time_t delay)
     {
       rehash(&me, &me, 1);
       dorehash = 0;
+    }
+  if (doremotd)
+    {
+      ReadMessageFile( &ConfigFileEntry.motd );
+      sendto_realops("Got signal SIGUSR1, reloading ircd motd file");
+      doremotd = 0;
     }
   /*
   ** Flush output buffers on all connections now if they
