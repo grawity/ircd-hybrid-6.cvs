@@ -3,9 +3,10 @@
 #include "sys.h"
 #include "numeric.h"
 #include "h.h"
+#include "send.h"
 
 #ifndef lint
-static char *rcs_version ="$Id: scache.c,v 1.2 1998/10/14 05:52:00 db Exp $";
+static char *rcs_version ="$Id: scache.c,v 1.3 1999/06/03 02:59:17 lusky Exp $";
 #endif
 
 static int hash(char *);	/* keep it hidden here */

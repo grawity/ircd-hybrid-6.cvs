@@ -19,7 +19,7 @@
  *
  *  (C) 1988 University of Oulu, Computing Center and Jarkko Oikarinen
  *
- * $Id: list.c,v 1.19 1999/07/04 08:51:38 tomh Exp $
+ * $Id: list.c,v 1.20 1999/07/06 05:42:19 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -29,6 +29,7 @@
 #include "blalloc.h"
 #include "res.h"
 #include "class.h"
+#include "send.h"
 /* #include "s_conf.h"
 
 #ifndef INADDR_NONE

@@ -30,6 +30,7 @@ static char *rcs_version = "$Id: hash.c,v 1.11 1999/07/04 08:51:36 tomh Exp $";
 #include "msg.h"
 #include "hash.h"
 #include "h.h"
+#include "send.h"
 
 #include <sys/stat.h>
 #include <fcntl.h>

@@ -22,7 +22,7 @@
  */
 
 #ifndef lint
-static char *rcs_version = "$Id: m_gline.c,v 1.8 1999/06/30 03:20:51 db Exp $";
+static char *rcs_version = "$Id: m_gline.c,v 1.9 1999/07/03 08:07:05 tomh Exp $";
 #endif
 
 #include "struct.h"
@@ -33,6 +33,8 @@ static char *rcs_version = "$Id: m_gline.c,v 1.8 1999/06/30 03:20:51 db Exp $";
 #include "msg.h"
 #include "channel.h"
 #include "s_conf.h"
+#include "send.h"
+
 #ifndef __EMX__
 #include <utmp.h> /* old slackware utmp.h defines BYTE_ORDER */
 #endif /* __EMX__ */

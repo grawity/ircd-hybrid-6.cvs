@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: ircd.c,v 1.63 1999/07/06 05:42:19 tomh Exp $
+ * $Id: ircd.c,v 1.64 1999/07/07 23:31:46 db Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -32,6 +32,7 @@
 #include "mtrie_conf.h"
 #include "s_conf.h"
 #include "s_bsd.h"
+#include "send.h"
 
 #include <sys/file.h>
 #include <sys/stat.h>

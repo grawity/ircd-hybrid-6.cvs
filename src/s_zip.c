@@ -18,12 +18,13 @@
  */
 
 #ifndef lint
-static  char rcsid[] = "@(#)$Id: s_zip.c,v 1.8 1999/05/09 06:23:31 db Exp $";
+static  char rcsid[] = "@(#)$Id: s_zip.c,v 1.9 1999/06/25 12:00:01 db Exp $";
 #endif
 
 #include "struct.h"
 #include "sys.h"
 #include "h.h"
+#include "send.h"
 
 #ifdef	ZIP_LINKS
 /*
