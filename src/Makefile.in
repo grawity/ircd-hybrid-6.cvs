@@ -38,6 +38,7 @@ SRCS = \
 	m_close.c \
 	m_connect.c \
 	m_die.c \
+	m_encap.c \
 	m_error.c \
 	m_gline.c \
 	m_htm.c \

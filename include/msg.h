@@ -132,6 +132,7 @@ typedef struct MessageTree MESSAGE_TREE;
 #define MAXPARA    15 
 
 #define MSG_TESTLINE "TESTLINE"
+#define MSG_ENCAP    "ENCAP"
 
 #ifdef MSGTAB
 #ifndef INCLUDED_m_commands_h
@@ -249,10 +250,11 @@ struct Message msgtab[] = {
 #endif
   { MSG_REHASH,  m_rehash,   0, MAXPARA, 1, 0, 0, 0L },
   { MSG_RESTART, m_restart,  0, MAXPARA, 1, 0, 0, 0L },
-  { MSG_DIE, m_die,          0, MAXPARA, 1, 0, 0, 0L },
+  { MSG_DIE,    m_die,       0, MAXPARA, 1, 0, 0, 0L },
   { MSG_HTM,    m_htm,       0, MAXPARA, 1, 0, 0, 0L },
   { MSG_SET,    m_set,       0, MAXPARA, 1, 0, 0, 0L },
-  { MSG_TESTLINE,       m_testline,          0, MAXPARA, 1, 0, 0, 0L },
+  { MSG_TESTLINE, m_testline,0, MAXPARA, 1, 0, 0, 0L },
+  { MSG_ENCAP,  ms_encap,    0, MAXPARA, 1, 0, 0, 0L },
   { (char *) 0, (int (*)()) 0 , 0, 0,    0, 0, 0, 0L }
 };
 

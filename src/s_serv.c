@@ -74,8 +74,9 @@ struct Capability captab[] = {
   { "EX",       CAP_EX },
   { "CHW",      CAP_CHW },
   { "KNOCK",    CAP_KNOCK },
-	{ "KLN",		  CAP_KLN },
-	{ "UNKLN",		CAP_UNKLN },
+  { "KLN",      CAP_KLN }, 
+  { "UNKLN",    CAP_UNKLN },
+  { "ENCAP",    CAP_ENCAP },
   { 0,   0 }
 };
 

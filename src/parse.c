@@ -59,7 +59,7 @@ static int do_numeric (char [], struct Client *,
                          struct Client *, int, char **);
 
 static struct Message *do_msg_tree(MESSAGE_TREE *, char *, struct Message *);
-static struct Message *tree_parse(char *);
+struct Message *tree_parse(char *);
 
 static char buffer[1024];  /* ZZZ must this be so big? must it be here? */
 
@@ -470,7 +470,7 @@ static struct Message *do_msg_tree(MESSAGE_TREE *mtree, char *prefix,
  *      -Dianora, orabidoo
  */
 
-static struct Message *tree_parse(char *cmd)
+struct Message *tree_parse(char *cmd)
 {
   char r;
   MESSAGE_TREE *mtree = msg_tree_root;

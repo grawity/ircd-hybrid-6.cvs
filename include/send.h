@@ -55,6 +55,9 @@ extern  void sendto_match_servs(struct Channel *, struct Client *,
                                 const char *, ...);
 extern  void sendto_match_cap_servs(struct Channel *, struct Client *, 
                                     int, const char *, ...);
+extern  void sendto_match_cap_servs_butone(struct Client *,struct Client *,
+                                           const char *, int,
+                                           const char *, ...);
 extern  void sendto_match_butone(struct Client *, struct Client *, 
                                  char *, int, const char *, ...);
 
