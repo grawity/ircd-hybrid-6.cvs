@@ -559,6 +559,12 @@ Info MyInformation[] = {
   { "REPORT_DLINE_TO_USER", "OFF", 0, "Inform Clients They are D-lined" },
 #endif /* REPORT_DLINE_TO_USER */
 
+#ifdef RESTRICT_LOCOP
+  { "RESTRICT_LOCOP", "ON", 0, "Restrict info to local operators" },
+#else
+  { "RESTRICT_LOCOP", "OFF", 0, "Restrict info to local operators" },
+#endif /* RESTRICT_LOCOP */
+    
 #ifdef RFC1035_ANAL
   { "RFC1035_ANAL", "ON", 0, "Reject / and _ in hostnames" },
 #else

@@ -776,6 +776,18 @@
 
 /* -------------- END NOT APPROVED ON EFNET SECTION --------------------- */
 
+/* RESTRICT_LOCOP
+ * Add restrictions to LOCOPS to easier allow them to being added when
+ * other opers/servers are feeling unsure about their addition.
+ *
+ * Current restrictions:
+ * - Dont allow non-global operators to see WALLOPS/OPERWALLs. This 
+ *   removes EFNETs biggest fear when adding new opers. That they 
+ *   possibly could see WALLOPS/OPERWALL and relay them to their 
+ *   bad friends. No more....
+ *
+ */
+#define RESTRICT_LOCOP
 
 /*   STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP STOP  */
 
