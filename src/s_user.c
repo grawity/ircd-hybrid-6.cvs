@@ -804,14 +804,6 @@ static int register_user(aClient *cptr, aClient *sptr,
       /* This is a duplicate of the NOTICE but see below...*/
       sendto_one(sptr, form_str(RPL_YOURHOST), me.name, nick,
                  get_listener_name(sptr->listener), ircd_version);
-      
-      /*
-      ** Don't mess with this one - IRCII needs it! -Avalon
-      */
-      sendto_one(sptr,
-                 "NOTICE %s :*** Your host is %s, running version %s",
-                 nick, get_listener_name(sptr->listener), ircd_version);
-      
       sendto_one(sptr, form_str(RPL_CREATED),me.name,nick,creation);
       sendto_one(sptr, form_str(RPL_MYINFO), me.name, parv[0],
                  me.name, ircd_version);
