@@ -21,7 +21,7 @@
 #ifndef lint
 static  char sccsid[] = "@(#)s_bsd.c	2.78 2/7/94 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
-static char *rcs_version = "$Id: s_bsd.c,v 1.36 1999/05/19 05:31:01 db Exp $";
+static char *rcs_version = "$Id: s_bsd.c,v 1.37 1999/05/22 18:49:23 lusky Exp $";
 #endif
 
 #include "struct.h"
@@ -1813,7 +1813,7 @@ void read_clients()
 	      {
 		ircstp->is_ref++;
 		/* slow down the whining to opers bit */
-		if((last_full_to_opers_notice + 10) <= NOW)
+		if((last_full_to_opers_notice + 20) <= NOW)
 		  {
 		    sendto_realops("All connections in use. (%s)",
 				   get_client_name(cptr, TRUE));
