@@ -1328,6 +1328,49 @@ send_operwall(aClient *from, char *type_message, char *message)
 } /* send_operwall() */
 
 /*
+** send_locops -- Send Wallop/Locops to All Opers on this server
+**
+*/
+
+void
+send_locops(aClient *from, char *type_message, char *message)
+
+{
+  char sender[NICKLEN + USERLEN + HOSTLEN + 5];
+  aClient *acptr;
+  anUser *user;
+  
+  if (!from || !message)
+    return;
+
+  if (!IsPerson(from))
+    return;
+
+  user = from->user;
+  (void)strcpy(sender, from->name);
+
+  if (*from->username) 
+    {
+      strcat(sender, "!");
+      strcat(sender, from->username);
+    }
+
+  if (*from->host)
+    {
+      strcat(sender, "@");
+      strcat(sender, from->host);
+    }
+
+  for (acptr = oper_cptr_list; acptr; acptr = acptr->next_oper_client)
+    {
+      if (!SendLocops(acptr)) 
+        continue; /* has to be oper if in this linklist */
+      sendto_one(acptr, ":%s WALLOPS :%s - %s", sender, type_message, message);
+    }
+} /* send_locops() */
+
+
+/*
  * to - destination client
  * from - client which message is from
  *

@@ -3240,6 +3240,8 @@ oper_flags_from_string(char *flags)
         int_flags |= FLAGS_EXTERNAL;
       else if(*flags == 'z')
         int_flags |= FLAGS_OPERWALL;
+      else if(*flags == 'l')
+        int_flags |= FLAGS_LOCOPS;   
 #ifdef OPERSPYLOG
       else if(*flags == 'Z')
         int_flags |= FLAGS_OSPYLOG;
@@ -3299,6 +3301,8 @@ char *oper_flags_as_string(int flags)
     *flags_ptr++ = 'x';
   if(flags & FLAGS_OPERWALL)
     *flags_ptr++ = 'z';
+  if(flags & FLAGS_LOCOPS)
+    *flags_ptr++ = 'l';
 #ifdef OPERSPYLOG
   if(flags & FLAGS_OSPYLOG)
     *flags_ptr++ = 'Z';
