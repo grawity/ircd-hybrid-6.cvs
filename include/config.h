@@ -211,6 +211,12 @@
 #define FNAME_USERLOG "/usr/local/ircd/users"
 #define FNAME_OPERLOG "/usr/local/ircd/opers"
 
+/* FNAME_OPERSPYLOG and FNAME_OPERSPYRLOG - logs of OPERSPY usage!
+ */
+#define FNAME_OPERSPYLOG   "/usr/local/ircd/operspy.local.log"
+#define FNAME_OPERSPYRLOG  "/usr/local/ircd/operspy.local.log"
+
+
 /* RFC1035_ANAL
  * Defining this causes ircd to reject hostnames with non-compliant chars.
  * undef'ing it will allow hostnames with _ or / to connect
@@ -697,6 +703,23 @@
  */
 #undef  NO_PRIORITY
 
+/* OPERSPY
+ * This was voted in as an EFnet feature. Gives opers with the correct
+ * conf flag (S) access to use OPERSPY features that allows them to
+ * see :
+ * - See all +i clients in /who
+ * - See all clients on +s/+p chans
+ * - See all +s/+ channels in /whois
+ * - See channel keys/modes
+ */
+#define OPERSPY
+
+/* OPERSPYLOG *mandatory on efnet*
+ * Logs OPERSPY usage.
+ */
+#define OPERSPYLOG
+
+
 /* ----------------- not approved on EFnet section --------------------
  *
  * if you are not an efnet admin - we recommend you enable most of these.. 
@@ -1036,6 +1059,10 @@
 #error ZIP_LINKS defined put ZLIB not found.  Undef ZIP_LINKS or install ZLIB
 #endif
 
+#if defined(OPERSPY) && !defined(OPERSPYLOG)
+#define OPERSPYLOG
+#endif
+
 #ifdef DEBUGMODE
 #  define Debug(x) debug x
 #  define LOGFILE LPATH
@@ -1066,6 +1093,13 @@
 #ifdef IDLE_CHECK
 #define MIN_IDLETIME 1800
 #endif
+
+#ifdef OPERSPY
+#define WHO_PREFIX       '!'
+#define WHOIS_PREFIX     '!'
+#define MODE_PREFIX      '!'
+#endif
+
 
 #define CONFIG_H_LEVEL_6_3
 

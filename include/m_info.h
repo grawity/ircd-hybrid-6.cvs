@@ -512,6 +512,18 @@ Info MyInformation[] = {
   { "OPER_JUPE_BYPASS", "OFF", 0, "Allow opers to bypass channel jupes" },
 #endif /* OPER_JUPE_BYPASS */
 
+#ifdef OPERSPY
+  { "OPERSPY", "ON", 0, "Allow OPERSPY for opers with S flag" },
+#else
+  { "OPERSPY", "OFF", 0, "Allow OPERSPY for opers with S flag" },
+#endif /* OPERSPY */
+    
+#ifdef OPERSPYLOG
+  { "OPERSPYLOG", "ON", 0, "Enable logging of OPERSPY usage" },
+#else
+  { "OPERSPYLOG", "OFF", 0, "Enable logging of OPERSPY usage" },
+#endif /* OPERSPYLOG */
+
 #ifdef ANTI_SPAMBOT
   { "OPER_SPAM_COUNTDOWN", "", OPER_SPAM_COUNTDOWN, "Anti SpamBot Parameter" },
 #endif /* ANTI_SPAMBOT */

@@ -54,6 +54,7 @@ SRCS = \
 	m_lusers.c \
 	m_message.c \
 	m_mode.c \
+        m_operspylog.c \
 	m_operwall.c \
 	m_oper.c \
 	m_pass.c \
@@ -127,6 +128,7 @@ SRCS = \
 #	m_close.o \
 #	m_connect.o \
 #	m_die.o \
+#       m_encap.o \
 #	m_error.o \
 #	m_gline.o \
 #	m_help.o \
@@ -139,6 +141,7 @@ SRCS = \
 #	m_ltrace.o \
 #	m_lusers.o \
 #	m_mode.o \
+#       m_operspylog.o \
 #	m_operwall.o \
 #	m_pass.o \
 #	m_ping.o \

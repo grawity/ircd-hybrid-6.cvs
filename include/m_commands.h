@@ -28,6 +28,8 @@
 struct Client;
 
 extern int ms_encap(struct Client *,struct Client *,int,char **);
+extern int ms_operspylog(struct Client *,struct Client *,int,char **);
+
 extern int m_testline(struct Client *,struct Client *,int,char **);
 
 extern int m_admin(struct Client *,struct Client *,int,char **);

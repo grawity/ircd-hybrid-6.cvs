@@ -162,6 +162,8 @@ typedef struct QlineItem {
 #define CONF_OPER_DIE         128
 #define CONF_OPER_STATSPHIDE  256
 #define CONF_OPER_ADMIN       512
+#define CONF_OPER_OSPY         1024
+#define CONF_OPER_OSPYLOG      2048
 
 typedef struct
 {
