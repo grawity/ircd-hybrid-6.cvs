@@ -149,7 +149,6 @@ static int user_modes_from_c_to_bitmask[] =
   FLAGS_NCHANGE, /* n */
   FLAGS_OPER,   /* o */
   FLAGS_STATSPHIDE, /* p */
-  0,            /* p */
   0,            /* q */
   FLAGS_REJ,    /* r */
   FLAGS_SERVNOTICE, /* s */
