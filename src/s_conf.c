@@ -19,7 +19,7 @@
  *
  *  (C) 1988 University of Oulu,Computing Center and Jarkko Oikarinen"
  *
- *  $Id: s_conf.c,v 1.154 1999/07/28 05:24:37 tomh Exp $
+ *  $Id: s_conf.c,v 1.155 1999/07/28 07:49:39 tomh Exp $
  */
 #include "s_conf.h"
 #include "listener.h"
@@ -976,13 +976,13 @@ int attach_confs(aClient* cptr, const char* name, int statmask)
       if ((tmp->status & statmask) && !IsIllegal(tmp) &&
           tmp->name && match(tmp->name, name))
         {
-          if (0 == attach_conf(cptr, tmp))
+          if (-1 < attach_conf(cptr, tmp))
             ++conf_counter;
         }
       else if ((tmp->status & statmask) && !IsIllegal(tmp) &&
                tmp->name && !irccmp(tmp->name, name))
         {
-          if (0 == attach_conf(cptr, tmp))
+          if (-1 < attach_conf(cptr, tmp))
             ++conf_counter;
         }
     }
