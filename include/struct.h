@@ -17,7 +17,7 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- * $Id: struct.h,v 1.20 1998/12/17 07:01:33 db Exp $
+ * $Id: struct.h,v 1.21 1998/12/23 19:05:09 db Exp $
  */
 
 #ifndef	__struct_include__
@@ -112,7 +112,8 @@ typedef struct	MessageFileItem aMessageFile;
 
 #define	USERLEN		10
 #define	REALLEN	 	50
-#define	TOPICLEN	120	/* old value 90, truncated on other servers */
+#define TOPICLEN 	120	/* old value 90, truncated on other servers */
+#define	KILLLEN		90	
 #define	CHANNELLEN	200
 #define	PASSWDLEN 	20
 #define	KEYLEN		23
