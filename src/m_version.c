@@ -1,5 +1,5 @@
 /************************************************************************
- *   IRC - Internet Relay Chat, src/s_serv.c
+ *   IRC - Internet Relay Chat, src/m_version.c
  *   Copyright (C) 1990 Jarkko Oikarinen and
  *                      University of Oulu, Computing Center
  *
@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: s_serv.c,v 1.189 1999/07/25 06:52:23 tomh Exp $
+ *   $Id: m_version.c,v 1.1 1999/07/25 18:01:46 tomh Exp $
  */
 #include "m_commands.h"
 #include "client.h"
