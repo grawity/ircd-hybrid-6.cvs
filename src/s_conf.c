@@ -19,7 +19,7 @@
  *
  *  (C) 1988 University of Oulu,Computing Center and Jarkko Oikarinen"
  *
- *  $Id: s_conf.c,v 1.140 1999/07/22 02:06:22 db Exp $
+ *  $Id: s_conf.c,v 1.141 1999/07/23 02:45:41 db Exp $
  */
 #include "s_conf.h"
 #include "listener.h"
@@ -35,6 +35,7 @@
 #include "s_bsd.h"
 #include "channel.h"
 #include "send.h"
+#include "res.h"    /* gethost_byname, gethost_byaddr */
 
 #include <string.h>
 #include <stdlib.h>
@@ -46,11 +47,8 @@
 #include <fcntl.h>
 #include <assert.h>
 
-extern int rehashed;
 
 extern ConfigFileEntryType ConfigFileEntry; /* defined in ircd.c */
-
-#include "res.h"    /* gethost_byname, gethost_byaddr */
 
 #ifndef INADDR_NONE
 #define INADDR_NONE ((unsigned int) 0xffffffff)
@@ -58,8 +56,6 @@ extern ConfigFileEntryType ConfigFileEntry; /* defined in ircd.c */
 
 struct sockaddr_in vserv;
 int                specific_virtual_host = 0;
-
-int safe_write(aClient *,const char *, int, char *);
 
 /* internally defined functions */
 
