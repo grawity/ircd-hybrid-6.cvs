@@ -508,6 +508,12 @@ static void sendnick_TS(struct Client *cptr, struct Client *acptr)
                  acptr->hopcount + 1, acptr->tsinfo, ubuf,
                  acptr->username, acptr->host,
                  acptr->user->server, acptr->info);
+#ifdef PROPAGATE_AWAY
+#ifdef BURST_AWAY
+      if (acptr->user->away)
+        sendto_one(cptr, ":%s AWAY :%s", acptr->name, acptr->user->away);
+#endif
+#endif
     }
 }
 

@@ -132,10 +132,17 @@ int     m_away(struct Client *cptr,
           MyFree(away);
           sptr->user->away = NULL;
         }
-/* some lamers scripts continually do a /away, hence making a lot of
-   unnecessary traffic. *sigh* so... as comstud has done, I've
-   commented out this sendto_serv_butone() call -Dianora */
-/*      sendto_serv_butone(cptr, ":%s AWAY", parv[0]); */
+/* 
+ *  some lamers scripts continually do a /away, hence making a lot of
+ *  unnecessary traffic. *sigh* so... as comstud has done, I've
+ *  commented out this sendto_serv_butone() call -Dianora 
+ * - Guess this got changed in hyb7 again.. so I'll let the admins
+ * - decide instead -ievil 
+ */
+#ifdef PROPAGATE_AWAY
+      sendto_serv_butone(cptr, ":%s AWAY", parv[0]); 
+#endif
+
       if (MyConnect(sptr))
         sendto_one(sptr, form_str(RPL_UNAWAY),
                    me.name, parv[0]);
@@ -146,10 +153,16 @@ int     m_away(struct Client *cptr,
   
   if (strlen(awy2) > (size_t) TOPICLEN)
     awy2[TOPICLEN] = '\0';
-/* some lamers scripts continually do a /away, hence making a lot of
-   unnecessary traffic. *sigh* so... as comstud has done, I've
-   commented out this sendto_serv_butone() call -Dianora */
-/*  sendto_serv_butone(cptr, ":%s AWAY :%s", parv[0], awy2); */
+/*
+ *  some lamers scripts continually do a /away, hence making a lot of
+ *  unnecessary traffic. *sigh* so... as comstud has done, I've
+ *  commented out this sendto_serv_butone() call -Dianora
+ * - Guess this got changed in hyb7 again.. so I'll let the admins
+ * - decide instead -ievil
+ */
+#ifdef PROPAGATE_AWAY
+   sendto_serv_butone(cptr, ":%s AWAY :%s", parv[0], awy2);
+#endif
 
   /* don't use realloc() -Dianora */
 

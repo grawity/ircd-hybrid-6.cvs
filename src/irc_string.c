@@ -36,15 +36,16 @@
  *
  *
  * Thu Nov 24 18:22:48 1986 
+ *
+ * Localisation of times -Hwy
  */
 const char* myctime(time_t value)
 {
   static char buf[32];
-  char*       p;
+  struct tm *ltm = localtime(&value);
+  static char *gcc_sucks = "%c";
 
-  strcpy(buf, ctime(&value));
-  if ((p = strchr(buf, '\n')) != NULL)
-    *p = '\0';
+  strftime(buf, 32, gcc_sucks, ltm);
   return buf;
 }
 

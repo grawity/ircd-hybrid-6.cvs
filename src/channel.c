@@ -77,7 +77,11 @@ static int errsent(int,int *);
 static void change_chan_flag(struct Channel *, struct Client *, int );
 static void set_deopped(struct Client *,struct Channel *,int);
 
+#ifdef PART_MESSAGES
+static  char    *PartFmt = ":%s PART %s :%s";
+#else
 static  char    *PartFmt = ":%s PART %s";
+#endif
 /*
  * some buffers for rebuilding channel/nick lists with ,'s
  */
@@ -2343,7 +2347,12 @@ int     m_join(struct Client *cptr,
             {
               chptr = lp->value.chptr;
               sendto_channel_butserv(chptr, sptr, PartFmt,
+#ifdef PART_MESSAGES
+                                     parv[0], chptr->chname, "");
+#else
                                      parv[0], chptr->chname);
+#endif
+
               remove_user_from_channel(sptr, chptr, 0);
             }
 
@@ -2672,10 +2681,17 @@ int     m_part(struct Client *cptr,
       /*
       **  Remove user from the old channel (if any)
       */
+#ifdef PART_MESSAGES
+      sendto_match_servs(chptr, cptr, PartFmt, parv[0], name,
+                         (parc == 3) ? parv[2] : "");
             
+      sendto_channel_butserv(chptr, sptr, PartFmt, parv[0], name,
+                             (parc == 3) ? parv[2] : "");
+#else
       sendto_match_servs(chptr, cptr, PartFmt, parv[0], name);
             
       sendto_channel_butserv(chptr, sptr, PartFmt, parv[0], name);
+#endif
       remove_user_from_channel(sptr, chptr, 0);
       name = strtoken(&p, (char *)NULL, ",");
     }
