@@ -241,7 +241,7 @@ void show_isupport(aClient *cptr, char *name)
                         mode_e ? "e" : "",
                         mode_I ? "I" : "");
 
-  ircsprintf(features2, "CHANTYPES=#& PREFIX=(ov)@+ %s NETWORK=%s CASEMAPPING=rfc1459",
+  ircsprintf(features2, "CHANTYPES=#& PREFIX=(ov)@+ %s NETWORK=%s CASEMAPPING=rfc1459 MAP",
                         cbmodes,
                         NETWORK_NAME);
 

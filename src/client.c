@@ -1173,7 +1173,10 @@ static void exit_one_client(struct Client *cptr, struct Client *sptr, struct Cli
         ts_warn("server %s without servptr!", sptr->name);
     }
   else if (sptr->servptr && sptr->servptr->serv)
+    {
       del_client_from_llist(&(sptr->servptr->serv->users), sptr);
+      sptr->servptr->serv->usercnt--;
+    }
   /* there are clients w/o a servptr: unregistered ones */
 
   /*

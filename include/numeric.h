@@ -142,6 +142,9 @@ extern const char* form_str(int);
 #define RPL_MYINFO           004
 #define RPL_ISUPPORT         005
 
+#define RPL_MAP              015
+#define RPL_MAPEND           017
+
 /*
  * Numeric replies from server commands.
  * These are currently in the range 200-399.

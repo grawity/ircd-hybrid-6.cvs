@@ -101,6 +101,7 @@ struct Server
   struct Client*   servers;     /* Servers on this server */
   struct Client*   users;       /* Users on this server */
   int		   tsversion;   /* ts version sent in SVINFO */
+  unsigned int     usercnt;     /* total number of users on this server */
 };
 
 struct Client

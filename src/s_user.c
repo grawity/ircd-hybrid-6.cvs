@@ -798,6 +798,7 @@ static int register_user(aClient *cptr, aClient *sptr,
       return exit_client(NULL, sptr, &me, "Ghost");
     }
   add_client_to_llist(&(sptr->servptr->serv->users), sptr);
+  sptr->servptr->serv->usercnt++;
 
 /* Increment our total user count here */
   if (++Count.total > Count.max_tot)
