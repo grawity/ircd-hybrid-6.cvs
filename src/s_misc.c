@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: s_misc.c,v 1.69 2000/11/21 06:49:32 lusky Exp $
+ *  $Id: s_misc.c,v 1.70 2001/06/04 13:35:28 leeh Exp $
  */
 #include "s_misc.h"
 #include "client.h"
@@ -110,7 +110,7 @@ const char* smalldate(time_t clock)
 }
 
 
-#if defined(GLINES) || defined(SEPARATE_QUOTE_KLINES_BY_DATE)
+#if defined(GLINES)
 /*
  * small_file_date
  * Make a small YYYYMMDD formatted string suitable for a
