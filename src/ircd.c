@@ -21,7 +21,7 @@
 #ifndef lint
 static	char sccsid[] = "@(#)ircd.c	2.48 3/9/94 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
-static char *rcs_version="$Id: ircd.c,v 1.45 1999/06/14 04:45:46 db Exp $";
+static char *rcs_version="$Id: ircd.c,v 1.46 1999/06/23 00:28:39 tomh Exp $";
 #endif
 
 #include "struct.h"
@@ -904,7 +904,6 @@ int	main(int argc, char *argv[])
   int	portarg = 0;
   uid_t	uid, euid;
   time_t	delay = 0;
-  int fd;
   FBFILE* file = 0;      /* initconf */
 
   aConfItem *aconf;
