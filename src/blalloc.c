@@ -4,7 +4,7 @@
  * Owner:  Wohali (Joan Touzet)
  *
  *
- * $Id: blalloc.c,v 1.10 1999/07/15 08:47:33 tomh Exp $
+ * $Id: blalloc.c,v 1.11 1999/07/15 10:53:16 db Exp $
  */
 #include "blalloc.h"
 #include "struct.h"
@@ -14,6 +14,7 @@
 #include "numeric.h"
 #include "send.h"
 #include <string.h>
+#include <stdlib.h>
 
 #ifdef DEBUG_BLOCK_ALLOCATOR
 const char* BH_CurrentFile = 0;   /* GLOBAL used for BlockHeap debugging */

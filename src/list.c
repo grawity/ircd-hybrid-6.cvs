@@ -19,7 +19,7 @@
  *
  *  (C) 1988 University of Oulu, Computing Center and Jarkko Oikarinen
  *
- * $Id: list.c,v 1.25 1999/07/15 08:47:36 tomh Exp $
+ * $Id: list.c,v 1.26 1999/07/15 10:53:17 db Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -31,6 +31,7 @@
 #include "class.h"
 #include "send.h"
 #include <string.h>
+#include <stdlib.h>
 
 /*
  * re-written to use Wohali (joant@cadence.com)
