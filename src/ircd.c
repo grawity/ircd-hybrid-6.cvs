@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: ircd.c,v 1.138 2001/06/04 05:07:16 db Exp $
+ * $Id: ircd.c,v 1.139 2001/06/05 16:18:26 kreator Exp $
  */
 #include "ircd.h"
 #include "channel.h"
@@ -67,6 +67,7 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 #include <sys/param.h>
+#include <signal.h>
 
 #if defined(HAVE_GETOPT_H)
 #include <getopt.h>
