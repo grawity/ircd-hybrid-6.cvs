@@ -493,8 +493,13 @@ verify_access(struct Client *cptr, const char* username, char **preason)
           if(IsConfDoSpoofIp(aconf))
             {
 #ifdef SPOOF_NOTICE
+#ifdef SPOOF_NOTICE_ADMIN_ONLY
+              sendto_realops_flags(FLAGS_ADMIN, "%s spoofing: %s(%s) as %s", cptr->name,
+                                   cptr->host, inetntoa((char*) &cptr->ip), aconf->name);
+#else
               sendto_realops("%s spoofing: %s(%s) as %s", cptr->name,
                              cptr->host, inetntoa((char*) &cptr->ip), aconf->name);
+#endif /* SPOOF_NOTICE_ADMIN_ONLY */
 #endif /* SPOOF_NOTICE */
               strncpy_irc(cptr->host, aconf->name, HOSTLEN);
               SetIPSpoof(cptr);

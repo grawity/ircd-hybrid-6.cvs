@@ -675,6 +675,12 @@ Info MyInformation[] = {
   { "SPOOF_NOTICE", "OFF", 0, "Show Operators when a Client connects with a spoofed I" },
 #endif /* SPOOF_NOTICE */
 
+#ifdef SPOOF_NOTICE_ADMIN_ONLY
+  { "SPOOF_NOTICE_ADMIN_ONLY", "ON", 0, "Show only Admins when a Client connects with a spoofed I" },
+#else
+  { "SPOOF_NOTICE_ADMIN_ONLY", "OFF", 0, "Show only Admins when a Client connects with a spoofed I" },
+#endif /* SPOOF_NOTICE_ADMIN_ONLY */
+
 #ifdef STATS_NOTICE
   { "STATS_NOTICE", "ON", 0, "Show Operators when a Client uses STATS" },
 #else

@@ -351,6 +351,10 @@
  */
 #define SPOOF_NOTICE
 
+/* SPOOF_NOTICE_ADMIN_ONLY - make only admins see spoofed hosts
+ */
+#define SPOOF_NOTICE_ADMIN_ONLY
+
 /* STATS_NOTICE - See a notice when a user does a /stats
  *
  * This is a violation of privacy.  Arguments for this have been
