@@ -965,8 +965,7 @@ void show_servers(struct Client *cptr)
                  (cptr2->serv->by[0] ? cptr2->serv->by : "Remote."), 
                  "*", (cptr2->serv->bysrv[0] ? cptr2->serv->bysrv : "*"), 
                  CurrentTime - cptr2->lasttime,
-                 days, (days > 0) ? "" : "d ", hours, (hours > 0) ? "" : "h ",
-                 minutes, (minutes > 0) ? "" : "m ", seconds, (seconds > 0) ? "" : "s");
+                 days, "d ", hours, "h ", minutes, "m ", seconds, "s");
     }
   sendto_one(cptr, ":%s %d %s :%d Server%s", me.name, RPL_STATSDEBUG,
              cptr->name, j, (j==1) ? "" : "s");
