@@ -20,17 +20,17 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id:$
+ *   $Id: m_ison.c,v 1.1 1999/07/30 03:25:51 db Exp $
  */
 #include "m_commands.h"
 #include "client.h"
+#include "irc_string.h"
 #include "ircd.h"
 #include "numeric.h"
-#include "s_serv.h"
 #include "send.h"
-#include "irc_string.h"
 
-static char buf[BUFSIZE];
+#include <string.h>
+
 
 /*
  * m_functions execute protocol messages on this server:
@@ -105,16 +105,14 @@ static char buf[BUFSIZE];
  */
 
 
-int     m_ison(struct Client *cptr,
-               struct Client *sptr,
-               int parc,
-               char *parv[])
+int m_ison(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 {
   struct Client *acptr;
   char  *s, **pav = parv;
   char  *p = (char *)NULL;
   int len;
   int len2;
+  static char buf[BUFSIZE];
 
   if (parc < 2)
     {

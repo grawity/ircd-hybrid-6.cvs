@@ -1,5 +1,5 @@
 /************************************************************************
- *   IRC - Internet Relay Chat, src/m_away.c
+ *   IRC - Internet Relay Chat, src/m_htm.c
  *   Copyright (C) 1990 Jarkko Oikarinen and
  *                      University of Oulu, Computing Center
  *
@@ -20,17 +20,17 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_away.c,v 1.1 1999/07/30 03:25:50 db Exp $
+ *   $Id: m_version.c,v 1.3 1999/07/28 07:49:37 tomh Exp $
  */
 #include "m_commands.h"
 #include "client.h"
+#include "common.h"
 #include "irc_string.h"
 #include "ircd.h"
 #include "numeric.h"
 #include "send.h"
 
 #include <stdlib.h>
-
 /*
  * m_functions execute protocol messages on this server:
  *
@@ -89,78 +89,83 @@
  */
 
 
-/***********************************************************************
- * m_away() - Added 14 Dec 1988 by jto. 
- *            Not currently really working, I don't like this
- *            call at all...
- *
- *            ...trying to make it work. I don't like it either,
- *            but perhaps it's worth the load it causes to net.
- *            This requires flooding of the whole net like NICK,
- *            USER, MODE, etc messages...  --msa
- ***********************************************************************/
-
+#define LOADCFREQ 5
 /*
-** m_away
-**      parv[0] = sender prefix
-**      parv[1] = away message
-*/
-int     m_away(struct Client *cptr,
-               struct Client *sptr,
-               int parc,
-               char *parv[])
+ * m_htm - HTM command handler
+ * high traffic mode info
+ */
+int m_htm(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 {
-  char  *away, *awy2 = parv[1];
+  char *command;
 
-  /* make sure the user exists */
-  if (!(sptr->user))
+  if (!MyClient(sptr) || !IsOper(sptr))
     {
-      sendto_realops_flags(FLAGS_DEBUG,
-                           "Got AWAY from nil user, from %s (%s)\n",cptr->name,sptr->name);
+      sendto_one(sptr, form_str(ERR_NOPRIVILEGES), me.name, parv[0]);
       return 0;
     }
-
-  away = sptr->user->away;
-
-  if (parc < 2 || !*awy2)
+  sendto_one(sptr,
+        ":%s NOTICE %s :HTM is %s(%d), %s. Max rate = %dk/s. Current = %.1fk/s",
+          me.name, parv[0], LIFESUX ? "ON" : "OFF", LIFESUX,
+          NOISYHTM ? "NOISY" : "QUIET",
+          LRV, currlife);
+  if (parc > 1)
     {
-      /* Marking as not away */
-      
-      if (away)
+      command = parv[1];
+      if (!irccmp(command,"TO"))
         {
-          MyFree(away);
-          sptr->user->away = NULL;
+          if (parc > 2)
+            {
+              int new_value = atoi(parv[2]);
+              if (new_value < 10)
+                {
+                  sendto_one(sptr, ":%s NOTICE %s :\002Cannot set LRV < 10!\002",
+                             me.name, parv[0]);
+                }
+              else
+                LRV = new_value;
+              sendto_one(sptr, ":%s NOTICE %s :NEW Max rate = %dk/s. Current = %.1fk/s",
+                         me.name, parv[0], LRV, currlife);
+              sendto_realops("%s!%s@%s set new HTM rate to %dk/s (%.1fk/s current)",
+                             parv[0], sptr->username, sptr->host,
+                             LRV, currlife);
+            }
+          else 
+            sendto_one(sptr, ":%s NOTICE %s :LRV command needs an integer parameter",me.name, parv[0]);
         }
-/* some lamers scripts continually do a /away, hence making a lot of
-   unnecessary traffic. *sigh* so... as comstud has done, I've
-   commented out this sendto_serv_butone() call -Dianora */
-/*      sendto_serv_butone(cptr, ":%s AWAY", parv[0]); */
-      if (MyConnect(sptr))
-        sendto_one(sptr, form_str(RPL_UNAWAY),
-                   me.name, parv[0]);
-      return 0;
+      else
+        {
+          if (!irccmp(command,"ON"))
+            {
+              LIFESUX = 1;
+              sendto_one(sptr, ":%s NOTICE %s :HTM is now ON.", me.name, parv[0]);
+              sendto_ops("Entering high-traffic mode: Forced by %s!%s@%s",
+                         parv[0], sptr->username, sptr->host);
+              LCF = 30; /* 30s */
+            }
+          else if (!irccmp(command,"OFF"))
+            {
+              LIFESUX = 0;
+              LCF = LOADCFREQ;
+              sendto_one(sptr, ":%s NOTICE %s :HTM is now OFF.", me.name, parv[0]);
+              sendto_ops("Resuming standard operation: Forced by %s!%s@%s",
+                         parv[0], sptr->username, sptr->host);
+            }
+          else if (!irccmp(command,"QUIET"))
+            {
+              sendto_ops("HTM is now QUIET");
+              NOISYHTM = NO;
+            }
+          else if (!irccmp(command,"NOISY"))
+            {
+              sendto_ops("HTM is now NOISY");
+              NOISYHTM = YES;
+            }
+          else
+            sendto_one(sptr,
+                       ":%s NOTICE %s :Commands are:HTM [ON] [OFF] [TO int] [QUIET] [NOISY]",
+                       me.name, parv[0]);
+        }
     }
-
-  /* Marking as away */
-  
-  if (strlen(awy2) > (size_t) TOPICLEN)
-    awy2[TOPICLEN] = '\0';
-/* some lamers scripts continually do a /away, hence making a lot of
-   unnecessary traffic. *sigh* so... as comstud has done, I've
-   commented out this sendto_serv_butone() call -Dianora */
-/*  sendto_serv_butone(cptr, ":%s AWAY :%s", parv[0], awy2); */
-
-  /* don't use realloc() -Dianora */
-
-  if (away)
-    MyFree(away);
-
-  away = (char *)MyMalloc(strlen(awy2)+1);
-  strcpy(away,awy2);
-
-  sptr->user->away = away;
-
-  if (MyConnect(sptr))
-    sendto_one(sptr, form_str(RPL_NOWAWAY), me.name, parv[0]);
   return 0;
 }
+

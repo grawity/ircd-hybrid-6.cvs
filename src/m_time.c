@@ -1,5 +1,5 @@
 /************************************************************************
- *   IRC - Internet Relay Chat, src/m_away.c
+ *   IRC - Internet Relay Chat, src/m_version.c
  *   Copyright (C) 1990 Jarkko Oikarinen and
  *                      University of Oulu, Computing Center
  *
@@ -20,16 +20,15 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_away.c,v 1.1 1999/07/30 03:25:50 db Exp $
+ *   $Id: m_version.c,v 1.3 1999/07/28 07:49:37 tomh Exp $
  */
 #include "m_commands.h"
 #include "client.h"
-#include "irc_string.h"
 #include "ircd.h"
 #include "numeric.h"
+#include "s_misc.h"
+#include "s_serv.h"
 #include "send.h"
-
-#include <stdlib.h>
 
 /*
  * m_functions execute protocol messages on this server:
@@ -89,78 +88,16 @@
  */
 
 
-/***********************************************************************
- * m_away() - Added 14 Dec 1988 by jto. 
- *            Not currently really working, I don't like this
- *            call at all...
- *
- *            ...trying to make it work. I don't like it either,
- *            but perhaps it's worth the load it causes to net.
- *            This requires flooding of the whole net like NICK,
- *            USER, MODE, etc messages...  --msa
- ***********************************************************************/
-
 /*
-** m_away
-**      parv[0] = sender prefix
-**      parv[1] = away message
-*/
-int     m_away(struct Client *cptr,
-               struct Client *sptr,
-               int parc,
-               char *parv[])
+ * m_time
+ *      parv[0] = sender prefix
+ *      parv[1] = servername
+ */
+int m_time(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 {
-  char  *away, *awy2 = parv[1];
-
-  /* make sure the user exists */
-  if (!(sptr->user))
-    {
-      sendto_realops_flags(FLAGS_DEBUG,
-                           "Got AWAY from nil user, from %s (%s)\n",cptr->name,sptr->name);
-      return 0;
-    }
-
-  away = sptr->user->away;
-
-  if (parc < 2 || !*awy2)
-    {
-      /* Marking as not away */
-      
-      if (away)
-        {
-          MyFree(away);
-          sptr->user->away = NULL;
-        }
-/* some lamers scripts continually do a /away, hence making a lot of
-   unnecessary traffic. *sigh* so... as comstud has done, I've
-   commented out this sendto_serv_butone() call -Dianora */
-/*      sendto_serv_butone(cptr, ":%s AWAY", parv[0]); */
-      if (MyConnect(sptr))
-        sendto_one(sptr, form_str(RPL_UNAWAY),
-                   me.name, parv[0]);
-      return 0;
-    }
-
-  /* Marking as away */
-  
-  if (strlen(awy2) > (size_t) TOPICLEN)
-    awy2[TOPICLEN] = '\0';
-/* some lamers scripts continually do a /away, hence making a lot of
-   unnecessary traffic. *sigh* so... as comstud has done, I've
-   commented out this sendto_serv_butone() call -Dianora */
-/*  sendto_serv_butone(cptr, ":%s AWAY :%s", parv[0], awy2); */
-
-  /* don't use realloc() -Dianora */
-
-  if (away)
-    MyFree(away);
-
-  away = (char *)MyMalloc(strlen(awy2)+1);
-  strcpy(away,awy2);
-
-  sptr->user->away = away;
-
-  if (MyConnect(sptr))
-    sendto_one(sptr, form_str(RPL_NOWAWAY), me.name, parv[0]);
+  if (hunt_server(cptr,sptr,":%s TIME :%s",1,parc,parv) == HUNTED_ISME)
+    sendto_one(sptr, form_str(RPL_TIME), me.name,
+               parv[0], me.name, date(0));
   return 0;
 }
+
