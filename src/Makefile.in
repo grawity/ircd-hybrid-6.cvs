@@ -69,6 +69,8 @@ SRCS = \
 	m_time.c \
 	m_trace.c \
 	m_unkline.c \
+	m_ungline.c \
+	m_undline.c \
 	m_userhost.c \
 	m_users.c \
 	m_version.c \
