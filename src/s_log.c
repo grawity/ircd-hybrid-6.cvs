@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: s_log.c,v 1.8 1999/11/16 05:04:38 lusky Exp $
+ *   $Id: s_log.c,v 1.9 2000/02/01 03:25:06 lusky Exp $
  */
 #include "s_log.h"
 #include "irc_string.h"
@@ -123,7 +123,7 @@ void log(int priority, const char* fmt, ...)
 
 #ifdef USE_SYSLOG  
   if (priority <= L_DEBUG)
-    syslog(sysLogLevel[priority], buf);
+    syslog(sysLogLevel[priority], "%s", buf);
 #endif
 #if defined(USE_LOGFILE) 
   write_log(buf);
