@@ -189,19 +189,33 @@ void show_opers(struct Client *cptr)
 
   for(cptr2 = oper_cptr_list; cptr2; cptr2 = cptr2->next_oper_client)
     {
-      if (!(cptr2->umodes & FLAGS_STATSPHIDE))
+      if (IsSetOperAdmin(cptr) || !(cptr2->umodes & FLAGS_STATSPHIDE)) 
         {
           ++j;
           if (MyClient(cptr) && IsAnOper(cptr))
             {
-              sendto_one(cptr, ":%s %d %s :[%c][%s] %s (%s@%s) Idle: %d",
-                         me.name, RPL_STATSDEBUG, cptr->name,
-                         IsOper(cptr2) ? 'O' : 'o',
-                         oper_privs_as_string(cptr2,
-                                              cptr2->confs->value.aconf->port),
-                         cptr2->name,
-                         cptr2->username, cptr2->host,
-                         CurrentTime - cptr2->user->last);
+              if (IsSetOperAdmin(cptr) && (cptr2->umodes & FLAGS_STATSPHIDE)) 
+                {
+                  sendto_one(cptr, ":%s %d %s :[%c][%s] %s (%s@%s) Idle: %d (hidden)",
+                             me.name, RPL_STATSDEBUG, cptr->name,
+                             IsOper(cptr2) ? 'O' : 'o',
+                             oper_privs_as_string(cptr2,
+                                                  cptr2->confs->value.aconf->port),
+                             cptr2->name,
+                             cptr2->username, cptr2->host,
+                             CurrentTime - cptr2->user->last);
+                } 
+              else 
+                {
+                  sendto_one(cptr, ":%s %d %s :[%c][%s] %s (%s@%s) Idle: %d",
+                            me.name, RPL_STATSDEBUG, cptr->name,
+                            IsOper(cptr2) ? 'O' : 'o',
+                            oper_privs_as_string(cptr2,
+                                                 cptr2->confs->value.aconf->port),
+                            cptr2->name,
+                            cptr2->username, cptr2->host,
+                            CurrentTime - cptr2->user->last);
+                }
             }
           else
             {
