@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_version.c,v 1.3 1999/07/28 07:49:37 tomh Exp $
+ *   $Id$
  */
 #include "m_commands.h"
 #include "client.h"
@@ -102,7 +102,7 @@ int m_lusers(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 
   if (!IsAnOper(sptr))
     {
-      if ((last_used + PACE_WAIT) > CurrentTime)
+      if ((last_used + WHOIS_WAIT) > CurrentTime)
         {
           /* safe enough to give this on a local connect only */
           if (MyClient(sptr))
