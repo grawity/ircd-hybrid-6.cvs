@@ -241,7 +241,7 @@ static void tcp_events(adns_state ads, int act,
        nqu= qu->next;
        assert(qu->state == query_tcpw);
        if (qu->retries > ads->nservers) {
-         LIST_UNLINK(ads->tcpw,qu);
+         DLIST_UNLINK(ads->tcpw,qu);
          adns__query_fail(qu,adns_s_allservfail);
        }
       }

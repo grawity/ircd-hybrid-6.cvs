@@ -30,6 +30,7 @@
 #include "irc_string.h"
 #include "fileio.h"
 #include "s_misc.h"
+#include "send.h"
 
 #include <fcntl.h>
 #include <unistd.h>

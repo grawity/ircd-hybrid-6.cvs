@@ -936,8 +936,8 @@ sendto_match_cap_servs_butone(aClient *from, aClient *one, const char *mask,
 {
   aClient *cptr;
   va_list args;
-  char buf[BUFSIZE];
-
+/*  char buf[BUFSIZE];
+ */
   va_start(args, pattern);
 
   for(cptr = serv_cptr_list; cptr; cptr = cptr->next_server_client)
