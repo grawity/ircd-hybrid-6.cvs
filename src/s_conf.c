@@ -22,7 +22,7 @@
 static  char sccsid[] = "@(#)s_conf.c	2.56 02 Apr 1994 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version = "$Id: s_conf.c,v 1.39 1999/02/03 02:46:27 db Exp $";
+static char *rcs_version = "$Id: s_conf.c,v 1.40 1999/02/15 03:05:18 db Exp $";
 #endif
 
 #include "struct.h"
@@ -218,7 +218,7 @@ int	attach_Iline(aClient *cptr,
 				       ntohl(cptr->ip.s_addr));
       if(aconf && !IsConfElined(aconf))
 	{
-	  if(tkline_conf = find_tkline(host,username))
+	  if(tkline_conf = find_tkline(host,non_ident))
 	    aconf = tkline_conf;
 	}
     }
