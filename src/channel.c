@@ -34,7 +34,7 @@
  *                mode * -p etc. if flag was clear
  *
  *
- * $Id: channel.c,v 1.179 2000/09/14 05:22:00 lusky Exp $
+ * $Id: channel.c,v 1.180 2000/09/18 02:24:24 lusky Exp $
  */
 #include "channel.h"
 #include "client.h"
@@ -1504,6 +1504,11 @@ void set_channel_mode(struct Client *cptr,
                   sendto_one(sptr, form_str(RPL_ENDOFEXCEPTLIST),
                              me.name, sptr->name, 
                              chptr->chname);
+                }
+              else
+                {
+                  sendto_one(sptr, form_str(ERR_CHANOPRIVSNEEDED), me.name, 
+                               sptr->name, chptr->chname);
                 }
               break;
             }
