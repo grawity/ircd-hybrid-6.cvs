@@ -19,7 +19,7 @@
 
 #ifndef lint
 static  char sccsid[] = "@(#)chkconf.c	1.7 27 Oct 1993 (C) 1993 Darren Reed";
-static char *rcs_version = "$Id: chkconf.c,v 1.2 1998/09/21 04:19:38 db Exp $";
+static char *rcs_version = "$Id: chkconf.c,v 1.3 1998/10/17 21:07:06 lusky Exp $";
 #endif
 
 #define FOREVER for(;;)
@@ -432,6 +432,36 @@ static int 	ckinitconf(int opt)
 	  (void)fprintf(stderr, "\tERROR: bad name field\n");
 	  continue;
 	}
+
+       if (aconf->status & CONF_ADMIN && !aconf->name)
+       {
+          (void)fprintf(stderr, "\tERROR: bad admin info\n");
+          continue;
+       }
+
+       if (aconf->status & CONF_ADMIN && !aconf->name)
+       {
+          (void)fprintf(stderr, "\tERROR: bad admin info\n");
+          continue;
+       }
+
+       if (aconf->status & CONF_ADMIN && !aconf->name)
+       {
+          (void)fprintf(stderr, "\tERROR: bad admin info\n");
+          continue;
+       }
+
+       if (aconf->status & CONF_ADMIN && !aconf->name)
+       {
+          (void)fprintf(stderr, "\tERROR: bad admin info\n");
+          continue;
+       }
+
+       if (aconf->status & CONF_ADMIN && !aconf->name)
+       {
+          (void)fprintf(stderr, "\tERROR: bad admin info\n");
+          continue;
+       }
 
       if (aconf->status & (CONF_SERVER_MASK|CONF_OPS))
 	if (!index(aconf->host, '@'))
