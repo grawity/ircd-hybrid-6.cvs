@@ -1,3 +1,15 @@
+*** 20000719_1 by lusky
+fixed check for valid chars in m_links()
+fixed high char handling in clean_string() (db)
+fix for core on malformed O/o line (db)
+fixed a buffer size in m_server() and m_links() (db)
+revved patchlevel to rc3
+
+
+*** 20000626_2 by lusky
+ghost kill fix
+
+
 *** 20000626_1 by lusky
 revved patchlevel to rc2
 added db's I-line patch that was supposed to have been in rc1
