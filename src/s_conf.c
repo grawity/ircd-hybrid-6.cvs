@@ -22,7 +22,7 @@
 static  char sccsid[] = "@(#)s_conf.c	2.56 02 Apr 1994 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version = "$Id: s_conf.c,v 1.12 1998/10/14 05:51:56 db Exp $";
+static char *rcs_version = "$Id: s_conf.c,v 1.13 1998/10/17 21:06:59 lusky Exp $";
 #endif
 
 #include "struct.h"
@@ -3144,7 +3144,7 @@ aConfItem *find_user_host_in_dline_hash(unsigned long host_ip,char *name,
 static int hash_dline_ip(unsigned long ip)
 {
   int hash;
-  hash = ((ip >>= 12) + ip) & (DLINE_HASH_SIZE-1);
+  hash = ( (ip >>= 10)  & DLINE_HASH_SIZE-1);
   return(hash);
 }
 
