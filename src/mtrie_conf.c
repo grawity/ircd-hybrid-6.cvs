@@ -43,7 +43,7 @@
  *
  * Diane Bruce -db (db@db.net)
  *
- * $Id: mtrie_conf.c,v 1.69 2000/08/22 03:34:41 lusky Exp $
+ * $Id: mtrie_conf.c,v 1.70 2000/10/12 03:09:58 lusky Exp $
  */
 #include "mtrie_conf.h"
 #include "class.h"
@@ -1400,6 +1400,12 @@ char *show_iline_prefix(aClient *sptr,aConfItem *aconf,char *name)
     *prefix_ptr++ = '%';
   if (IsConfDoSpoofIp(aconf))
     *prefix_ptr++ = '=';
+
+#ifdef E_LINES_OPER_ONLY
+  if(IsAnOper(sptr))
+#endif
+    if (IsConfExemptGline(aconf))
+      *prefix_ptr++ = '_';
 
 #ifdef E_LINES_OPER_ONLY
   if(IsAnOper(sptr))
