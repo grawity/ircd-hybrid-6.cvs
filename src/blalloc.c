@@ -8,7 +8,7 @@
 /* ************************************************************************ */
 
 #ifndef lint
-static char *rcs_version = "$Id: blalloc.c,v 1.1.1.1 1998/09/17 14:25:04 db Exp $";
+static char *rcs_version = "$Id: blalloc.c,v 1.2 1998/10/14 05:51:48 db Exp $";
 #endif
 
 /* ------------------------------------------------------------------------ */
@@ -66,8 +66,8 @@ static int newblock(BlockHeap *bh)
 
    b->freeElems = bh->elemsPerBlock;
    b->next = bh->base;
-   b->allocMap = (long *) MyMalloc (sizeof(long) * (bh->numlongs +1));
-   memset((void *)b->allocMap, 0, (bh->numlongs + 1 ) * sizeof(long));
+   b->allocMap = (unsigned long *) MyMalloc (sizeof(unsigned long) * (bh->numlongs +1));
+   memset((void *)b->allocMap, 0, (bh->numlongs + 1 ) * sizeof(unsigned long));
 
    if (b->allocMap == NULL)
      {

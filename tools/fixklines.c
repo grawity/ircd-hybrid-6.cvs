@@ -29,18 +29,21 @@ Typical usage:
 #include <string.h>
 #include <sys/types.h>
 #include <sys/time.h>
+#include <ctype.h>
 
 #define MAXLINE 1024
 #define YES 1
 #define NO 0
 
-static char *version="$Id: fixklines.c,v 1.3 1998/07/10 21:13:02 db Exp $";
+#ifndef lint
+static char *version="$Id: fixklines.c,v 1.1.1.1 1998/09/17 14:25:05 db Exp $";
+#endif
 
 char linebuf[MAXLINE];
 void read_write_klines(char *,char *);
 int host_is_legal_dline(char *);
 
-main(int argc,char *argv[])
+int main(int argc,char *argv[])
 {
   if(argc < 3)
     {
@@ -50,6 +53,7 @@ main(int argc,char *argv[])
     }
 
   read_write_klines(argv[1],argv[2]);
+  return 0;
 }
 
 /*
