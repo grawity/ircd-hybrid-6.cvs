@@ -20,7 +20,11 @@ ircd, and continue to be made to this ircd.
 But we review each other's work on this project, and are open to publicly
 submittable bug reports.
  
-The core team as, of this release:
+Chief Maintainer: 
+ievil         Arnvid L. Karstad  <ievil@isd.no>
+
+
+The core team responsible for developing the hybrid-6 code base was: 
  
 AndroSyn      Aaron Sethman      <androsyn@ratbox.org>
 billy-jon     Bill Bierma        <bill@mu.org>
@@ -55,6 +59,7 @@ kre           Dinko Korunic      <kreator@fly.srk.fer.hr>
 LarZ          Matthew Ramsey     <mjr@blackened.com>
 orabidoo      Roger Espel LLima  <espel@unix.bigots.org>
 Riedel        Dennis Vink        <riedel@chaotic.nl>
+ripje         Nick Parrin        <ndp@coreworks.nl>
 Seaner        Sean McVeigh       <sdlmcvei@uwaterloo.ca>
 Shadowfax     Michael Pearce     <mpearce@varner.com>
 Slowaris      Ryan Parker        <rjp@wpmedia.com>

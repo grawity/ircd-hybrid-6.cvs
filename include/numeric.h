@@ -358,6 +358,6 @@ extern const char* form_str(int);
 #define ERR_USERSDONTMATCH   502
 
 #define ERR_GHOSTEDCLIENT    503
-#define ERR_LAST_ERR_MSG     504
+#define ERR_LAST_ERR_MSG     999
 
 #endif /* INCLUDED_numeric_h */
