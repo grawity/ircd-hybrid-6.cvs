@@ -1121,6 +1121,13 @@ report_and_set_user_flags(aClient *sptr,aConfItem *aconf)
                  me.name,sptr->name);
     }
 #endif
+  if(IsConfCanFlood(aconf))
+    {
+      SetCanFlood(sptr);
+      sendto_one(sptr,
+                 ":%s NOTICE %s :*** You are exempt from flooding ratelimit. BEHAVE!",
+	         me.name,sptr->name);
+    }
 }
 
 /*

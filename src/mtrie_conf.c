@@ -1499,6 +1499,12 @@ char *show_iline_prefix(struct Client *sptr,struct ConfItem *aconf,char *name)
 #ifdef E_LINES_OPER_ONLY
   if(IsAnOper(sptr))
 #endif
+    if (IsConfCanFlood(aconf))
+      *prefix_ptr++ = '|';
+
+#ifdef E_LINES_OPER_ONLY
+  if(IsAnOper(sptr))
+#endif
     if (IsConfExemptGline(aconf))
       *prefix_ptr++ = '_';
 

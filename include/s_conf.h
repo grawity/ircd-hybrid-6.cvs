@@ -114,6 +114,7 @@ typedef struct QlineItem {
 #define CONF_FLAGS_E_LINED              0x0020
 #define CONF_FLAGS_F_LINED              0x0080
 #define CONF_FLAGS_EXEMPTGLINE          0x2000
+#define CONF_FLAGS_CANFLOOD             0x4000
 
 #ifdef IDLE_CHECK
 #define CONF_FLAGS_IDLE_LINED           0x0100
@@ -139,6 +140,7 @@ typedef struct QlineItem {
 #define IsConfElined(x)         ((x)->flags & CONF_FLAGS_E_LINED)
 #define IsConfFlined(x)         ((x)->flags & CONF_FLAGS_F_LINED)
 #define IsConfExemptGline(x)    ((x)->flags & CONF_FLAGS_EXEMPTGLINE)
+#define IsConfCanFlood(x)       ((x)->flags & CONF_FLAGS_CANFLOOD)
 
 #ifdef IDLE_CHECK
 #define IsConfIdlelined(x)      ((x)->flags & CONF_FLAGS_IDLE_LINED)

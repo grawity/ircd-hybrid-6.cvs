@@ -1853,6 +1853,9 @@ static char *set_conf_flags(struct ConfItem *aconf,char *tmp)
           aconf->flags |= CONF_FLAGS_IDLE_LINED;
           break;
 #endif
+         case '|':      /* can flood */
+	   aconf->flags |= CONF_FLAGS_CANFLOOD;
+	   break;
         default:
           return tmp;
         }
