@@ -34,7 +34,7 @@
  *		  mode * -p etc. if flag was clear
  *
  *
- * $Id: channel.c,v 1.117 1999/07/18 21:36:49 db Exp $
+ * $Id: channel.c,v 1.118 1999/07/18 21:47:13 db Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -94,12 +94,6 @@ static void set_deopped(aClient *,aChannel *,int);
 struct timeval tsdnow, tsdthen; 
 unsigned long tsdms;
 #endif
-
-typedef struct
-{
-  int mode;
-  char letter;
-}FLAG_ITEM;
 
 
 static	char	*PartFmt = ":%s PART %s";
