@@ -486,6 +486,12 @@ verify_access(struct Client *cptr, const char* username, char **preason)
             }
 #endif        /* GLINES */
 
+         if (IsMustResolve(aconf) && IsDigit(cptr->host[strlen(cptr->host)-1]))
+         {
+           sendto_one(cptr, ":%s NOTICE %s :*** Your IP must resolve to use this server", me.name, cptr->name);
+           return ( -1 );
+         }
+
           if(IsConfDoIdentd(aconf))
             SetNeedId(cptr);
 
@@ -1844,6 +1850,9 @@ static char *set_conf_flags(struct ConfItem *aconf,char *tmp)
           break;
         case '^':        /* is exempt from k/g lines */
           aconf->flags |= CONF_FLAGS_E_LINED;
+          break;
+        case '/':        /* clients host must resolve */
+          aconf->flags |= CONF_FLAGS_RESOLVE;
           break;
         case '&':        /* obsolete flag was "can run a bot" */
           break;
