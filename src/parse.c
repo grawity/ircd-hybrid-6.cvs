@@ -336,10 +336,10 @@ int parse(aClient *cptr, char *pbuffer, char *bufend)
    */
 
 #ifdef IDLE_FROM_MSG
-  if (IsRegisteredUser(cptr) && mptr->reset_idle)
+  if (IsRegisteredUser(cptr) && mptr->reset_idle && !(cptr->umodes & FLAGS_UNIDLE))
     from->user->last = CurrentTime;
 #else
-  if (IsRegisteredUser(cptr) && !mptr->reset_idle)
+  if (IsRegisteredUser(cptr) && !mptr->reset_idle && !(cptr->umodes & FLAGS_UNIDLE))
     from->user->last = CurrentTime;
 #endif
   
