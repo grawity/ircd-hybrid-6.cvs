@@ -2433,7 +2433,15 @@ static void initconf(FBFILE* file, int use_include)
               aconf->host = x;
             }
 
+ /*
+  ** SPOOF_IP
+  **  - Allows spoofs to be ip's instead just hostnames.
+  */ 
+ #ifdef SPOOF_IP
+           if( !(aconf->flags & CONF_FLAGS_SPOOF_IP) && is_address(aconf->host,&ip_host,&ip_lmask) ) 
+ #else
            if( is_address(aconf->host,&ip_host,&ip_lmask) )
+ #endif
 	     {
                aconf->ip = ip_host & ip_lmask;
                aconf->ip_mask = ip_lmask;
