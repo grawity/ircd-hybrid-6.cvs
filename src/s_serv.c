@@ -74,8 +74,10 @@ struct Capability captab[] = {
   { "EX",       CAP_EX },
   { "CHW",      CAP_CHW },
   { "KNOCK",    CAP_KNOCK },
+#ifdef HUB
   { "KLN",      CAP_KLN }, 
   { "UNKLN",    CAP_UNKLN },
+#endif
   { "ENCAP",    CAP_ENCAP },
   { 0,   0 }
 };

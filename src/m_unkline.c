@@ -85,9 +85,11 @@ int m_unkline (aClient *cptr,aClient *sptr,int parc,char *parv[])
   
   if (IsServer(cptr))
     {
+#ifdef HUB
       if (parc == 4)
          sendto_match_cap_servs(NULL, cptr, CAP_UNKLN,":%s UNKLINE %s %s %s",
                                 parv[0], parv[1], parv[2], parv[3]);
+#endif
       return 0;
     }
 
