@@ -594,6 +594,12 @@ int m_set(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
                              me.name, parv[0]);
                   return 0;
                 }
+              if (newval >= (60*24*365))
+                {
+                  sendto_one(sptr, ":%s NOTICE %s :MAXTKLINE must be < 525600 (a year)",
+                             me.name, parv[0]);
+                  return 0;
+                }
               MAXTKLINE  = newval;
               sendto_realops("%s has changed MAXTKLINE to %i",
                              parv[0], MAXTKLINE);
