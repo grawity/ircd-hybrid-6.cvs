@@ -55,7 +55,7 @@
  *  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
  *
- *  $Id: adns.h,v 1.2 2001/12/04 07:33:53 androsyn Exp $
+ *  $Id$
  */
 
 #ifndef ADNS_H_INCLUDED
@@ -66,7 +66,9 @@
 #include "irc_string.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
+#ifdef HAVE_SYS_SELECT_H
 #include <sys/select.h>
+#endif /* HAVE_SYS_SELECT_H */
 #include <sys/types.h>
 #include <sys/time.h>
 #include <unistd.h>
