@@ -34,7 +34,7 @@
  *		  mode * -p etc. if flag was clear
  *
  *
- * $Id: channel.c,v 1.125 1999/07/20 04:39:23 tomh Exp $
+ * $Id: channel.c,v 1.126 1999/07/20 08:57:25 db Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -44,6 +44,7 @@
 #include "send.h"
 #include "hash.h"
 #include "whowas.h"
+#include "s_user.h"
 
 #include <assert.h>
 #include <string.h>
