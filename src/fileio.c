@@ -4,7 +4,7 @@
  * Copyright (C) 1990 Jarkko Oikarinen and
  *                    University of Oulu, Co Center
  *
- * $Id: fileio.c,v 1.0 2000/06/10 02:45:37 lusky Exp $
+ * $Id$
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@
 #include <fcntl.h>  /* O_RDONLY, O_WRONLY, ... */
 #include <unistd.h> /* read, write, open, close */
 #include <assert.h> /* assert */
+#include <string.h>
 
 #define FB_EOF  0x01
 #define FB_FAIL 0x02

@@ -18,7 +18,7 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- *   $Id: packet.c,v 1.22 1999/09/04 20:21:14 lusky Exp $
+ *   $Id$
  */ 
 #include "packet.h"
 #include "client.h"
@@ -31,6 +31,7 @@
 #include "irc_string.h"
 
 #include <assert.h>
+#include <string.h>
 
 /*
 ** dopacket

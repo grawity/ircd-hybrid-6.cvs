@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: ircd_signal.c,v 1.2 1999/07/31 08:22:58 tomh Exp $
+ * $Id$
  */
 #include "ircd_signal.h"
 #include "ircd.h"         /* dorehash */
@@ -25,6 +25,7 @@
 #include "s_log.h"
 #include "send.h"         /* flush_connections */
 
+#include <stdlib.h>
 #include <signal.h>
 
 /*

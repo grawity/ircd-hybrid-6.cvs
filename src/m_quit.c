@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id:$
+ *   $Id$
  */
 #include "m_commands.h"
 #include "client.h"
@@ -28,6 +28,7 @@
 #include "numeric.h"
 #include "s_serv.h"
 #include "send.h"
+#include <string.h>
 
 /*
  * m_functions execute protocol messages on this server:

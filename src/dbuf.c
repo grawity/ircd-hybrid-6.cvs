@@ -21,7 +21,7 @@
  * see the header file (dbuf.h).
  *
  *
- * $Id: dbuf.c,v 1.17 2001/07/18 02:15:25 lusky Exp $
+ * $Id$
  */
 #include "dbuf.h"
 #include "common.h"
@@ -30,6 +30,7 @@
 
 #include <assert.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 
