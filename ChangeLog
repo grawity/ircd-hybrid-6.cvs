@@ -1,3 +1,13 @@
+*** 20011203_4 by androsyn
+These are the changes to kill res.c dead.
+
+
+
+*** 20011203_3 by androsyn
+Added all the goodies for adns/
+
+
+
 *** 20011203_2 by androsyn
 Directory /cvsroot/ircd-hybrid-6/adns added to the repository
 
