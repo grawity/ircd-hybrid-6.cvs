@@ -1,7 +1,7 @@
 /*
  * scache.c
  *
- * $Id: scache.c,v 1.9 1999/07/18 07:16:54 tomh Exp $
+ * $Id: scache.c,v 1.10 1999/07/18 15:43:00 db Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -46,7 +46,7 @@ static int hash(const char* string)
   hash_value = 0;
   while (*string)
     {
-      hash_value += tolower(*string);
+      hash_value += ToLower(*string);
       /* I don't like auto increments inside macro calls... -db */
       string++;
     }
