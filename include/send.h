@@ -2,7 +2,7 @@
  * send.h
  * Copyright (C) 1999 Patrick Alken
  *
- * $Id: send.h,v 1.2 1999/07/08 07:35:04 tomh Exp $
+ * $Id: send.h,v 1.3 1999/07/08 11:39:18 db Exp $
  */
 
 /*
@@ -23,6 +23,15 @@
  */
 struct Client;
 struct Channel;
+
+/* for sendto_ops_lev */
+#define CCONN_LEV	1
+#define REJ_LEV		2
+#define SKILL_LEV	3
+#define FULL_LEV	4
+#define SPY_LEV		5
+#define DEBUG_LEV	6
+#define NCHANGE_LEV	7
 
 #ifdef HAVE_STDARG_H
 
