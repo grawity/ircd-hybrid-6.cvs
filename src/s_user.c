@@ -25,7 +25,7 @@
 static  char sccsid[] = "@(#)s_user.c	2.68 07 Nov 1993 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version="$Id: s_user.c,v 1.23 1998/11/26 07:14:56 lusky Exp $";
+static char *rcs_version="$Id: s_user.c,v 1.24 1998/11/28 03:28:48 db Exp $";
 
 #endif
 
@@ -1147,7 +1147,7 @@ static	int	register_user(aClient *cptr,
       
       sendto_one(sptr,
 		 rpl_str(RPL_MOTD),
-		 nme.name, parv[0],
+		 me.name, parv[0],
 		 "*** This is the short motd ***"
 		 );
 
