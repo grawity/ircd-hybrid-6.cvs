@@ -32,6 +32,8 @@
 #ifndef ADNS_DLIST_H_INCLUDED
 #define ADNS_DLIST_H_INCLUDED
 
+#define unused_arg /**/
+
 #define DLIST_INIT(list) ((list).head= (list).tail= 0)
 #define DLINK_INIT(link) ((link).next= (link).back= 0)
 
@@ -51,7 +53,7 @@
     (list).tail= (node); \
   } while(0)
 
-#define DLIST_UNLINK(list,node) DLIST_UNLINK_PART(list,node,)
-#define DLIST_LINK_TAIL(list,node) DLIST_LINK_TAIL_PART(list,node,)
+#define DLIST_UNLINK(list,node) DLIST_UNLINK_PART(list,node,unused_arg)
+#define DLIST_LINK_TAIL(list,node) DLIST_LINK_TAIL_PART(list,node,unused_arg)
 
 #endif
