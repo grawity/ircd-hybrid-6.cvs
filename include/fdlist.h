@@ -1,13 +1,16 @@
 /*
  * fdlist.h
  *
- * $Id: fdlist.h,v 1.6 1999/07/06 05:38:58 tomh Exp $
+ * $Id: fdlist.h,v 1.7 1999/07/18 19:46:04 tomh Exp $
  */
 #ifndef _IRCD_DOG3_FDLIST
 #define _IRCD_DOG3_FDLIST
+#ifndef INCLUDED_config_h
+#include "config.h"       /* MAXCONNECTIONS */
+#endif
 
 struct FDList {
-  unsigned char entry [MAXCONNECTIONS+2];
+  unsigned char entry[MAXCONNECTIONS + 2];
 };
 
 extern struct FDList serv_fdlist;
