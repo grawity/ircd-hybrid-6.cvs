@@ -1,7 +1,7 @@
 /*
  * m_info.c 
  *
- * $Id: m_info.c,v 1.32 1999/07/25 05:32:58 tomh Exp $
+ * $Id: m_info.c,v 1.33 1999/07/25 06:52:22 tomh Exp $
  */
 #define DEFINE_M_INFO_DATA
 #include "m_info.h"
@@ -9,7 +9,6 @@
 #include "common.h"
 #include "ircd.h"
 #include "numeric.h"
-#include "s_err.h"
 #include "s_serv.h"
 #include "s_user.h"
 #include "send.h"

@@ -19,7 +19,7 @@
  *
  *  (C) 1988 University of Oulu,Computing Center and Jarkko Oikarinen"
  *
- *  $Id: s_conf.c,v 1.153 1999/07/28 05:10:26 tomh Exp $
+ *  $Id: s_conf.c,v 1.154 1999/07/28 05:24:37 tomh Exp $
  */
 #include "s_conf.h"
 #include "listener.h"
@@ -35,8 +35,6 @@
 #include "channel.h"
 #include "hash.h"
 #include "send.h"
-#include "s_err.h"
-#include "s_err.h"
 #include "res.h"    /* gethost_byname, gethost_byaddr */
 
 #include <string.h>
