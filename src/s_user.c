@@ -2022,12 +2022,8 @@ int user_mode(aClient *cptr, aClient *sptr, int parc, char *parv[])
 
                   fdlist_delete(sptr->fd, FDL_OPER | FDL_BUSY);
                   detach_conf(sptr,sptr->confs->value.aconf);
-                  sptr->flags2 &= ~(FLAGS2_OPER_GLOBAL_KILL|
-                                    FLAGS2_OPER_REMOTE|
-                                    FLAGS2_OPER_UNKLINE|
-                                    FLAGS2_OPER_GLINE|
-                                    FLAGS2_OPER_N|
-                                    FLAGS2_OPER_K);
+                  sptr->flags2 &= ~(FLAGS2_OPER_FLAGS);
+
                   while(cur_cptr)
                     {
                       if(sptr == cur_cptr) 
