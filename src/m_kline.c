@@ -494,7 +494,7 @@ m_kline(struct Client *cptr,
       if (IsServer(cptr))
         {
           if(parc == 6)
-             sendto_match_cap_servs(NULL, sptr, CAP_KLN,":%s KLINE %s %s %s %s :%s",
+             sendto_match_cap_servs(NULL, cptr, CAP_KLN,":%s KLINE %s %s %s %s :%s",
                                     parv[0], parv[1], parv[2], parv[3],parv[4], parv[5]);
           return 0;
         }

@@ -27,7 +27,7 @@
 
 /* PLEASE READ SECTION:
  *
- * I have commented out WHOIS_NOTICE and STATS_NOTICE
+ * I have commented out SHOW_REMOTE_WHOIS, WHOIS_NOTICE and STATS_NOTICE
  * Personally, I feel opers do not need to know the information
  * returned by having those two defines defined, it is an invasion
  * of privacy. The original need/use of showing STATS_NOTICE
@@ -367,6 +367,15 @@
  * you don't need this. -Dianora
  */
 #undef  WHOIS_NOTICE
+
+/* SHOW_REMOTE_WHOIS - Shows a notice to an oper when a client 
+ * does a /whois on them, even when  the client is not on the
+ * same server as the oper (eg. a /whois nick nick ).
+ * Why do opers need this at all? Its an invasion of privacy. bah.
+ * you don't need this. -Dianora 
+ */
+#undef SHOW_REMOTE_WHOIS
+
 
 /* WHOIS_WAIT - minimum seconds between remote use of WHOIS before
  * max use count is reset

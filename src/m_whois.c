@@ -285,7 +285,11 @@ int     m_whois(struct Client *cptr,
                        me.name, parv[0], name);
 #ifdef WHOIS_NOTICE
           if ((MyOper(acptr)) && ((acptr)->umodes & FLAGS_SPY) &&
-              (MyConnect(sptr)) && (IsPerson(sptr)) && (acptr != sptr))
+#ifndef SHOW_REMOTE_WHOIS
+              (MyConnect(sptr)) && (IsPerson(sptr)) &&
+#endif
+             (acptr != sptr))
+              
             sendto_one(acptr,
                        ":%s NOTICE %s :*** Notice -- %s (%s@%s) is doing a /whois on you.",
                        me.name, acptr->name, parv[0], sptr->username,
@@ -428,7 +432,11 @@ int     m_whois(struct Client *cptr,
                        me.name, parv[0], name);
 #ifdef WHOIS_NOTICE
           if ((MyOper(acptr)) && ((acptr)->umodes & FLAGS_SPY) &&
-              (MyConnect(sptr)) && (IsPerson(sptr)) && (acptr != sptr))
+#ifndef SHOW_REMOTE_WHOIS
+              (MyConnect(sptr)) && (IsPerson(sptr)) &&
+#endif
+             (acptr != sptr))
+
             sendto_one(acptr,
                        ":%s NOTICE %s :*** Notice -- %s (%s@%s) is doing a /whois on you.",
                        me.name, acptr->name, parv[0], sptr->username,
