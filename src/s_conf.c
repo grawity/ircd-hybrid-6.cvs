@@ -19,7 +19,7 @@
  *
  *  (C) 1988 University of Oulu,Computing Center and Jarkko Oikarinen"
  *
- *  $Id: s_conf.c,v 1.142 1999/07/23 03:23:15 db Exp $
+ *  $Id: s_conf.c,v 1.143 1999/07/23 04:58:17 tomh Exp $
  */
 #include "s_conf.h"
 #include "listener.h"
@@ -39,6 +39,7 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <time.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>

@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: m_gline.c,v 1.27 1999/07/22 02:44:24 db Exp $
+ *  $Id: m_gline.c,v 1.28 1999/07/23 03:15:48 db Exp $
  */
 
 #include "config.h"
@@ -44,6 +44,7 @@
 #include <assert.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <time.h>
 #include <fcntl.h>
 
