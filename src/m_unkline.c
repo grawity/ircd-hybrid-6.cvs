@@ -21,11 +21,8 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- *   $Id: m_unkline.c,v 1.43 2001/11/29 06:28:24 db Exp $
+ *   $Id$
  */
-#ifdef GLINES
-#include "m_gline.h"
-#endif
 #include "m_commands.h"
 #include "channel.h"
 #include "client.h"
@@ -41,6 +38,9 @@
 #include "s_misc.h"
 #include "send.h"
 #include "struct.h"
+#ifdef GLINES
+#include "m_gline.h"
+#endif
 
 #include <stdio.h>
 #include <time.h>
