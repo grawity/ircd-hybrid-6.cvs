@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: ircd.c,v 1.141 2001/06/12 02:15:47 greg Exp $
+ * $Id: ircd.c,v 1.143 2001/07/05 22:16:59 greg Exp $
  */
 #include "ircd.h"
 #include "channel.h"
@@ -906,12 +906,7 @@ int main(int argc, char *argv[])
   me.servptr = &me;
   SetMe(&me);
   make_server(&me);
-#ifdef CRYPT_LINKS
-  if (crypt_init() != CRYPT_OK) {
-    fprintf(stderr, "Failed to initialize RSA private key\n");
-    exit(-1);
-  }
-#endif
+
   me.serv->up = me.name;
   me.lasttime = me.since = me.firsttime = CurrentTime;
   add_to_client_hash_table(me.name, &me);
