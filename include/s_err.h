@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: s_err.h,v 1.19 1999/06/14 04:45:44 db Exp $
+ * $Id: s_err.h,v 1.20 1999/06/17 01:45:40 lusky Exp $
  *
  */
 
@@ -391,7 +391,7 @@ static	char *	replies[] = {
 #endif
 /* 349 RPL_ENDOFEXCEPTLIST */	":%s 349 %s %s :End of Channel Exception List",
 /* 350 */	(char *)NULL,
-/* 351 RPL_VERSION, */		":%s 351 %s %s.%s %s :%s",
+/* 351 RPL_VERSION, */		":%s 351 %s %s(%s).%s %s :%s",
 /* 352 RPL_WHOREPLY, */		":%s 352 %s %s %s %s %s %s %s :%d %s",
 /* 353 RPL_NAMREPLY, */		":%s 353 %s %s",
 /* 354 */	(char *)NULL,
