@@ -24,7 +24,7 @@
 #ifndef lint
 static  char sccsid[] = "@(#)s_misc.c	2.39 27 Oct 1993 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
-static char *rcs_version = "$Id: s_misc.c,v 1.30 1999/06/25 05:23:37 tomh Exp $";
+static char *rcs_version = "$Id: s_misc.c,v 1.31 1999/06/25 11:59:59 db Exp $";
 #endif
 
 #include <sys/time.h>
@@ -48,6 +48,7 @@ static char *rcs_version = "$Id: s_misc.c,v 1.30 1999/06/25 05:23:37 tomh Exp $"
 #include <sys/types.h>
 #include <time.h>
 #endif
+#include <netdb.h>
 #include "h.h"
 #include "fdlist.h"
 extern fdlist serv_fdlist;
