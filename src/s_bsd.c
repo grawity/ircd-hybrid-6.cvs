@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: s_bsd.c,v 1.122 1999/10/14 06:14:43 lusky Exp $
+ *  $Id: s_bsd.c,v 1.123 2000/02/02 06:05:42 lusky Exp $
  */
 #include "s_bsd.h"
 #include "class.h"
@@ -41,6 +41,10 @@
 #include "s_zip.h"
 #include "send.h"
 #include "struct.h"
+
+#ifdef DEBUGMODE
+#include "s_debug.h"
+#endif
 
 #include <assert.h>
 #include <stdio.h>
