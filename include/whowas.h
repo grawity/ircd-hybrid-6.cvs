@@ -29,7 +29,7 @@
  * frozen beta revision 2.6.1
  *
  * th+hybrid rcs version
- * $Id: whowas.h,v 1.1.1.1 1997/09/29 15:35:23 db Exp $
+ * $Id: whowas.h,v 1.1.1.1 1998/09/17 14:25:04 db Exp $
  */
 
 #ifndef	__whowas_include__
@@ -45,6 +45,11 @@ typedef struct aname {
 	char	ww_nick[NICKLEN+1];
 	char	ww_info[REALLEN+1];
 } aName;
+
+/*
+** initwhowas
+*/
+extern void initwhowas(void);
 
 /*
 ** add_history
