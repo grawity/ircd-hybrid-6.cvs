@@ -1,3 +1,14 @@
+*** 19990907_2 by lusky
+bumped patchlevel to b104
+fixed a couple of stary index()'s
+fix a cast in viconf
+fixed broken tools/Makefile.in
+
+
+*** 19990907_1 by lusky
+disallow ':' in fix_key_old() too
+
+
 *** 19990906_1 by lusky
 compromise on supressed killpath and just not send to non opers at all rather than send two to real opers (jl)
 more +k/-k fixes
