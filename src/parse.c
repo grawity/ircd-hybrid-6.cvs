@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: parse.c,v 1.45 2001/07/02 02:17:56 db Exp $
+ *   $Id$
  */
 #include "parse.h"
 #include "channel.h"
@@ -290,7 +290,7 @@ int parse(aClient *cptr, char *pbuffer, char *bufend)
 	  else
 	    {
 	      para[i++] = s;
-              if (i > paramcount)
+              if (i >= paramcount)
                 {
                   break;
                 }
