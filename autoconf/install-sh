@@ -1,5 +1,5 @@
 #! /bin/sh
-#
+# $Id: install-sh,v 1.9 2000/06/22 05:40:52 lusky Exp $
 # install - install a program, script, or datafile
 # This comes from X11R5 (mit/util/scripts/install.sh).
 #

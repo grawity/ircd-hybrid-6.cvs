@@ -1,3 +1,4 @@
+dnl $Id: configure.in,v 1.9 2000/06/22 05:40:52 lusky Exp $
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(include/class.h)
 

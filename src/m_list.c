@@ -3,6 +3,8 @@
  *   Copyright (C) 1990 Jarkko Oikarinen and
  *                      University of Oulu, Co Center
  *
+ * $Id: m_list.c,v 1.0 2000/06/10 02:45:37 lusky Exp $ 
+ *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
  *   the Free Software Foundation; either version 1, or (at your option)

@@ -1,7 +1,7 @@
 /*
- * irc2.7.2/ircd/res.h (C)opyright 1992 Darren Reed.
+ * include/res.h (C)opyright 1992 Darren Reed.
  *
- * $Id: res.h,v 1.12 1999/07/11 22:29:54 tomh Exp $
+ * $Id: res.h,v 1.13 1999/07/21 05:45:05 tomh Exp $
  */
 #ifndef INCLUDED_res_h
 #define INCLUDED_res_h

@@ -1,6 +1,6 @@
 #!/bin/sh
-#
 # IRCD INSTALL SCRIPT
+# $Id: install_ircd,v 1.0 2000/06/22 05:40:52 lusky Exp $
 #
 # Completely re-written by FlashMan <chuegen@quadrunner.com> 981231
 # Wow.  The old version was *very* messy and had boatloads of redundancy.
