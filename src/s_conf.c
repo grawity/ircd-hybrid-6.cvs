@@ -19,7 +19,7 @@
  *
  *  (C) 1988 University of Oulu,Computing Center and Jarkko Oikarinen"
  *
- *  $Id: s_conf.c,v 1.193 2001/02/19 05:08:30 lusky Exp $
+ *  $Id: s_conf.c,v 1.194 2001/06/04 01:13:16 greg Exp $
  */
 #include "s_conf.h"
 #include "channel.h"
@@ -294,6 +294,7 @@ void report_configured_links(struct Client* sptr, int mask)
               c = 'c';
 
             /* Don't allow non opers to see actual ips */
+#ifndef HIDE_SERVERS_IPS
             if(IsAnOper(sptr))
               sendto_one(sptr, form_str(p->rpl_stats), me.name,
                          sptr->name, c,
@@ -307,6 +308,7 @@ void report_configured_links(struct Client* sptr, int mask)
                          get_conf_class(tmp),
                          oper_flags_as_string((int)tmp->hold));
             else
+#endif	   
               sendto_one(sptr, form_str(p->rpl_stats), me.name,
                          sptr->name, c,
                          "*@255.255.255.255",
