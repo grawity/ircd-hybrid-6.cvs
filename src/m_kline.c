@@ -22,7 +22,7 @@
  */
 
 #ifndef lint
-static char *rcs_version = "$Id: m_kline.c,v 1.5 1999/06/26 01:46:03 tomh Exp $";
+static char *rcs_version = "$Id: m_kline.c,v 1.6 1999/06/26 07:52:08 tomh Exp $";
 #endif
 
 #include "struct.h"
@@ -416,7 +416,7 @@ int     m_kline(aClient *cptr,
   aconf->status = CONF_KILL;
   DupString(aconf->host, host);
 
-  DupString(aconf->name, user);
+  DupString(aconf->user, user);
   aconf->port = 0;
 
   if(temporary_kline_time)
