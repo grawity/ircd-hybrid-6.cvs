@@ -72,7 +72,7 @@ int m_sinfo (struct Client *cptr, struct Client *sptr, int parc, char *parv[])
           sendto_one(sptr, ":%s NOTICE %s :*** Notice -- server is currently not in split-mode",
                      me.name, parv[0]);
 #else
-        sendto_one(sptr, ":%s NOTICE %s :*** Notice -- Error: server is not running with splitcode enabled!",
+        sendto_one(sptr, ":%s NOTICE %s :*** Notice -- server is not running with splitcode enabled!",
                    me.name, parv[0]);
 #endif
         return 0;
