@@ -34,13 +34,14 @@
  *                mode * -p etc. if flag was clear
  *
  *
- * $Id: channel.c,v 1.128 1999/07/21 05:28:44 tomh Exp $
+ * $Id: channel.c,v 1.129 1999/07/21 19:29:28 sean Exp $
  */
 #include "struct.h"
 #include "common.h"
 #include "numeric.h"
 #include "channel.h"
 #include "h.h"
+#include "list.h"
 #include "send.h"
 #include "hash.h"
 #include "whowas.h"
