@@ -5,7 +5,7 @@
  *
  * This program will take a kline.conf and remove duplicate and redundant 
  * entries from it, creating a kline.conf.parsed file
- * $Id: klineParse.c,v 1.0 2000/06/22 05:40:52 lusky Exp $
+ * $Id$
  */
 
 #define kParseVer "2.12"
@@ -427,9 +427,9 @@ int strToLower(unsigned char *aString) {
 
 int 
 Tcl_StringMatch(string, pattern)
-    register char *string;	/* String. */
-    register char *pattern;	/* Pattern, which may contain
-				 * special characters. */
+    char *string;	/* String. */
+    char *pattern;	/* Pattern, which may contain
+			 * special characters. */
 {
     char c2;
 

@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_kline.c,v 1.64 2001/12/04 15:28:23 androsyn Exp $
+ *   $Id$
  */
 #include "m_commands.h"
 #include "m_kline.h"
@@ -405,8 +405,8 @@ m_kline(struct Client *cptr,
   unsigned long ip;
   unsigned long ip_mask;
   const char *kconf; /* kline conf file */
-  register char tmpch;
-  register int nonwild;
+  char tmpch;
+  int nonwild;
 
 #ifdef SLAVE_SERVERS
   char *slave_oper;
