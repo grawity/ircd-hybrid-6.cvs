@@ -34,7 +34,7 @@
  *                mode * -p etc. if flag was clear
  *
  *
- * $Id: channel.c,v 1.169 1999/10/25 02:11:31 lusky Exp $
+ * $Id: channel.c,v 1.170 1999/11/14 04:41:58 lusky Exp $
  */
 #include "channel.h"
 #include "client.h"
@@ -2280,7 +2280,7 @@ static  int     can_join(struct Client *sptr, struct Channel *chptr, char *key, 
              "User %s (%s@%s) is attemping to join locally juped channel %s",
                      sptr->name,
                      sptr->username, sptr->host,chptr->chname);
-      return (ERR_JUPEDCHAN);
+      return (ERR_BADCHANNAME);
     }
 #endif
 
