@@ -17,7 +17,7 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- * $Id: struct.h,v 1.41 1999/07/01 18:26:06 db Exp $
+ * $Id: struct.h,v 1.42 1999/07/01 20:35:11 db Exp $
  */
 #ifndef	INCLUDED_struct_h
 #define INCLUDED_struct_h
@@ -1077,8 +1077,7 @@ typedef struct
   int dronecount;
 #endif
 
-#if defined(NO_CHANOPS_WHEN_SPLIT) || defined(PRESERVE_CHANNEL_ON_SPLIT) || \
-	defined(NO_JOIN_ON_SPLIT) || defined(NO_JOIN_ON_SPLIT_SIMPLE)
+#if NEED_SPLITCODE
   time_t server_split_recovery_time;
   int split_smallnet_size;
   int split_smallnet_users;

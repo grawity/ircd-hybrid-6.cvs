@@ -26,7 +26,7 @@
 static  char sccsid[] = "@(#)s_user.c	2.68 07 Nov 1993 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version="$Id: s_user.c,v 1.102 1999/07/01 18:26:08 db Exp $";
+static char *rcs_version="$Id: s_user.c,v 1.103 1999/07/01 20:35:13 db Exp $";
 
 #endif
 
@@ -2685,8 +2685,6 @@ static int do_user(char *nick,
 
   user = make_user(sptr);
   oflags = sptr->flags;
-/* changed the goto into if-else...   -Taner */
-/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD FOR YOU Taner!!! - Dianora */
 
   if (!MyConnect(sptr))
     {
