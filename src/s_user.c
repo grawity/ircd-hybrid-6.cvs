@@ -20,13 +20,14 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: s_user.c,v 1.196 1999/07/30 21:31:58 db Exp $
+ *  $Id: s_user.c,v 1.197 1999/07/30 23:46:47 db Exp $
  */
 #include "s_user.h"
 #include "channel.h"
 #include "class.h"
 #include "common.h"
 #include "fdlist.h"
+#include "flud.h"
 #include "hash.h"
 #include "irc_string.h"
 #include "ircd.h"
