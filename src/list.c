@@ -19,11 +19,10 @@
  *
  *  (C) 1988 University of Oulu, Computing Center and Jarkko Oikarinen
  *
- * $Id: list.c,v 1.33 1999/07/19 09:11:45 tomh Exp $
+ * $Id: list.c,v 1.34 1999/07/21 05:28:46 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
-#include "h.h"
 #include "numeric.h"
 #include "blalloc.h"
 #include "res.h"

@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: s_debug.c,v 1.31 1999/07/23 03:04:55 tomh Exp $
+ *   $Id: s_debug.c,v 1.32 1999/07/23 07:06:58 tomh Exp $
  */
 #include "struct.h"
 #include "s_conf.h"
@@ -32,7 +32,6 @@
 #include "hash.h"
 #include "ircd.h"
 #include "channel.h"
-#include "h.h"
 
 #include <string.h>
 #include <stdarg.h>

@@ -17,11 +17,12 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: bsd.c,v 1.9 1999/07/22 02:06:12 db Exp $
+ *   $Id: bsd.c,v 1.10 1999/07/23 04:58:15 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
 #include "ircd.h"
+#include "bsd.h"
 
 #include <errno.h>
 #include <sys/types.h>

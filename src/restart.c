@@ -1,11 +1,10 @@
 /*
  * restart.c
  *
- * $Id: restart.c,v 1.7 1999/07/23 04:58:17 tomh Exp $
+ * $Id: restart.c,v 1.8 1999/07/23 07:06:57 tomh Exp $
  */
 #include "restart.h"
 #include "common.h"
-#include "h.h"
 #include "ircd.h"
 #include "send.h"
 #include "struct.h"
