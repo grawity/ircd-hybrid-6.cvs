@@ -226,6 +226,14 @@ WritePendingLines(const char *filename)
     DelPending(PendingLines);
     PendingLines = ptmp;
   } /* while (PendingLines) */
+
+  /* There's a chance a rehash has been done prior to the pending lines
+   * being written out to the conf file.  They may have been removed from
+   * memory.  For this reason, we should rehash the confs to be sure we
+   * don't lose any klines.
+   */
+  rehash(&me, &me, 0);
+
 } /* WritePendingLines() */
 
 /*
@@ -845,6 +853,10 @@ m_kline(struct Client *cptr,
     DupString(pptr->host, host);
     DupString(pptr->reason, reason);
     DupString(pptr->when, current_date);
+    if (oper_reason != NULL)
+      DupString(pptr->oper_reason, oper_reason);
+    else
+      pptr->oper_reason = NULL;  /* Yes this is needed */
 
 #ifdef SLAVE_SERVERS
     pptr->rcptr = rcptr;
@@ -1293,6 +1305,8 @@ m_dline(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
       pptr->reason = strdup(reason);
       if (oper_reason != NULL)
 	pptr->oper_reason = strdup(oper_reason);
+      else
+        pptr->oper_reason = NULL;
       pptr->when = strdup(current_date);
 
       sendto_one(sptr,
