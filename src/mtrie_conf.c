@@ -43,7 +43,7 @@
  *
  * Diane Bruce -db (db@db.net)
  *
- * $Id: mtrie_conf.c,v 1.78 2001/10/25 16:28:15 leeh Exp $
+ * $Id: mtrie_conf.c,v 1.79 2001/11/29 06:44:29 db Exp $
  */
 #include "mtrie_conf.h"
 #include "class.h"
@@ -1434,12 +1434,6 @@ char *show_iline_prefix(struct Client *sptr,struct ConfItem *aconf,char *name)
 #endif
     if (IsConfElined(aconf))
       *prefix_ptr++ = '^';
-
-#ifdef B_LINES_OPER_ONLY
-  if(IsAnOper(sptr))
-#endif
-    if (IsConfBlined(aconf))
-      *prefix_ptr++ = '&';
 
 #ifdef F_LINES_OPER_ONLY
   if(IsAnOper(sptr))
