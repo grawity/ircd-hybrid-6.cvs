@@ -231,7 +231,7 @@ K:bar:No reason (1997/08/30 14.56):foo
           if (irccmp(host,found_host) || irccmp(user,found_user))
             {
 	      if (flush_write(sptr, in, out, buf, temppath) < 0)
-		return;
+		return 0;
 	      continue;
             }
           else

@@ -1492,12 +1492,6 @@ char *show_iline_prefix(struct Client *sptr,struct ConfItem *aconf,char *name)
     *prefix_ptr++ = '%';
   if (IsConfDoSpoofIp(aconf))
     *prefix_ptr++ = '=';
-  if (IsMustResolve(aconf))
-    *prefix_ptr++ = '/';
-#ifdef CHECK_CLONE
-  if (IsConfCloneExempt(aconf))
-    *prefix_ptr++ = '{';
-#endif
 
 #ifdef E_LINES_OPER_ONLY
   if(IsAnOper(sptr))
