@@ -26,6 +26,8 @@ Usermodes: (* designates that the umode is oper only)
        * +x     - Can see new server introduction and server split
                   messages.
        * +p     - Can hide from stats p (oper flag P - for tcm's)
+       * +a     - User is admin
+
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 

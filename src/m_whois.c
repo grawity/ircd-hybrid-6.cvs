@@ -283,6 +283,12 @@ int     m_whois(struct Client *cptr,
           if (IsAnOper(acptr))
             sendto_one(sptr, form_str(RPL_WHOISOPERATOR),
                        me.name, parv[0], name);
+
+#ifndef HIDDEN_ADMIN
+          if (IsSetOperAdmin(acptr) && (acptr->umodes & FLAGS_ADMIN))
+                      sendto_one(sptr, form_str(RPL_WHOISADMIN), me.name, parv[0], name);
+#endif /* #ifndef HIDDEN_ADMIN */
+
 #ifdef WHOIS_NOTICE
           if ((MyOper(acptr)) && ((acptr)->umodes & FLAGS_SPY) &&
 #ifndef SHOW_REMOTE_WHOIS
@@ -430,6 +436,11 @@ int     m_whois(struct Client *cptr,
           if (IsAnOper(acptr))
             sendto_one(sptr, form_str(RPL_WHOISOPERATOR),
                        me.name, parv[0], name);
+#ifndef HIDDEN_ADMIN
+          if (IsSetOperAdmin(acptr) && (acptr->umodes & FLAGS_ADMIN))
+            sendto_one(sptr, form_str(RPL_WHOISADMIN), me.name, parv[0], name);
+#endif /* #ifdef HIDDEN_ADMIN */
+
 #ifdef WHOIS_NOTICE
           if ((MyOper(acptr)) && ((acptr)->umodes & FLAGS_SPY) &&
 #ifndef SHOW_REMOTE_WHOIS

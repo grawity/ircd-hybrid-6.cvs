@@ -338,6 +338,8 @@ struct Client
 #define FLAGS_OPER         0x04000 /* Operator */
 #define FLAGS_LOCOP        0x08000 /* Local operator -- SRB */
 #define FLAGS_STATSPHIDE   0x10000 /* Oper hides from stats P */
+#define FLAGS_ADMIN        0x20000 /* Oper is admin */
+
 
 /* *sigh* overflow flags */
 #define FLAGS2_RESTRICTED   0x0001      /* restricted client */
@@ -357,6 +359,8 @@ struct Client
 #define FLAGS2_OPER_DIE         0x00800  /* oper can die */
 #define FLAGS2_OPER_REHASH      0x01000  /* oper can rehash */
 #define FLAGS2_OPER_STATSPHIDE  0x02000  /* oper can hide from stats p */
+#define FLAGS2_OPER_ADMIN       0x04000  /* oper is admin */
+
 
 #define FLAGS2_OPER_FLAGS       (FLAGS2_OPER_GLOBAL_KILL | \
                                  FLAGS2_OPER_REMOTE | \
@@ -365,8 +369,9 @@ struct Client
                                  FLAGS2_OPER_N | \
                                  FLAGS2_OPER_K | \
                                  FLAGS2_OPER_DIE | \
+                                 FLAGS2_OPER_REHASH | \
                                  FLAGS2_OPER_STATSPHIDE | \
-                                 FLAGS2_OPER_REHASH)
+                                 FLAGS2_OPER_ADMIN )
 /* ZIP_LINKS */
 
 #define FLAGS2_ZIP           0x4000  /* (server) link is zipped */
@@ -389,7 +394,13 @@ struct Client
                       FLAGS_REJ | FLAGS_SKILL | FLAGS_FULL | FLAGS_SPY | \
                       FLAGS_NCHANGE | FLAGS_OPERWALL | FLAGS_DEBUG | \
                       FLAGS_BOTS | FLAGS_EXTERNAL | FLAGS_LOCOP | \
-                      FLAGS_STATSPHIDE )
+                      FLAGS_STATSPHIDE | FLAGS_ADMIN)
+
+
+#ifndef ADMIN_UMODES
+#define ADMIN_UMODES  (FLAGS_OPER | FLAGS_WALLOP | FLAGS_SERVNOTICE | \
+                      FLAGS_SPY | FLAGS_OPERWALL | FLAGS_DEBUG | FLAGS_BOTS | FLAGS_ADMIN )
+#endif /* ADMIN_UMODES */
 
 #ifndef OPER_UMODES
 #define OPER_UMODES  (FLAGS_OPER | FLAGS_WALLOP | FLAGS_SERVNOTICE | \
@@ -507,6 +518,9 @@ struct Client
 #define IsOperRehash(x)         ((x)->flags2 & FLAGS2_OPER_REHASH)
 #define SetOperStatsPHide(x)    ((x)->flags2 |= FLAGS2_OPER_STATSPHIDE)
 #define IsOperStatsPHide(x)     ((x)->flags2 & FLAGS2_OPER_STATSPHIDE)
+#define IsSetOperAdmin(x)       ((x)->flags2 & FLAGS2_OPER_ADMIN)
+#define SetOperAdmin(x)         ((x)->flags2 |= FLAGS2_OPER_ADMIN)
+
 #define CBurst(x)               ((x)->flags2 & FLAGS2_CBURST)
 
 /*

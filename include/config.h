@@ -445,12 +445,19 @@
 #define ZIP_LEVEL 2
 
 /*
- * OPER_UMODES LOCOP_UMODES - set these to be the initial umodes when OPER'ing
- * These can be over-ridden in ircd.conf file, with flags in last O field
+ * ADMIN_UMODES OPER_UMODES LOCOP_UMODES - set these to be the initial umode
+ * when OPER'in These can be over-ridden in ircd.conf file, with flags in
+ * last O field
  */
+#define ADMIN_UMODES (FLAGS_OPER|FLAGS_WALLOP|FLAGS_SERVNOTICE|FLAGS_OPERWALL|FLAGS_ADMIN)
 #define OPER_UMODES   (FLAGS_OPER|FLAGS_WALLOP|FLAGS_SERVNOTICE|FLAGS_OPERWALL)
 #define LOCOP_UMODES   (FLAGS_LOCOP|FLAGS_WALLOP|FLAGS_SERVNOTICE)
 
+/*
+ * HIDDEN_ADMIN - On EFnet this *must* be defined!!!
+ */
+#define HIDDEN_ADMIN
+      
 /* MAXIMUM LINKS - max links for class 0 if no Y: line configured
  *
  * This value is only used if you don't have server classes defined, and

@@ -221,17 +221,39 @@ int m_oper(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
               sptr->umodes |= ((int)aconf->hold & ALL_UMODES);
               if( !IsSetOperN(sptr) )
                 sptr->umodes &= ~FLAGS_NCHANGE;
+              if( IsSetOperAdmin(sptr) )
+                sptr->umodes &= ~FLAGS_ADMIN;
 
               sendto_one(sptr, ":%s NOTICE %s :*** Oper flags set from conf",
                          me.name,parv[0]);
             }
           else
             {
+              if( IsSetOperAdmin(sptr) )
+                {
+                  sptr->umodes |= (ADMIN_UMODES);
+                }
+              else
+                {
               sptr->umodes |= (OPER_UMODES);
             }
         }
+        }
 
       fdlist_add(sptr->fd, FDL_OPER | FDL_BUSY);
+
+      if (IsSetOperAdmin(sptr) )
+        {
+#ifdef CUSTOM_ERR
+          sendto_ops("%s (%s@%s) has just acquired the personality of a petty megalomaniacal tyrant [IRC Admin]", parv[0],
+#else
+          sendto_ops("%s (%s@%s) is now administrator", parv[0],
+#endif /* CUSTOM_ERR */
+          sptr->username, sptr->host);
+        }
+      else
+        {
+
 #ifdef CUSTOM_ERR
       sendto_ops("%s (%s@%s) has just acquired the personality of a petty megalomaniacal tyrant [IRC(%c)p]", parv[0],
 #else
@@ -239,6 +261,8 @@ int m_oper(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
 #endif /* CUSTOM_ERR */
                  sptr->username, sptr->host,
                  IsOper(sptr) ? 'O' : 'o');
+        }                 
+
       send_umode_out(cptr, sptr, old);
       sendto_one(sptr, form_str(RPL_YOUREOPER), me.name, parv[0]);
       sendto_one(sptr, ":%s NOTICE %s :*** Oper privs are %s",me.name,parv[0],
