@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  $Id: s_user.c,v 1.160 1999/07/20 04:35:35 db Exp $
+ *  $Id: s_user.c,v 1.161 1999/07/20 07:51:02 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -552,10 +552,10 @@ static int register_user(aClient *cptr, aClient *sptr,
 
       if(!valid_hostname(sptr->host))
 	{
-	  sendto_realops("Invalid hostname for %s, dumping user %s",
-			 inetntoa((char *)&sptr->ip), sptr->name);
-	  ircstp->is_ref++;
-	  return exit_client(cptr, sptr, &me, "Invalid hostname");
+	  sendto_one(sptr,":%s NOTICE %s :*** Notice -- You have an illegal character in your hostname", 
+		     me.name, sptr->name );
+
+	  strncpy(sptr->host,sptr->sockhost,HOSTIPLEN+1);
 	}
 
       aconf = sptr->confs->value.aconf;

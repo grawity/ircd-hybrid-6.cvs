@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: s_serv.c,v 1.165 1999/07/20 08:38:38 db Exp $
+ *   $Id: s_serv.c,v 1.166 1999/07/21 02:33:27 db Exp $
  */
 
 #define CAPTAB
@@ -2375,10 +2375,6 @@ int     m_operwall(aClient *cptr,
 		   me.name, parv[0], "OPERWALL");
       return 0;
     }
-  /*
-  if (strlen(message) > TOPICLEN)
-    message[TOPICLEN] = '\0';
-    */
 
 #ifdef PACE_WALLOPS
   if( MyClient(sptr) && ((last_used_wallops + WALLOPS_WAIT) > NOW) )

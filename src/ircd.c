@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: ircd.c,v 1.92 1999/07/20 04:39:24 tomh Exp $
+ * $Id: ircd.c,v 1.93 1999/07/20 07:51:00 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -174,6 +174,9 @@ static	time_t	try_connections(time_t currenttime)
 	}
 
       confrq = get_con_freq(cltmp);
+      if( confrq < 300 )
+	confrq = 300;
+
       aconf->hold = currenttime + confrq;
       /*
       ** Found a CONNECT config with port specified, scan clients
