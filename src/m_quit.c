@@ -101,15 +101,14 @@ int     m_quit(struct Client *cptr,
   char reason[TOPICLEN +1];
   char *comment = (parc > 1 && parv[1]) ? parv[1] : cptr->name;
 
-
   sptr->flags |= FLAGS_NORMALEX;
+
   if (strlen(comment) > (size_t) TOPICLEN)
     comment[TOPICLEN] = '\0';
 
   if (!IsServer(sptr) && MyConnect(sptr) && comment[0]) 
     {
       snprintf(reason, TOPICLEN, "Quit: %s", comment);
-      reason[TOPICLEN] = '\0';
       comment = reason;    
     }
 

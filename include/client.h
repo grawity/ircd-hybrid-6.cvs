@@ -358,8 +358,8 @@ struct Client
 #define FLAGS2_OPER_K           0x00400  /* oper can kill/kline */
 #define FLAGS2_OPER_DIE         0x00800  /* oper can die */
 #define FLAGS2_OPER_REHASH      0x01000  /* oper can rehash */
-#define FLAGS2_OPER_STATSPHIDE  0x02000  /* oper can hide from stats p */
-#define FLAGS2_OPER_ADMIN       0x04000  /* oper is admin */
+#define FLAGS2_OPER_STATSPHIDE  0x0800000  /* oper can hide from stats p */
+#define FLAGS2_OPER_ADMIN       0x1000000  /* oper is admin */
 
 
 #define FLAGS2_OPER_FLAGS       (FLAGS2_OPER_GLOBAL_KILL | \
