@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: m_info.h,v 1.21 2001/11/30 08:00:19 db Exp $
+ * $Id$
  */
 #ifndef INCLUDED_m_info_h
 #define INCLUDED_m_info_h
@@ -419,12 +419,6 @@ Info MyInformation[] = {
 #else
   { "NO_DEFAULT_INVISIBLE", "OFF", 0, "Do not Give Clients +i Mode Upon Connection" },
 #endif /* NO_DEFAULT_INVISIBLE */
-
-#ifdef NO_DUPE_MULTI_MESSAGES
-  { "NO_DUPE_MULTI_MESSAGES", "ON", 0, "Do not allow dupe PRIVMSG targets" },
-#else
-  { "NO_DUPE_MULTI_MESSAGES", "OFF", 0, "Do not allow dupe PRIVMSG targets" },
-#endif /* NO_DUPE_MULTI_MESSAGES */
 
 #ifdef NO_JOIN_ON_SPLIT
   { "NO_JOIN_ON_SPLIT", "ON", 0, "Users Cannot Join Channels During a NetSplit" },

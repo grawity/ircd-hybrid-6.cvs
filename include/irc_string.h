@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: irc_string.h,v 1.14 2000/07/20 03:58:22 lusky Exp $
+ *   $Id$
  */
 #ifndef INCLUDED_irc_string_h
 #define INCLUDED_irc_string_h
@@ -51,9 +51,7 @@ extern int ircncmp(const char *s1, const char *s2, int n);
 ** canonize - reduce a string of duplicate list entries to contain
 ** only the unique items.
 */  
-#ifdef NO_DUPE_MULTI_MESSAGES
 extern char* canonize(char *);
-#endif
 /*
  * ircsprintf - optimized sprintf
  */

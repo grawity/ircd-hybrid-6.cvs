@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_message.c,v 1.11 2000/09/10 08:42:49 lusky Exp $
+ *   $Id$
  */
 #include "m_commands.h"
 #include "client.h"
@@ -146,10 +146,8 @@ static  int     m_message(struct Client *cptr,
         return 0;
 #endif
 #endif
-#ifdef NO_DUPE_MULTI_MESSAGES
       if (strchr(parv[1],','))
         parv[1] = canonize(parv[1]);
-#endif
     }
 
 

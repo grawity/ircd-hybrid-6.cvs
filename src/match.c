@@ -22,7 +22,7 @@
  * Cleanup of collapse and match
  * Moved static calls variable to match
  * Added asserts for null pointers
- * $Id: match.c,v 1.24 2000/09/02 03:42:12 lusky Exp $
+ * $Id$
  *
  */
 #include "irc_string.h"
@@ -203,7 +203,6 @@ int ircncmp(const char* s1, const char *s2, int n)
   return (res);
 }
 
-#ifdef NO_DUPE_MULTI_MESSAGES
 /*
 ** canonize
 **
@@ -248,7 +247,6 @@ char    *canonize(char *buffer)
     }
   return cbuf;
 } 
-#endif
 
 
 const unsigned char ToLowerTab[] = { 
