@@ -34,7 +34,7 @@
  *		  mode * -p etc. if flag was clear
  *
  *
- * $Id: channel.c,v 1.109 1999/07/14 02:04:45 db Exp $
+ * $Id: channel.c,v 1.110 1999/07/15 08:47:34 tomh Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -352,13 +352,9 @@ static	int	add_exceptid(aClient *cptr, aChannel *chptr, char *eid)
 }
 
 /*
- * This original comment makes no sense to me -Dianora
  *
  * "del_banid - delete an id belonging to cptr
  * if banid is null, deleteall banids belonging to cptr."
- *
- * "cptr" what cptr? if banid is null,it just returns with an -1
- * -Dianora
  *
  * from orabidoo
  */
