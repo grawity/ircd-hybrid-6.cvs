@@ -3151,8 +3151,10 @@ char *oper_privs_as_string(aClient *cptr,int port)
     {
       if(cptr)
         SetOperUnIdle(cptr);
+      *privs_ptr++ = 'I';
     }
-  
+  else
+    *privs_ptr++ = 'i';  
 
   if(port & CONF_OPER_DIE)
     {
