@@ -22,7 +22,7 @@
 static	char sccsid[] = "@(#)channel.c	2.58 2/18/94 (C) 1990 University of Oulu, Computing\
  Center and Jarkko Oikarinen";
 
-static char *rcs_version="$Id: channel.c,v 1.24 1998/11/06 22:35:20 db Exp $";
+static char *rcs_version="$Id: channel.c,v 1.25 1998/11/13 21:49:23 db Exp $";
 #endif
 
 #include "struct.h"
@@ -2790,7 +2790,7 @@ int	m_knock(aClient *cptr,
 
   if(!IsAnOper(sptr))
     {
-      if((last_used + MOTD_WAIT) > NOW)
+      if((last_used + PACE_WAIT) > NOW)
 	return 0;
       else
 	last_used = NOW;
