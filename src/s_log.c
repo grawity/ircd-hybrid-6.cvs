@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: s_log.c,v 1.11 2001/02/19 05:08:31 lusky Exp $
+ *   $Id$
  */
 #include "s_log.h"
 #include "irc_string.h"
@@ -118,7 +118,7 @@ void vlog(int priority, const char *fmt, va_list args)
   vsprintf(buf, fmt, args);
 #ifdef USE_SYSLOG
   if(priority <= L_DEBUG)
-  	syslog(sysLogLevel[priority, "%s", buf);
+  	syslog(sysLogLevel[priority], "%s", buf);
 #endif
 #ifdef USE_LOGFILE
    write_log(buf);
