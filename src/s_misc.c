@@ -24,7 +24,7 @@
 #ifndef lint
 static  char sccsid[] = "@(#)s_misc.c	2.39 27 Oct 1993 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
-static char *rcs_version = "$Id: s_misc.c,v 1.12 1999/01/05 02:49:02 chuegen Exp $";
+static char *rcs_version = "$Id: s_misc.c,v 1.13 1999/01/14 07:46:38 chuegen Exp $";
 #endif
 
 #include <sys/time.h>
@@ -488,8 +488,12 @@ char	*comment	/* Reason for the exit */
 	  sendto_realops_lev(CCONN_LEV, "Client exiting: %s (%s@%s) [%s] [%s]",
 		    sptr->name, sptr->user->username,
 		    sptr->user->host,
+#ifdef WINTRHAWK
+		    comment,
+#else
 		    (sptr->flags & FLAGS_NORMALEX) ?
 		    "Client Quit" : comment,
+#endif /* WINTRHAWK */
 		    sptr->hostip);
 	}
 #ifdef FNAME_USERLOG
