@@ -17,7 +17,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: parse.c,v 1.24 1999/07/24 03:40:15 db Exp $
+ *   $Id: parse.c,v 1.25 1999/07/24 03:45:18 db Exp $
  */
 #include "struct.h"
 #include "common.h"
@@ -174,13 +174,13 @@ aClient *find_person(char *name, aClient *cptr)
  *
  * NOTE: parse() should not be called recusively by any other functions!
  */
-int     parse(aClient *cptr, char *buffer, char *bufend)
+int parse(aClient *cptr, char *buffer, char *bufend)
 {
   aClient *from = cptr;
   char  *ch;
   char  *s;
   int   i;
-  char  *numeric;
+  char* numeric = 0;
   int   paramcount;
   struct Message *mptr;
 
