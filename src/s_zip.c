@@ -18,7 +18,7 @@
  */
 
 #ifndef lint
-static  char rcsid[] = "@(#)$Id: s_zip.c,v 1.3 1998/12/18 22:51:42 db Exp $";
+static  char rcsid[] = "@(#)$Id: s_zip.c,v 1.4 1998/12/19 03:45:55 db Exp $";
 #endif
 
 #include "struct.h"
@@ -214,8 +214,12 @@ char *unzip_packet(aClient *cptr, char *buffer, int *length)
 	      p++;
 	      cptr->zip->incount--;
 	      memcpy((void *)cptr->zip->inbuf,(void *)p,cptr->zip->incount);
-	      *length = UNZIP_BUFFER_SIZE - zin->avail_out;
-	      return unzipbuf;
+	    }
+	  else
+	    {
+	      /* oh, hmmm I dunno then, but give up in complete disgust */
+	      *length = -1;
+	      return((char *)NULL);
 	    }
 	}
 
