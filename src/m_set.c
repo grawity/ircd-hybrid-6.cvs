@@ -20,7 +20,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *   $Id: m_set.c,v 1.5 2001/06/06 05:03:17 db Exp $
+ *   $Id$
  */
 #include "m_commands.h"
 #include "client.h"
@@ -109,7 +109,13 @@
  *      10 - SPLITUSERS
  *      11 - SPAMNUM
  *      12 - SPAMTIME
+ *      13 - LOG
  * - rjp
+ *
+ * Currently, the end of the table is TOKEN_BAD, 14.  If you add anything
+ * to the set table, you must increase TOKEN_BAD so that it is directly
+ * after the last valid entry.
+ * -Hwy
  */
 
 #define TOKEN_MAX 0
