@@ -43,7 +43,7 @@
  *
  * Diane Bruce -db (db@db.net)
  *
- * $Id: mtrie_conf.c,v 1.68 2000/06/26 22:38:42 lusky Exp $
+ * $Id: mtrie_conf.c,v 1.69 2000/08/22 03:34:41 lusky Exp $
  */
 #include "mtrie_conf.h"
 #include "class.h"
@@ -839,6 +839,7 @@ static aConfItem *find_sub_mtrie(DOMAIN_LEVEL *cur_level,
   DOMAIN_PIECE *cur_piece;
   char *cur_dns_piece;
   aConfItem *aconf=(aConfItem *)NULL;
+  aConfItem *aconf_user=(aConfItem *)NULL;
 
   cur_dns_piece = dns_stack[--stack_pointer];
 
@@ -883,7 +884,8 @@ static aConfItem *find_sub_mtrie(DOMAIN_LEVEL *cur_level,
 
   if(stack_pointer == 0)
     {
-      return(find_user_piece(cur_piece,flags,cur_dns_piece,user));
+      aconf_user=find_user_piece(cur_piece,flags,cur_dns_piece,user);
+      return(aconf_user ? aconf_user : last_found_iline_aconf);
     }
 
   if(cur_piece->next_level)
