@@ -22,7 +22,7 @@
 static  char sccsid[] = "@(#)s_conf.c	2.56 02 Apr 1994 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version = "$Id: s_conf.c,v 1.46 1999/03/27 06:20:23 db Exp $";
+static char *rcs_version = "$Id: s_conf.c,v 1.47 1999/03/27 11:14:23 db Exp $";
 #endif
 
 #include "struct.h"
@@ -245,6 +245,8 @@ int	attach_Iline(aClient *cptr,
 			     cptr->name,host,cptr->hostip,me.name);
 	      strncpyzt(cptr->sockhost,"oper.",sizeof(cptr->sockhost));
 	      strcat(cptr->sockhost,me.name);
+	      SetIPSpoof(cptr);
+	      SetIPHidden(cptr);
 	    }
 	  else
 	    strncpyzt(cptr->sockhost,host,sizeof(cptr->sockhost));
