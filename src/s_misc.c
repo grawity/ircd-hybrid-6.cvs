@@ -24,7 +24,7 @@
 #ifndef lint
 static  char sccsid[] = "@(#)s_misc.c	2.39 27 Oct 1993 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
-static char *rcs_version = "$Id: s_misc.c,v 1.24 1999/05/29 14:06:49 db Exp $";
+static char *rcs_version = "$Id: s_misc.c,v 1.25 1999/05/29 21:55:11 db Exp $";
 #endif
 
 #include <sys/time.h>
@@ -517,7 +517,7 @@ char	*comment	/* Reason for the exit */
 		    (sptr->flags & FLAGS_NORMALEX) ?
 		    "Client Quit" : comment,
 #endif /* WINTRHAWK */
-		    sptr->hostip);
+                    inetntoa((char *)&sptr->ip));
 	}
 #ifdef FNAME_USERLOG
 	  on_for = timeofday - sptr->firsttime;
