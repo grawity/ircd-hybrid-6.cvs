@@ -16,18 +16,18 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: m_kline.h,v 1.11 1999/07/20 21:22:36 wnder Exp $
+ * $Id: m_kline.h,v 1.2 1999/07/21 01:55:23 db Exp $
  */
 
 typedef struct PKDlines
 {
-	struct PKDlines *next;
-	aClient *sptr, *rcptr;
-	char *user; /* username of K/D lined user */
-	char *host; /* hostname of K/D lined user */
-	char *reason; /* reason they are K/D lined */
-	char *when; /* when the K/D line was set */
-	int type;
+        struct PKDlines *next;
+        aClient *sptr, *rcptr;
+        char *user; /* username of K/D lined user */
+        char *host; /* hostname of K/D lined user */
+        char *reason; /* reason they are K/D lined */
+        char *when; /* when the K/D line was set */
+        int type;
 } aPendingLine;
 
 /*
