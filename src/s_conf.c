@@ -22,7 +22,7 @@
 static  char sccsid[] = "@(#)s_conf.c	2.56 02 Apr 1994 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version = "$Id: s_conf.c,v 1.38 1999/01/22 04:24:21 db Exp $";
+static char *rcs_version = "$Id: s_conf.c,v 1.39 1999/02/03 02:46:27 db Exp $";
 #endif
 
 #include "struct.h"
@@ -1470,7 +1470,7 @@ int 	initconf(int opt, int fd,int use_include)
 
   Reg	char	*tmp, *s;
   int	i, dontadd;
-  char	line[512];
+  char	line[BUFSIZE];
   int	ccount = 0, ncount = 0;
   u_long vaddr;
   aConfItem *aconf = NULL;
