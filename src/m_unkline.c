@@ -21,7 +21,7 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- *   $Id: m_unkline.c,v 1.42 2001/08/05 16:06:00 leeh Exp $
+ *   $Id: m_unkline.c,v 1.43 2001/11/29 06:28:24 db Exp $
  */
 #ifdef GLINES
 #include "m_gline.h"
@@ -734,4 +734,5 @@ int m_ungline (aClient *cptr,aClient *sptr,int parc,char *parv[])
 #else
   sendto_one(sptr,":%s NOTICE %s :UNGLINE disabled",me.name,parv[0]);
 #endif
+  return 0;
 }
