@@ -17,7 +17,7 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- * $Id: struct.h,v 1.36 1999/06/03 02:03:48 db Exp $
+ * $Id: struct.h,v 1.37 1999/06/17 04:15:40 lusky Exp $
  */
 
 #ifndef	__struct_include__
@@ -441,10 +441,10 @@ struct	ConfItem
   struct in_addr ipnum;	/* ip number of host field */
   unsigned long ip;	/* only used for I D lines etc. */
   unsigned long ip_mask;
-  char	*host;
+  char	*name;		/* IRC name, nick, server name, or original u@h */
+  char	*host;		/* host part of user@host */
   char	*passwd;
-  char	*name;
-  char  *mask;		/* Only used for I lines */
+  char	*user;		/* user part of user@host */
   int	port;
   time_t hold;		/* Hold action until this time (calendar time) */
   aClass *class;	  /* Class of connection */
