@@ -601,6 +601,9 @@ static void initialize_global_set_options(void)
  server_split_time = CurrentTime;
 #endif
 
+ MAXTKLINE = DEFAULT_MAXTKLINE;
+ MAXBANS = DEFAULTMAXBANS;
+
  /* End of global set options */
 
 }

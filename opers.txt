@@ -232,6 +232,11 @@ COMMAND         - USAGE and DESCRIPTION
                     MAX       - Sets the number of max connections
                                 to <value>.  (This number cannot exceed
                                 HARD_FDLIMIT in config.h)
+                    MAXBANS   - Sets the maximum bans and exceptions
+                                that a channel can have.
+
+                    MAXTKLINE - Sets the current max kline time. Dont set
+                                it too high.
 
                     -- The following three are if compiled with FLUD --
                      FLUDNUM   - Sets the number of flud messages to 

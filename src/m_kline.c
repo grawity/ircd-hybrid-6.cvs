@@ -540,8 +540,8 @@ m_kline(struct Client *cptr,
                         me.name, parv[0], "KLINE");
           return 0;
         }
-      if(temporary_kline_time > (24*60))
-        temporary_kline_time = (24*60); /* Max it at 24 hours */
+      if(temporary_kline_time > (MAXTKLINE))
+        temporary_kline_time = (MAXTKLINE); /* Max it at the current MAXTKLINE */
       temporary_kline_time_seconds = (time_t)temporary_kline_time * (time_t)60;
         /* turn it into minutes */
       argv = parv[2];
