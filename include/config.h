@@ -758,6 +758,12 @@
  */   
 #undef SPOOF_IP
 
+/* OPER_JUPE_BYPASS
+ * - in cases with drone channels one could want to join juped channels.
+ *   - ievil
+ */
+#undef OPER_JUPE_BYPASS
+   
 
 /* -------------- END NOT APPROVED ON EFNET SECTION --------------------- */
 

@@ -616,7 +616,11 @@ int     can_send(struct Client *cptr, struct Channel *chptr)
   Link  *lp;
 
 #ifdef JUPE_CHANNEL
+#ifdef OPER_JUPE_BYPASS
+  if (MyClient(cptr) && chptr->juped && !IsAnOper(cptr))
+#else
   if (MyClient(cptr) && chptr->juped)
+#endif
     {
       return 1;
     }
@@ -1899,7 +1903,11 @@ static  int     can_join(struct Client *sptr, struct Channel *chptr, char *key, 
   int ban_or_exception;
 
 #ifdef JUPE_CHANNEL
+#ifdef OPER_JUPE_BYPASS
+  if(chptr->juped && !IsAnOper(sptr))
+#else
   if(chptr->juped)
+#endif
     {
       sendto_ops_flags(FLAGS_SPY,
              "User %s (%s@%s) is attempting to join locally juped channel %s",
