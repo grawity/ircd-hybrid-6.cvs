@@ -152,14 +152,16 @@ typedef struct QlineItem {
 
 /* port definitions for Opers */
 
-#define CONF_OPER_GLOBAL_KILL 1
-#define CONF_OPER_REMOTE      2
-#define CONF_OPER_UNKLINE     4
-#define CONF_OPER_GLINE       8
-#define CONF_OPER_N          16
-#define CONF_OPER_K          32
-#define CONF_OPER_REHASH     64
-#define CONF_OPER_DIE       128
+#define CONF_OPER_GLOBAL_KILL   1
+#define CONF_OPER_REMOTE        2
+#define CONF_OPER_UNKLINE       4
+#define CONF_OPER_GLINE         8
+#define CONF_OPER_N            16
+#define CONF_OPER_K            32
+#define CONF_OPER_REHASH       64
+#define CONF_OPER_DIE         128
+#define CONF_OPER_STATSPHIDE  256
+
 
 typedef struct
 {

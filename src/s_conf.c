@@ -3018,6 +3018,10 @@ oper_privs_from_string(int int_privs,char *privs)
         int_privs |= CONF_OPER_DIE;         /* allow die */
       else if(*privs == 'd')
         int_privs &= ~CONF_OPER_DIE;        /* disallow die */
+      else if(*privs == 'P')
+        int_privs |= CONF_OPER_STATSPHIDE;  /* allow stats P hide */
+      else if(*privs == 'p')
+        int_privs &= ~CONF_OPER_STATSPHIDE; /* disallow stats P hide */
       privs++;
     }
   return(int_privs);
@@ -3103,6 +3107,15 @@ char *oper_privs_as_string(aClient *cptr,int port)
     }
   else
     *privs_ptr++ = 'h';
+
+  if(port & CONF_OPER_STATSPHIDE)
+    {
+      if(cptr)
+        SetOperStatsPHide(cptr);
+      *privs_ptr++ = 'P';
+    }
+  else
+    *privs_ptr++ = 'p';
 
   if(port & CONF_OPER_DIE)
     {
