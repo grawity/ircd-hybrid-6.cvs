@@ -2201,7 +2201,7 @@ static void initconf(FBFILE* file, int use_include)
               if(classToFind && (ClassPtr(aconf) == class0))
                 {
                   sendto_realops(
-                           "Warning *** Defaulting to class 0 for class %d",
+                           "Warning: Defaulting to class 0 for class %d",
                          classToFind);
                 }
             }

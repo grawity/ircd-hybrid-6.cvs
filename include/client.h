@@ -51,8 +51,6 @@
 #define HOSTIPLEN       16      /* Length of dotted quad form of IP        */
                                 /* - Dianora                               */
 #define PASSWDLEN       20
-#define IDLEN           12      /* this is the maximum length, not the actual
-                                   generated length; DO NOT CHANGE! */
 #define CLIENT_BUFSIZE 512      /* must be at least 512 bytes */
 
 /*
@@ -79,7 +77,6 @@ struct User
   time_t         last;
   int            refcnt;        /* Number of times this block is referenced */
   int            joined;        /* number of channels joined */
-  char           id[IDLEN + 1]; /* for future use *hint* */
   const char*    server;        /* pointer to scached server name */
   /*
   ** In a perfect world the 'server' name

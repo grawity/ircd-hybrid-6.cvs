@@ -257,6 +257,7 @@ Then just ignore the line
             {
               if (flush_write(sptr, in, out, buf, temppath) < 0)
 		return 0;
+              continue;
             }
           *p++ = '\0';
 
@@ -266,6 +267,7 @@ Then just ignore the line
             {
               if (flush_write(sptr, in, out, buf, temppath) < 0)
 		return 0;
+              continue;
             }
           *p = '\0';
 

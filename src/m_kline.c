@@ -268,15 +268,31 @@ WriteKline(const char *filename, struct Client *sptr, struct Client *rcptr,
   if (IsServer(sptr))
   {
     if (rcptr != NULL)
-      ircsprintf(buffer,
-		 "#%s!%s@%s from %s K'd: %s@%s:%s\n",
-		 rcptr->name,
-		 rcptr->username,
-		 rcptr->host,
-		 sptr->name,
-		 user,
-		 host,
-		 reason);
+      if (oper_reason)
+      {
+        ircsprintf(buffer,
+		   "#%s!%s@%s from %s K'd: %s@%s:%s|%s\n",
+		   rcptr->name,
+		   rcptr->username,
+		   rcptr->host,
+		   sptr->name,
+		   user,
+		   host,
+		   reason,
+                   oper_reason);
+      }
+      else
+      {
+        ircsprintf(buffer,
+                   "#%s!%s@%s from %s K'd: %s@%s:%s\n",
+                   rcptr->name,
+                   rcptr->username,
+                   rcptr->host,
+                   sptr->name,
+                   user,
+                   host,
+                   reason);
+      }
   }
   else
 #endif /* SLAVE_SERVERS */
