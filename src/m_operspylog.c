@@ -79,9 +79,6 @@ void operspy_log(struct Client *cptr, const char *command, const char *target)
                cptr->name, cptr->username, cptr->host);
                
     sendto_match_cap_servs_butone(cptr, 0, "*", CAP_ENCAP, "ENCAP * OPERSPY %s :%s",command, target);
-/*    sendto_match_servs(cptr, "*", CAP_ENCAP, "ENCAP * OPERSPY %s :%s",
- *                      command, target);
- */
 #ifdef FNAME_OPERSPYLOG
     if ((logfile = open(FNAME_OPERSPYLOG, O_WRONLY|O_APPEND)) != -1)
       {
