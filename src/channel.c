@@ -696,6 +696,7 @@ static  int is_invex(struct Client *cptr,struct Channel *chptr)
 #ifdef CHANMODE_I
   char  s[NICKLEN+USERLEN+HOSTLEN+6];
   char  *s2;
+  Link *t2;
 
   if (!IsPerson(cptr))
     return (0);
@@ -703,7 +704,6 @@ static  int is_invex(struct Client *cptr,struct Channel *chptr)
   strcpy(s, make_nick_user_host(cptr->name, cptr->username, cptr->host));
   s2 = make_nick_user_host(cptr->name, cptr->username,
                            inetntoa((char*) &cptr->ip));
-  Link *t2;
   for (t2 = chptr->invexlist; t2; t2 = t2->next)
     if (match(BANSTR(t2), s) || match(BANSTR(t2), s2))
       {
