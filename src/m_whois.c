@@ -22,6 +22,7 @@
  *   $Id$
  */
 
+#include "common.h"
 #include "m_operspylog.h"
 #include "m_commands.h"
 #include "client.h"
@@ -116,7 +117,7 @@ int m_whois (struct Client *cptr, struct Client *sptr, int parc, char *parv[])
   p = strchr (parv[1], ',');
   if (p) *p = '\0';
   {
-    int       invis, showperson, member, wilds;
+    int       invis, member;
     found = 0;
 
 #ifdef OPERSPY
