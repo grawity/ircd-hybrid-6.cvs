@@ -2032,7 +2032,7 @@ int user_mode(aClient *cptr, aClient *sptr, int parc, char *parv[])
               if(!IsAnOper(sptr))
                 break;
 
-              sptr->umodes &= ~(FLAGS_OPER|FLAGS_LOCOP|FLAGS_STATSPHIDE|FLAGS_ADMIN);
+              sptr->umodes &= ~(FLAGS_OPER|FLAGS_LOCOP|FLAGS_STATSPHIDE|FLAGS_OSPYLOG|FLAGS_ADMIN);
 
               Count.oper--;
 
