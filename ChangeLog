@@ -1,3 +1,12 @@
+*** 20011204_7 by db
+- I couldn't take the attach_Iline vs. attach_iline any more
+
+
+
+*** 20011204_6 by androsyn
+Oops..forgot a LIST_*
+
+
 *** 20011204_5 by androsyn
 Going to need libadns linked in to do something useful with that there
 fangled thing
