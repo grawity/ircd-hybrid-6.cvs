@@ -16,7 +16,7 @@
  *   along with this program; if not, write to the Free Software
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- * $Id: config.h,v 1.38 1999/05/09 01:00:30 lusky Exp $
+ * $Id: config.h.dist,v 1.34 1999/05/09 06:03:37 db Exp $
  */
 
 #ifndef	__config_include__

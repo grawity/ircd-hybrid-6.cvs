@@ -21,7 +21,7 @@
 #ifndef lint
 static  char sccsid[] = "@(#)list.c	2.22 15 Oct 1993 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
-static char *rcs_version = "$Id: list.c,v 1.7 1999/04/17 23:18:14 lusky Exp $";
+static char *rcs_version = "$Id: list.c,v 1.8 1999/04/30 03:42:14 db Exp $";
 #endif
 
 #include "struct.h"
@@ -240,7 +240,7 @@ void free_client(aClient *cptr)
        sendto_ops("Please report to the hybrid team! ircd-hybrid@the-project.org");
 
 #if defined(USE_SYSLOG) && defined(SYSLOG_BLOCK_ALLOCATOR)
-       syslog(LOG_DEBUG,"list.c couldn't BlockHeapFree(free_remote_aClients,cptr) cptr = %lX", cptr);
+       syslog(LOG_DEBUG,"list.c couldn't BlockHeapFree(free_remote_aClients,cptr) cptr = %lX", (long unsigned int) cptr);
 #endif
     }
 }
@@ -323,7 +323,7 @@ void free_user(anUser *user, aClient *cptr)
 	  sendto_ops("list.c couldn't BlockHeapFree(free_anUsers,user) user = %lX", user );
 	  sendto_ops("Please report to the hybrid team! ircd-hybrid@the-project.org");
 #if defined(USE_SYSLOG) && defined(SYSLOG_BLOCK_ALLOCATOR)
-	  syslog(LOG_DEBUG,"list.c couldn't BlockHeapFree(free_anUsers,user) user = %lX", user);
+	  syslog(LOG_DEBUG,"list.c couldn't BlockHeapFree(free_anUsers,user) user = %lX", (long unsigned int) user);
 #endif
 	}
 

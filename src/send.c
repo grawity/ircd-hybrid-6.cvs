@@ -22,7 +22,7 @@
 static  char sccsid[] = "@(#)send.c	2.32 2/28/94 (C) 1988 University of Oulu, \
 Computing Center and Jarkko Oikarinen";
 
-static char *rcs_version = "$Id: send.c,v 1.27 1999/02/16 06:04:45 db Exp $";
+static char *rcs_version = "$Id: send.c,v 1.28 1999/03/11 19:51:40 db Exp $";
 #endif
 
 #include "struct.h"
@@ -1912,5 +1912,6 @@ int sendto_slaves(aClient *one,
 	      }
 	  }
       }
+    return 0;
   }
 #endif
