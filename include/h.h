@@ -22,7 +22,7 @@
  * Most of the externs and prototypes thrown in here to 'cleanup' things.
  * -avalon
  *
- * $Id: h.h,v 1.31 1999/07/08 00:36:25 db Exp $
+ * $Id: h.h,v 1.32 1999/07/08 05:44:14 tomh Exp $
  *
  */
 #ifndef INCLUDED_h_h
@@ -31,14 +31,6 @@
 #include "fdlist.h"
 
 struct Class;
-
-extern aMessageFile	*motd;
-#ifdef AMOTD
-extern aMessageFile	*amotd;
-#endif
-extern struct tm	*motd_tm;
-
-extern aMessageFile	*helpfile;
 
 extern int lifesux;
 extern fdlist serv_fdlist;
