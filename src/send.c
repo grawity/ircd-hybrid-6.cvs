@@ -1530,7 +1530,7 @@ flush_server_connections()
 extern aConfItem *u_conf;
 
 int
-sendto_slaves(aClient *one, char *message, char *nick, int parc, char *parv[])
+sendto_slaves(aClient *one, int flags, char *message, char *nick, int parc, char *parv[])
 
 {
   aClient *acptr;
@@ -1543,7 +1543,7 @@ sendto_slaves(aClient *one, char *message, char *nick, int parc, char *parv[])
       
       for (aconf = u_conf; aconf; aconf = aconf->next)
         {
-          if (match(acptr->name,aconf->name))
+          if (match(acptr->name,aconf->name) && (aconf->port & flags))
             { 
               if(parc > 3)
                 sendto_one(acptr,":%s %s %s %s %s :%s",
