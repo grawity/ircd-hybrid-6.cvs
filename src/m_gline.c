@@ -312,7 +312,7 @@ int     m_gline(aClient *cptr,
 
       ircsprintf(buffer, "%s (%s)",
 #ifdef GLINE_REASON_FIRST
-                 gline_pending_ptr->reason1 
+                 tmp_gline_pending_ptr->reason1 
 #else
                  reason
 #endif      
@@ -331,7 +331,7 @@ int     m_gline(aClient *cptr,
                      user,
                      host,
 #ifdef GLINE_REASON_FIRST
-                     gline_pending_ptr->reason1
+                     tmp_gline_pending_ptr->reason1
 #else
                      reason
 #endif
