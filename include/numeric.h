@@ -360,6 +360,9 @@ extern const char* form_str(int);
 #define ERR_USERSDONTMATCH   502
 
 #define ERR_GHOSTEDCLIENT    503
+
+#define RPL_ETRACE           709
+
 #define ERR_LAST_ERR_MSG     999
 
 #endif /* INCLUDED_numeric_h */

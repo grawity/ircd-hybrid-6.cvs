@@ -103,6 +103,7 @@ extern int m_dns(struct Client *,struct Client *,int,char **);
 extern int m_htm(struct Client *,struct Client *,int,char **);
 extern int m_set(struct Client *,struct Client *,int,char **);
 extern int m_map(struct Client *,struct Client *,int,char **);
+extern int m_etrace(struct Client *,struct Client *,int,char **);
 
 #endif /* INCLUDED_m_commands_h */
 

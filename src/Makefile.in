@@ -40,6 +40,7 @@ SRCS = \
 	m_die.c \
 	m_encap.c \
 	m_error.c \
+	m_etrace.c \
 	m_gline.c \
 	m_htm.c \
 	m_info.c \
@@ -130,6 +131,7 @@ SRCS = \
 #	m_connect.o \
 #	m_die.o \
 #       m_encap.o \
+#       m_etrace.o \
 #	m_error.o \
 #	m_gline.o \
 #	m_help.o \
