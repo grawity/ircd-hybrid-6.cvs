@@ -214,7 +214,7 @@ void _free_client(struct Client* cptr)
        */
       sendto_ops(BH_FREE_ERROR_MESSAGE, cptr);
       sendto_ops("Please report to the hybrid team! " \
-                 "ircd-hybrid@the-project.org");
+                 "bugs@ircd-hybrid.org");
 
       ilog(L_WARN, BH_FREE_ERROR_MESSAGE, cptr);
     }

@@ -349,7 +349,7 @@ int BlockHeapFree(BlockHeap *bh, void *ptr)
                          bh->elemSize,
                          BH_CurrentFile,
                          BH_CurrentLine);
-              sendto_ops("Please report to the hybrid team! ircd-hybrid@the-project.org");
+              sendto_ops("Please report to the hybrid team! bugs@ircd-hybrid.org");
 #endif /* DEBUG_BLOCK_ALLOCATOR */
             }
           else

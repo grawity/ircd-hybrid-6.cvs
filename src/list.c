@@ -195,7 +195,7 @@ void _free_user(anUser* user, aClient* cptr)
       if(BlockHeapFree(free_anUsers,user))
         {
           sendto_realops("list.c couldn't BlockHeapFree(free_anUsers,user) user = %lX", user );
-          sendto_realops("Please report to the hybrid team! ircd-hybrid@the-project.org");
+          sendto_realops("Please report to the hybrid team! bugs@ircd-hybrid.org");
 #ifdef SYSLOG_BLOCK_ALLOCATOR 
           ilog(L_DEBUG,"list.c couldn't BlockHeapFree(free_anUsers,user) user = %lX", (long unsigned int) user);
 #endif
