@@ -191,14 +191,6 @@
  */
 #define  TS5_ONLY
 
-/* SLAVE_SERVERS - Use this to send LOCOPS and KLINES to servers you define
- * uses U: lines in ircd.conf, each server defined in an U: line
- * is sent a copy of the locally placed K-line, and will also
- * accept K-lines from those servers.
- * This is useful for sites with more than one client server.
- */
-#undef  SLAVE_SERVERS
-
 /* FNAME_USERLOG and FNAME_OPERLOG - logs of local USERS and OPERS
  * Define this filename to maintain a list of persons who log
  * into this server. Logging will stop when the file does not exist.

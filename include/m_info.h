@@ -637,12 +637,6 @@ Info MyInformation[] = {
   { "SHOW_REMOTE_WHOIS", "OFF", 0, "Allow opers to see remote whois" },
 #endif /* SHOW_REMOTE_WHOIS */
 
-#ifdef SLAVE_SERVERS
-  { "SLAVE_SERVERS", "ON", 0, "Send LOCOPS and K-lines to U: lined Servers" },
-#else
-  { "SLAVE_SERVERS", "OFF", 0, "Send LOCOPS and K-lines to U: lined Servers" },
-#endif /* SLAVE_SERVERS */
-
 #ifdef SPATH
   { "SPATH", SPATH, 0, "Path to Server Executable" },
 #else
