@@ -322,24 +322,26 @@ int     m_whois(struct Client *cptr,
               (MyConnect(sptr)) && (IsPerson(sptr)) &&
 #endif
              (acptr != sptr))
-              
+            { 
 #ifdef SHOW_REMOTE_WHOIS
           if (MyConnect(sptr))              
+                {
 #endif /* SHOW_REMOTE_WHOIS */
             sendto_one(acptr,
                        ":%s NOTICE %s :*** Notice -- %s (%s@%s) is doing a /whois on you.",
                        me.name, acptr->name, parv[0], sptr->username,
                        sptr->host);
+                }
 #ifdef SHOW_REMOTE_WHOIS
           else
+                {
             sendto_one(acptr,
                        ":%s NOTICE %s :*** Notice -- %s (%s@%s) is doing a /whois on you. [%s]",
                        me.name, acptr->name, parv[0], sptr->username,
                        sptr->host, sptr->user->server);
-
+                }
 #endif /* SHOW_REMOTE_WHOIS */
-
-
+            }
 #endif /* #ifdef WHOIS_NOTICE */
 
 
@@ -502,22 +504,26 @@ int     m_whois(struct Client *cptr,
               (MyConnect(sptr)) && (IsPerson(sptr)) &&
 #endif
              (acptr != sptr))
+            {
 #ifdef SHOW_REMOTE_WHOIS
           if (MyConnect(sptr))
+                {
 #endif /* SHOW_REMOTE_WHOIS */
             sendto_one(acptr,
                        ":%s NOTICE %s :*** Notice -- %s (%s@%s) is doing a /whois on you.",
                        me.name, acptr->name, parv[0], sptr->username,
                        sptr->host);
 #ifdef SHOW_REMOTE_WHOIS
+                }
           else
+                {
             sendto_one(acptr,
                        ":%s NOTICE %s :*** Notice -- %s (%s@%s) is doing a /whois on you. [%s]",
                        me.name, acptr->name, parv[0], sptr->username,
                        sptr->host, sptr->user->server);
-
+                 }
 #endif /* SHOW_REMOTE_WHOIS */
-
+            }
 #endif /* #ifdef WHOIS_NOTICE */
 
           if ((acptr->user

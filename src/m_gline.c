@@ -1005,7 +1005,7 @@ static int majority_gline(aClient *sptr,
               (irccmp(gline_pending_ptr->oper_server1,oper_server) == 0) )
             {
               /* This oper or server has already "voted" */
-              sendto_realops("oper or server has already voted [%s!%s@%s] on %s"
+              sendto_realops("oper or server has already voted [%s!%s@%s] on %s",
 	                     oper_nick, oper_user, oper_host, oper_server);
               return NO;
             }
@@ -1019,7 +1019,7 @@ static int majority_gline(aClient *sptr,
                   (irccmp(gline_pending_ptr->oper_server2,oper_server)==0))
                 {
                   /* This oper or server has already "voted" */
-                  sendto_realops("oper or server has already voted [%s!%s@%s] on %s"
+                  sendto_realops("oper or server has already voted [%s!%s@%s] on %s",
 		                 oper_nick, oper_user, oper_host, oper_server);
                   return NO;
                 }
