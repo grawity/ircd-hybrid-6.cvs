@@ -106,7 +106,7 @@ SRCS = \
 	scache.c \
 	send.c \
 	sprintf_irc.c \
-	whowas.c
+	m_whowas.c
 
 #
 # Do it this way for Ultrix, and its portable at least

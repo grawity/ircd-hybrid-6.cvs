@@ -44,7 +44,7 @@
 #include "s_serv.h"
 #include "send.h"
 #include "struct.h"
-#include "whowas.h"
+#include "m_whowas.h"
 #include "s_debug.h"
 
 #include <assert.h>

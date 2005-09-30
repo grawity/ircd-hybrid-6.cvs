@@ -38,7 +38,7 @@
 #include "s_user.h"
 #include "send.h"
 #include "struct.h"
-#include "whowas.h"
+#include "m_whowas.h"
 #include "s_conf.h"       
 
 #include <assert.h>

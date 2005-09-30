@@ -29,7 +29,7 @@
 #include "s_log.h"
 #include "s_serv.h"
 #include "send.h"
-#include "whowas.h"
+#include "m_whowas.h"
 #include "irc_string.h"
 
 #include <string.h>

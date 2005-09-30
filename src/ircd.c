@@ -50,7 +50,7 @@
 #include "scache.h"
 #include "send.h"
 #include "struct.h"
-#include "whowas.h"
+#include "m_whowas.h"
 #include "blalloc.h"
 
 #include <stdlib.h>
